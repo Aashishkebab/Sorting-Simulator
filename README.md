@@ -2,7 +2,7 @@
 Program that simulates sorting arrays with multiple threads and different algorithms.
 The project was originally written in NetBeans. It was originally made for a project in my Computer Science class in college.
 
-##To use the program
+## To use the program
 1. User sets the size of the array of items to be sorted.
 2. The user sets the order of the list of items to be sorted.
 3. The user chooses the block size, which is the number of items in the array are to be sorted in parallel on different threads.
