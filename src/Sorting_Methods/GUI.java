@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import static Sorting_Methods.Sorting_Simulator.*;
+import static Sorting_Methods.SortingSimulator.*;
 import sorting_algorithms.Sort;
 
 /**

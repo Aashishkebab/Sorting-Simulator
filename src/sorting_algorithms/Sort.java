@@ -11,9 +11,9 @@ import java.util.Arrays;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import Sorting_Methods.Fork;
-import Sorting_Methods.Sorting_Simulator;
-import static Sorting_Methods.Sorting_Simulator.alert;
-import static Sorting_Methods.Sorting_Simulator.truncate;
+import Sorting_Methods.SortingSimulator;
+import static Sorting_Methods.SortingSimulator.alert;
+import static Sorting_Methods.SortingSimulator.truncate;
 import static sorting_algorithms.TrumpSort.immigrants;
 
 /**
@@ -242,7 +242,7 @@ public class Sort{
         
         alert("Operation finished", "The time taken is below", (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false);
         
-        System.out.println("Sorted array:\n" + Sorting_Simulator.truncate(Arrays.toString((Comparable[])(allBlocks.poll())), 3333));
+        System.out.println("Sorted array:\n" + SortingSimulator.truncate(Arrays.toString((Comparable[])(allBlocks.poll())), 3333));
         System.out.println(""); System.out.println("");
     }
 

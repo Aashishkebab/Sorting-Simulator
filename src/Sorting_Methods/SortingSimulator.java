@@ -16,7 +16,7 @@ import javafx.stage.Stage;
  *
  * @author Aashish Bharadwaj
  */
-public class Sorting_Simulator extends Application{
+public class SortingSimulator extends Application{
     
     public static boolean banned = false;
     public static boolean randomExplained = false;
