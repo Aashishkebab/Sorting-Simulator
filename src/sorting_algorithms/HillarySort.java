@@ -1,0 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sorting_algorithms;
+
+/**
+ *
+ * @author Aashish Bharadwaj
+ */
+public class HillarySort extends Sort{
+    public static Comparable[] lieToEveryone(Comparable[] array){
+        return null;
+    }
+}
