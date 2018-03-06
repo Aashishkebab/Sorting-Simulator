@@ -2,7 +2,7 @@ package sorting_algorithms;
 
 public class BucketSort extends Sort{
 	public static Comparable[] bucketSort(Comparable[] a){
-		int[] bucket = new int[a.length + 1];
+		int[] bucket = new int[getMax(a) + 1];
 
 		for(int i = 0; i < bucket.length; i++){
 			bucket[i] = 0;

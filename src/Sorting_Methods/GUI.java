@@ -199,7 +199,7 @@ public class GUI{
         bucketSort.setOnAction(sort -> {
             Sort.sortingMethod = "bucketSort";
         });
-        bucketSort.setOnAction(sort -> {
+        countingSort.setOnAction(sort -> {
             Sort.sortingMethod = "countingSort";
         });
         
