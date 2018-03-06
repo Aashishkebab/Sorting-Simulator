@@ -1,7 +1,6 @@
 package sorting_algorithms;
 
-public class BucketSort {
-
+public class BucketSort extends Sort{
 	public static Comparable[] bucketSort(Comparable[] a){
 		int[] bucket = new int[a.length + 1];
 
