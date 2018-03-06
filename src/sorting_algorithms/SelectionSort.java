@@ -10,7 +10,7 @@ package sorting_algorithms;
  * @author Aashish Bharadwaj
  */
 public class SelectionSort extends Sort{
-    public static Comparable[] selectionSort(Comparable[] array){
+    public static void selectionSort(Comparable[] array){
         for(int i = 0; i < array.length; i++){
             for(int j = i + 1; j < array.length; j++){
                 if(array[i].compareTo(array[j]) > 0){
@@ -18,7 +18,6 @@ public class SelectionSort extends Sort{
                 }
             }
         }
-        
-        return array;
+        return;
     }
 }

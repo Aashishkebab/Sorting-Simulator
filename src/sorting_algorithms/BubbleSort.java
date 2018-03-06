@@ -10,7 +10,7 @@ package sorting_algorithms;
  * @author Aashish Bharadwaj
  */
 public class BubbleSort extends Sort{
-    public static Comparable[] bubbleSort(Comparable[] array) {
+    public static void bubbleSort(Comparable[] array) {
         for(int i = array.length - 1; i >= 0; i--){
             for(int j = array.length - 1; j >= 0; j--){
 //                try{
@@ -20,7 +20,6 @@ public class BubbleSort extends Sort{
 //                }catch(Exception e){}
             }
         }
-        
-        return array;
+        return;
     }
 }

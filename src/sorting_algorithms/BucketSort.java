@@ -1,7 +1,7 @@
 package sorting_algorithms;
 
 public class BucketSort extends Sort{
-	public static Comparable[] bucketSort(Comparable[] array){
+	public static void bucketSort(Comparable[] array){
 		int[] bucket = new int[getMax(array) + 1];
 
 		for(int i = 0; i < bucket.length; i++){
@@ -18,7 +18,6 @@ public class BucketSort extends Sort{
 				array[outPos++] = i;
 			}
 		}
-
-		return array;
+		return;
 	}
 }

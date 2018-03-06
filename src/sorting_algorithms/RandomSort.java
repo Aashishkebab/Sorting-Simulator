@@ -13,7 +13,7 @@ import static sorting_algorithms.Sort.swapTwoValues;
  */
 public class RandomSort {
 
-    public static Comparable[] randomSort(Comparable[] array){
+    public static void randomSort(Comparable[] array){
         boolean sorted = true;
         int loops = 0;
         
@@ -35,14 +35,11 @@ public class RandomSort {
             if(loops >= (Integer.MAX_VALUE / 17)){
                 System.out.println("");
                 System.out.println("Took too long, here's what we got.");
-                
-                return array;
+                return;
             }
             sorted = true;
             
         }
-        
-        return array;
     }
     
 }

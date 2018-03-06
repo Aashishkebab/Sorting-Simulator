@@ -45,46 +45,47 @@ public class Fork implements Runnable{
         }
         
         if(fork.equals("selectionSort")){            
-            array = SelectionSort.selectionSort(this.array);
+            SelectionSort.selectionSort(this.array);
         }
         if(fork.equals("bubbleSort")){
-            array = BubbleSort.bubbleSort(this.array);
+            BubbleSort.bubbleSort(this.array);
         }
         if(fork.equals("insertionSort")){
-            array = InsertionSort.insertionSort(this.array);
+            InsertionSort.insertionSort(this.array);
         }
         if(fork.equals("quickSort")){
-            array = QuickSort.quickSort(this.array);
+            QuickSort.quickSort(this.array);
         }
         if(fork.equals("mergeSort")){
-            array = MergeSort.mergeSort(this.array);
+            MergeSort.mergeSort(this.array);
         }
         if(fork.equals("randomSort")){
-            array = RandomSort.randomSort(this.array);
+            RandomSort.randomSort(this.array);
         }
         if(fork.equals("guessAndCheck")){
+            System.out.println("Unsupported");
 //            array = RandomSort.guessAndCheck(this.array);
         }
         if(fork.equals("javaSort")){
             Arrays.sort(this.array);
         }
         if(fork.equals("trumpSort")){
-            this.array = TrumpSort.makeSortingGreatAgain(this.array);
+            TrumpSort.makeSortingGreatAgain(this.array);
         }
         if(fork.equals("bernieSort")){
-            this.array = BernieSort.spreadTheWealth(this.array);
+            BernieSort.spreadTheWealth(this.array);
         }
         if(fork.equals("hillarySort")){
-            this.array = HillarySort.lieToEveryone(this.array);
+            HillarySort.lieToEveryone(this.array);
         }
         if(fork.equals("radixSort")) {
-            this.array = RadixSort.radixSort(this.array);
+            RadixSort.radixSort(this.array);
         }
         if(fork.equals("bucketSort")) {
-            this.array = BucketSort.bucketSort(this.array);
+            BucketSort.bucketSort(this.array);
         }
         if(fork.equals("countingSort")) {
-            this.array = CountingSort.countingSort(this.array);
+            CountingSort.countingSort(this.array);
         }
         
         //System.out.println("Offer: " + Arrays.toString(array));

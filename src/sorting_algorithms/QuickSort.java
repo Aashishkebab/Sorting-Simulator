@@ -15,13 +15,13 @@ import static sorting_algorithms.Sort.swapTwoValues;
  * @author Aashish Bharadwaj
  */
 public class QuickSort extends Sort{
-    
+
     private static Comparable[] array;
     public static int recurse = 0;
 
-    public static Comparable[] quickSort(Comparable[] array){
+    public static void quickSort(Comparable[] array){
         QuickSort.array = array;
-        return realQuickSort(array, 0, array.length - 1);
+        realQuickSort(array, 0, array.length - 1);
     }
     
     private static Comparable[] actualQuickSort(int lower, int upper){  //Deprecated
@@ -90,7 +90,7 @@ public class QuickSort extends Sort{
 
     private static int partitionamafy(Comparable[] array, int lower, int upper) {
         recurse++;
-//        System.out.println(recurse);
+        System.out.println(recurse);
         
         Comparable pivot = array[upper];
         int newLow = lower - 1;

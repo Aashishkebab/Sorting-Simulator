@@ -1,7 +1,7 @@
 package sorting_algorithms;
 
 public class CountingSort extends Sort{
-	public static Comparable[] countingSort(Comparable array[]) {
+	public static void countingSort(Comparable array[]) {
 		int max = getMax(array);
 
 		//The output array that will have sorted array
@@ -36,7 +36,6 @@ public class CountingSort extends Sort{
 		for(int i = 0; i < array.length; ++i){
 			array[i] = output[i];
 		}
-
-		return array;
+		return;
 	}
 }

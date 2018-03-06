@@ -38,16 +38,16 @@ public class RadixSort extends Sort{
 
 	//The main function to that sorts arr[] of size n using
 	//Radix Sort
-	public static Comparable[] radixSort(Comparable arr[]){
+	public static void radixSort(Comparable arr[]){
 		// Find the maximum number to know number of digits
 		int m = getMax(arr);
 
 		//Do counting sort for every digit. Note that instead
 		//of passing digit number, exp is passed. exp is 10^i
 		//where i is current digit number
-		for(int exp = 1; m / exp > 0; exp *= 10)
+		for(int exp = 1; m / exp > 0; exp *= 10){
 			countSort(arr, arr.length, exp);
+		}
 
-		return arr;
 	}
 }
