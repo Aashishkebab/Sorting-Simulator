@@ -78,6 +78,9 @@ public class Fork implements Runnable{
         if(fork.equals("radixSort")) {
             this.array = RadixSort.radixSort(this.array);
         }
+        if(fork.equals("bucketSort")) {
+            this.array = BucketSort.bucketSort(this.array);
+        }
         
         //System.out.println("Offer: " + Arrays.toString(array));
         try{
@@ -92,5 +95,4 @@ public class Fork implements Runnable{
             }
         }
     }
-    
 }
