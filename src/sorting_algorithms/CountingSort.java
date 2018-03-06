@@ -21,14 +21,14 @@ public class CountingSort extends Sort{
 
 		//Change count[i] so that count[i] now contains actual
 		//position of this character in output array
-		for(int i = 1; i <= 255; ++i){
+		for(int i = 1; i <= max; ++i){
 			count[i] += count[i - 1];
 		}
 
 		//Build the output array
 		for(int i = 0; i < array.length; ++i){
-			output[count[(int)arr[i]] - 1] = arr[i];
-			--count[(int)arr[i]];
+			output[count[(int)array[i]] - 1] = array[i];
+			--count[(int)array[i]];
 		}
 
 		// Copy the output array, so that it now
@@ -37,6 +37,6 @@ public class CountingSort extends Sort{
 			array[i] = output[i];
 		}
 
-		return arr;
+		return array;
 	}
 }
