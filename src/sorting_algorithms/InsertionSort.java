@@ -19,7 +19,7 @@ public class InsertionSort extends Sort{
                 }
             }catch(Exception atBeginning){}
         }
-        
+
         return array;
     }
 }
