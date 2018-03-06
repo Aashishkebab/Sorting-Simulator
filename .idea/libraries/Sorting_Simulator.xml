@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Sorting-Simulator">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Sorting-Simulator.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
