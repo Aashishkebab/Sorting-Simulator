@@ -17,6 +17,7 @@ import sorting_algorithms.BernieSort;
 import sorting_algorithms.TrumpSort;
 import sorting_algorithms.RadixSort;
 import sorting_algorithms.BucketSort;
+import sorting_algorithms.CountingSort;
 import java.time.Instant;
 import java.util.Arrays;
 import static sorting_algorithms.Sort.allBlocks;
@@ -81,6 +82,9 @@ public class Fork implements Runnable{
         }
         if(fork.equals("bucketSort")) {
             this.array = BucketSort.bucketSort(this.array);
+        }
+        if(fork.equals("countingSort")) {
+            this.array = CountingSort.countingSort(this.array);
         }
         
         //System.out.println("Offer: " + Arrays.toString(array));
