@@ -44,7 +44,7 @@ public class GUI{
                         static RadioButton hillarySort = new RadioButton("Hillary Sort (Wipe the server)");
                         static RadioButton radixSort = new RadioButton("Radix Sort");
                         static RadioButton bucketSort = new RadioButton("Bucket Sort");
-                        static RadioButton countingSort = new RadioButton("Counting Sort (Not Working)");
+                        static RadioButton countingSort = new RadioButton("Counting Sort");
 
                 static VBox typeBox = new VBox(7);
                     static Label typeTitle = new Label("Input Type");
