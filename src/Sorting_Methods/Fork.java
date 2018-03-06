@@ -16,6 +16,7 @@ import sorting_algorithms.Sort;
 import sorting_algorithms.BernieSort;
 import sorting_algorithms.TrumpSort;
 import sorting_algorithms.RadixSort;
+import sorting_algorithms.BucketSort;
 import java.time.Instant;
 import java.util.Arrays;
 import static sorting_algorithms.Sort.allBlocks;

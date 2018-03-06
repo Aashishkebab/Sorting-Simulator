@@ -43,6 +43,7 @@ public class GUI{
                         static RadioButton bernieSort = new RadioButton("Bernie Sort (Democratic socialism)");
                         static RadioButton hillarySort = new RadioButton("Hillary Sort (Wipe the server)");
                         static RadioButton radixSort = new RadioButton("Radix Sort (no comparisons)");
+                        static RadioButton bucketSort = new RadioButton("Bucket Sort");
 
                 static VBox typeBox = new VBox(7);
                     static Label typeTitle = new Label("Input Type");
@@ -91,6 +92,7 @@ public class GUI{
                 algorithmBox.getChildren().add(bernieSort);
                 algorithmBox.getChildren().add(hillarySort);
                 algorithmBox.getChildren().add(radixSort);
+                algorithmBox.getChildren().add(bucketSort);
                 
                 javaSort.setSelected(true);
                 
@@ -129,6 +131,7 @@ public class GUI{
         bernieSort.setToggleGroup(algorithms);
         hillarySort.setToggleGroup(algorithms);
         radixSort.setToggleGroup(algorithms);
+        bucketSort.setToggleGroup(algorithms);
         
         alreadySorted.setToggleGroup(types);
         reverseOrder.setToggleGroup(types);
@@ -189,6 +192,10 @@ public class GUI{
         });
         radixSort.setOnAction(sort -> {
             Sort.sortingMethod = "radixSort";
+            //System.out.println("mergeSort");
+        });
+        bucketSort.setOnAction(sort -> {
+            Sort.sortingMethod = "bucketSort";
             //System.out.println("mergeSort");
         });
         
