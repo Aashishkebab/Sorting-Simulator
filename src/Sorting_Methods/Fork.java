@@ -57,7 +57,7 @@ public class Fork implements Runnable{
             QuickSort.quickSort(this.array);
         }
         if(fork.equals("mergeSort")){
-            MergeSort.mergeSort(this.array);
+            this.array = MergeSort.mergeSort(this.array);
         }
         if(fork.equals("randomSort")){
             RandomSort.randomSort(this.array);
