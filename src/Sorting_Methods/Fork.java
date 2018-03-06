@@ -15,6 +15,7 @@ import sorting_algorithms.HillarySort;
 import sorting_algorithms.Sort;
 import sorting_algorithms.BernieSort;
 import sorting_algorithms.TrumpSort;
+import sorting_algorithms.RadixSort;
 import java.time.Instant;
 import java.util.Arrays;
 import static sorting_algorithms.Sort.allBlocks;
@@ -57,7 +58,6 @@ public class Fork implements Runnable{
             array = MergeSort.mergeSort(this.array);
         }
         if(fork.equals("randomSort")){
-            
             array = RandomSort.randomSort(this.array);
         }
         if(fork.equals("guessAndCheck")){
@@ -74,6 +74,9 @@ public class Fork implements Runnable{
         }
         if(fork.equals("hillarySort")){
             this.array = HillarySort.lieToEveryone(this.array);
+        }
+        if(fork.equals("radixSort")) {
+            this.array = RadixSort.radixSort(this.array);
         }
         
         //System.out.println("Offer: " + Arrays.toString(array));
