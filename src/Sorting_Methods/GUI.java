@@ -42,9 +42,9 @@ public class GUI{
                         static RadioButton trumpSort = new RadioButton("Trump Sort (Illegal comparables)");
                         static RadioButton bernieSort = new RadioButton("Bernie Sort (Democratic socialism)");
                         static RadioButton hillarySort = new RadioButton("Hillary Sort (Wipe the server)");
-                        static RadioButton radixSort = new RadioButton("Radix Sort (no comparisons)");
+                        static RadioButton radixSort = new RadioButton("Radix Sort");
                         static RadioButton bucketSort = new RadioButton("Bucket Sort");
-                        static RadioButton countingSort = new RadioButton("Counting Sort");
+                        static RadioButton countingSort = new RadioButton("Counting Sort (Not Working)");
 
                 static VBox typeBox = new VBox(7);
                     static Label typeTitle = new Label("Input Type");
