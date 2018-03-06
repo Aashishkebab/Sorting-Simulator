@@ -3,18 +3,8 @@ package sorting_algorithms;
 import java.util.Arrays;
 
 public class RadixSort extends Sort{
-	// A utility function to get maximum value in arr[]
-	static int getMax(Comparable arr[], int n){
-		int mx = (int)arr[0];
-		for (int i = 1; i < n; i++)
-			if ((int)arr[i] > mx){
-				mx = (int)arr[i];
-			}
-		return mx;
-	}
-
-	// A function to do counting sort of arr[] according to
-	// the digit represented by exp.
+	//A function to do counting sort of arr[] according to
+	//the digit represented by exp.
 	static void countSort(Comparable arr[], int n, int exp){
 		int output[] = new int[n]; // output array
 		int i;
@@ -26,8 +16,8 @@ public class RadixSort extends Sort{
 			count[((int)arr[i] / exp) % 10]++;
 		}
 
-		// Change count[i] so that count[i] now contains
-		// actual position of this digit in output[]
+		//Change count[i] so that count[i] now contains
+		//actual position of this digit in output[]
 		for (i = 1; i < 10; i++){
 			count[i] += count[i - 1];
 		}
@@ -46,15 +36,15 @@ public class RadixSort extends Sort{
 		}
 	}
 
-	// The main function to that sorts arr[] of size n using
-	// Radix Sort
+	//The main function to that sorts arr[] of size n using
+	//Radix Sort
 	public static Comparable[] radixSort(Comparable arr[]){
 		// Find the maximum number to know number of digits
-		int m = getMax(arr, arr.length);
+		int m = getMax(arr);
 
-		// Do counting sort for every digit. Note that instead
-		// of passing digit number, exp is passed. exp is 10^i
-		// where i is current digit number
+		//Do counting sort for every digit. Note that instead
+		//of passing digit number, exp is passed. exp is 10^i
+		//where i is current digit number
 		for(int exp = 1; m / exp > 0; exp *= 10)
 			countSort(arr, arr.length, exp);
 

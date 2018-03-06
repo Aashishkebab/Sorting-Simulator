@@ -65,6 +65,16 @@ public class Sort{
         
         return array;
     }
+
+	// A utility function to get maximum value in arr[]
+	public static int getMax(Comparable arr[]){
+		int mx = (int)arr[0];
+		for (int i = 1; i < arr.length; i++)
+			if ((int)arr[i] > mx){
+				mx = (int)arr[i];
+			}
+		return mx;
+	}
     
     public static void letsSort(int size, int blocks){
         
@@ -241,7 +251,7 @@ public class Sort{
         }
         
         alert("Operation finished", "The time taken is below", (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false);
-        
+
         System.out.println("Sorted array:\n" + SortingSimulator.truncate(Arrays.toString((Comparable[])(allBlocks.poll())), 3333));
         System.out.println(""); System.out.println("");
     }
