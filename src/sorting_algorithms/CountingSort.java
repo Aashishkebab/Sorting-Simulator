@@ -1,16 +1,17 @@
 package sorting_algorithms;
 
-public class CountingSort {
+public class CountingSort extends Sort{
 	public static Comparable[] countingSort(Comparable arr[]) {
 		int n = arr.length;
+		int max = getMax(arr);
 
 		// The output character array that will have sorted arr
 		Comparable output[] = new Comparable[n];
 
 		// Create a count array to store count of individual
 		// characters and initialize count array as 0
-		int count[] = new int[arr.length];
-		for(int i = 0; i < arr.length; ++i) {
+		int count[] = new int[max];
+		for(int i = 0; i < max; ++i) {
 			count[i] = 0;
 		}
 
