@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ccccebf-f4d7-4993-aaf6-e24dcb9bff83" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/sorting_algorithms/RadixSort.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/Sorting_Methods/Fork.java" afterPath="$PROJECT_DIR$/src/Sorting_Methods/Fork.java" />
       <change beforePath="$PROJECT_DIR$/src/Sorting_Methods/GUI.java" afterPath="$PROJECT_DIR$/src/Sorting_Methods/GUI.java" />
-      <change beforePath="$PROJECT_DIR$/src/sorting_algorithms/InsertionSort.java" afterPath="$PROJECT_DIR$/src/sorting_algorithms/InsertionSort.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +28,8 @@
       <file leaf-file-name="Sort.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sorting_algorithms/Sort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="135" column="29" lean-forward="false" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+            <state relative-caret-position="86">
+              <caret line="125" column="30" lean-forward="true" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -420,8 +417,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sorting_algorithms/Sort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="135" column="29" lean-forward="false" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+        <state relative-caret-position="86">
+          <caret line="125" column="30" lean-forward="true" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
           <folding />
         </state>
       </provider>
