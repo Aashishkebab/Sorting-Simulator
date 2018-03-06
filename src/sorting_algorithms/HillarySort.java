@@ -10,7 +10,9 @@ package sorting_algorithms;
  * @author Aashish Bharadwaj
  */
 public class HillarySort extends Sort{
-    public static Comparable[] lieToEveryone(Comparable[] array){
-        return null;
+    public static void lieToEveryone(Comparable[] array){
+        for(int i = 0; i < array.length; i++){
+            array[i] = null;
+        }
     }
 }
