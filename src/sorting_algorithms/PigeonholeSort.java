@@ -2,11 +2,12 @@ package sorting_algorithms;
 
 import java.util.Arrays;
 
-public class PiegeonholeSort {
-	public static void pigeonhole_sort(int array[], int n){
+public class PigeonholeSort {
+	public static void pigeonholeSort(int array[]){
 		int min = array[0];
 		int max = array[0];
 		int range, i, j, index;
+		int n = array.length;
 
 		for(int a = 0; a < n; a++){
 			if(array[a] > max) {
@@ -24,7 +25,7 @@ public class PiegeonholeSort {
 		for(i = 0; i < n; i++){
 			phole[array[i] - min]++;
 		}
-		
+
 		index = 0;
 
 		for(j = 0; j < range; j++){

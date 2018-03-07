@@ -47,6 +47,7 @@ public class GUI{
                         static RadioButton radixSort = new RadioButton("Radix Sort");
                         static RadioButton bucketSort = new RadioButton("Bucket Sort");
                         static RadioButton countingSort = new RadioButton("Counting Sort");
+                        static RadioButton pigeonSort = new RadioButton("Pigeonhole Sort");
 
                 static VBox typeBox = new VBox(7);
                     static Label typeTitle = new Label("Input Type");
@@ -100,6 +101,7 @@ public class GUI{
                 algorithmBox.getChildren().add(radixSort);
                 algorithmBox.getChildren().add(bucketSort);
                 algorithmBox.getChildren().add(countingSort);
+                algorithmBox.getChildren().add(pigeonSort);
                 
                 javaSort.setSelected(true);
                 
@@ -142,6 +144,7 @@ public class GUI{
         radixSort.setToggleGroup(algorithms);
         bucketSort.setToggleGroup(algorithms);
         countingSort.setToggleGroup(algorithms);
+        pigeonSort.setToggleGroup(algorithms);
         
         alreadySorted.setToggleGroup(types);
         reverseOrder.setToggleGroup(types);
@@ -216,6 +219,9 @@ public class GUI{
         });
         countingSort.setOnAction(sort -> {
             Sort.sortingMethod = "countingSort";
+        });
+        pigeonSort.setOnAction(sort -> {
+            Sort.sortingMethod = "pigeonSort";
         });
         
         alreadySorted.setOnAction(numbers -> {

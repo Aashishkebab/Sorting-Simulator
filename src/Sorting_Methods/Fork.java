@@ -80,6 +80,9 @@ public class Fork implements Runnable{
         if(fork.equals("countingSort")) {
             CountingSort.countingSort(this.array);
         }
+        if(fork.equals("pigeonSort")) {
+            PigeonholeSort.pigeonholeSort(this.array);
+        }
         
         //System.out.println("Offer: " + Arrays.toString(array));
         try{
