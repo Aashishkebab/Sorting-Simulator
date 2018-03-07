@@ -10,14 +10,20 @@ package sorting_algorithms;
  * @author Aashish Bharadwaj
  */
 public class InsertionSort extends Sort{
-    public static void insertionSort(Comparable[] array) {
-        for(int i = 0; i < array.length; i++){
-            try{
-                for(int j = i; array[j].compareTo(array[j - 1]) < 0; j--){
-//                    System.out.println(Arrays.toString(array));
-                    swapTwoValues(j, j - 1, array);
-                }
-            }catch(Exception atBeginning){}
+    public static void insertionSort(Comparable[] array){
+        int n = array.length;
+        for (int i = 1; i < n; ++i){
+            int key = (int)array[i];
+            int j = i - 1;
+
+            /* Move elements of arr[0..i-1], that are
+               greater than key, to one position ahead
+               of their current position */
+            while (j >= 0 && (int)array[j] > key){
+                array[j + 1] = array[j];
+                j = j - 1;
+            }
+            array[j + 1] = key;
         }
         return;
     }
