@@ -32,8 +32,11 @@ public class Fork implements Runnable{
             return;
         }
         
-        if(fork.equals("selectionSort")){            
+        if(fork.equals("selectionSort")){
             SelectionSort.selectionSort(this.array);
+        }
+        if(fork.equals("heapSort")){
+            HeapSort.heapSort(this.array);
         }
         if(fork.equals("bubbleSort")){
             BubbleSort.bubbleSort(this.array);
@@ -55,10 +58,6 @@ public class Fork implements Runnable{
         }
         if(fork.equals("randomSort")){
             RandomSort.randomSort(this.array);
-        }
-        if(fork.equals("guessAndCheck")){
-            System.out.println("Unsupported");
-//            array = RandomSort.guessAndCheck(this.array);
         }
         if(fork.equals("javaSort")){
             Arrays.sort(this.array);

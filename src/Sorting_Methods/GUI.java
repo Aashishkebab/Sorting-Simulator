@@ -27,11 +27,12 @@ public class GUI{
             static VBox mainInterface = new VBox(23);
                 static HBox topCushion = new HBox();
             
-                static VBox algorithmBox = new VBox(4);
+                static VBox algorithmBox = new VBox(3);
                     static Label algorithmTitle = new Label("Sorting Algorithm");
 
                     static ToggleGroup algorithms = new ToggleGroup();
                         static RadioButton selectionSort = new RadioButton("Selection Sort");
+                        static RadioButton heapSort = new RadioButton("Heap Sort");
                         static RadioButton bubbleSort = new RadioButton("Bubble Sort");
                         static RadioButton combSort = new RadioButton("Comb Sort");
                         static RadioButton insertionSort = new RadioButton("Insertion Sort");
@@ -40,7 +41,6 @@ public class GUI{
                         static RadioButton mergeSort = new RadioButton("Merge Sort");
                         static RadioButton javaSort = new RadioButton("Java default sort");
                         static RadioButton randomSort = new RadioButton("Randomness Sort");
-                        static RadioButton guessAndCheck = new RadioButton("Guess-and-check Sort");
                         static RadioButton trumpSort = new RadioButton("Trump Sort (Illegal comparables)");
                         static RadioButton bernieSort = new RadioButton("Bernie Sort (Democratic socialism)");
                         static RadioButton hillarySort = new RadioButton("Hillary Sort (Wipe the server)");
@@ -84,6 +84,7 @@ public class GUI{
         mainInterface.getChildren().add(algorithmBox);
             algorithmBox.getChildren().add(algorithmTitle);
                 algorithmBox.getChildren().add(selectionSort);
+                algorithmBox.getChildren().add(heapSort);
                 algorithmBox.getChildren().add(bubbleSort);
                 algorithmBox.getChildren().add(combSort);
                 algorithmBox.getChildren().add(insertionSort);
@@ -126,6 +127,7 @@ public class GUI{
         topCushion.setMinHeight(3);
         
         selectionSort.setToggleGroup(algorithms);
+        heapSort.setToggleGroup(algorithms);
         bubbleSort.setToggleGroup(algorithms);
         combSort.setToggleGroup(algorithms);
         insertionSort.setToggleGroup(algorithms);
@@ -133,7 +135,6 @@ public class GUI{
         quickSort.setToggleGroup(algorithms);
         mergeSort.setToggleGroup(algorithms);
         randomSort.setToggleGroup(algorithms);
-        guessAndCheck.setToggleGroup(algorithms);
         javaSort.setToggleGroup(algorithms);
         trumpSort.setToggleGroup(algorithms);
         bernieSort.setToggleGroup(algorithms);
@@ -152,6 +153,10 @@ public class GUI{
     private static void setElementActions(){
         selectionSort.setOnAction(sort -> {
             Sort.sortingMethod = "selectionSort";
+            //System.out.println("selectionSort");
+        });
+        heapSort.setOnAction(sort -> {
+            Sort.sortingMethod = "heapSort";
             //System.out.println("selectionSort");
         });
         bubbleSort.setOnAction(sort -> {
@@ -185,9 +190,6 @@ public class GUI{
             
             Sort.sortingMethod = "randomSort";
             //System.out.println("randomSort");
-        });
-        guessAndCheck.setOnAction(sort -> {
-            Sort.sortingMethod = "guessAndCheck";
         });
         javaSort.setOnAction(sort -> {
             Sort.sortingMethod = "javaSort";
