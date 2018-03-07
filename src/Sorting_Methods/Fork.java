@@ -5,19 +5,7 @@
  */
 package Sorting_Methods;
 
-import sorting_algorithms.RandomSort;
-import sorting_algorithms.BubbleSort;
-import sorting_algorithms.SelectionSort;
-import sorting_algorithms.MergeSort;
-import sorting_algorithms.QuickSort;
-import sorting_algorithms.InsertionSort;
-import sorting_algorithms.HillarySort;
-import sorting_algorithms.Sort;
-import sorting_algorithms.BernieSort;
-import sorting_algorithms.TrumpSort;
-import sorting_algorithms.RadixSort;
-import sorting_algorithms.BucketSort;
-import sorting_algorithms.CountingSort;
+import sorting_algorithms.*;
 import java.time.Instant;
 import java.util.Arrays;
 import static sorting_algorithms.Sort.allBlocks;
@@ -52,6 +40,9 @@ public class Fork implements Runnable{
         }
         if(fork.equals("insertionSort")){
             InsertionSort.insertionSort(this.array);
+        }
+        if(fork.equals("shellSort")) {
+            ShellSort.shellSort(this.array);
         }
         if(fork.equals("quickSort")){
             QuickSort.quickSort(this.array);

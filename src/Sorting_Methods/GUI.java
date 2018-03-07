@@ -34,6 +34,7 @@ public class GUI{
                         static RadioButton selectionSort = new RadioButton("Selection Sort");
                         static RadioButton bubbleSort = new RadioButton("Bubble Sort");
                         static RadioButton insertionSort = new RadioButton("Insertion Sort");
+                        static RadioButton shellSort = new RadioButton("Shell Sort");
                         static RadioButton quickSort = new RadioButton("Quick Sort");
                         static RadioButton mergeSort = new RadioButton("Merge Sort");
                         static RadioButton javaSort = new RadioButton("Java default sort");
@@ -84,6 +85,7 @@ public class GUI{
                 algorithmBox.getChildren().add(selectionSort);
                 algorithmBox.getChildren().add(bubbleSort);
                 algorithmBox.getChildren().add(insertionSort);
+                algorithmBox.getChildren().add(shellSort);
                 algorithmBox.getChildren().add(quickSort);
                 algorithmBox.getChildren().add(mergeSort);
                 algorithmBox.getChildren().add(javaSort);
@@ -124,6 +126,7 @@ public class GUI{
         selectionSort.setToggleGroup(algorithms);
         bubbleSort.setToggleGroup(algorithms);
         insertionSort.setToggleGroup(algorithms);
+        shellSort.setToggleGroup(algorithms);
         quickSort.setToggleGroup(algorithms);
         mergeSort.setToggleGroup(algorithms);
         randomSort.setToggleGroup(algorithms);
@@ -155,6 +158,10 @@ public class GUI{
         insertionSort.setOnAction(sort -> {
             Sort.sortingMethod = "insertionSort";
             //System.out.println("insertionSort");
+        });
+        shellSort.setOnAction(sort -> {
+            Sort.sortingMethod = "shellSort";
+            //System.out.println("shellSort");
         });
         quickSort.setOnAction(sort -> {
             Sort.sortingMethod = "quickSort";
