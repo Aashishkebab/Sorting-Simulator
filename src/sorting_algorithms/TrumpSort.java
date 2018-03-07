@@ -21,17 +21,42 @@ public class TrumpSort extends Sort{
         for(int i = 0; i < array.length; i++){
             try{
                 if(array[wall] > array[i]){
-                    array = deport(i, array);
-                    i--;
+                    //array = deport(i, array);
+                    //i--;
+                    array[i] = 0;
                 }else if(array[wall] < array[i]){
                     wall = i;
                 }
             }catch(Exception e){}
         }
+        array = deportAll(array);
 
 //        System.out.println("Here it is:\n" + Arrays.toString(array));
 
         return array;
+    }
+
+    static int[] deportAll(int[] array){
+        int[] newArray = new int[array.length - getNumberOfImmigrants(array)];
+
+        int j = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] != 0){
+                newArray[j] = array[i];
+                j++;
+            }
+        }
+        return newArray;
+    }
+
+    static int getNumberOfImmigrants(int[] array){
+        int illegals = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] == 0){
+                illegals++;
+            }
+        }
+        return illegals;
     }
 
     public static int[] deport(int illegal, int[] array) {
