@@ -27,7 +27,7 @@ public class GUI{
             static VBox mainInterface = new VBox(23);
                 static HBox topCushion = new HBox();
             
-                static VBox algorithmBox = new VBox(7);
+                static VBox algorithmBox = new VBox(4);
                     static Label algorithmTitle = new Label("Sorting Algorithm");
 
                     static ToggleGroup algorithms = new ToggleGroup();
