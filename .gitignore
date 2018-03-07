@@ -2,7 +2,7 @@
 nbproject/private/
 build/
 build.xml
-out/
+out/production/
 
 
 .idea/workspace.xml
