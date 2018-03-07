@@ -90,7 +90,7 @@ public class QuickSort extends Sort{
 
     private static int partitionamafy(Comparable[] array, int lower, int upper) {
         recurse++;
-        System.out.println(recurse);
+        //System.out.println(recurse);
         
         Comparable pivot = array[upper];
         int newLow = lower - 1;
