@@ -33,6 +33,7 @@ public class GUI{
                     static ToggleGroup algorithms = new ToggleGroup();
                         static RadioButton selectionSort = new RadioButton("Selection Sort");
                         static RadioButton bubbleSort = new RadioButton("Bubble Sort");
+                        static RadioButton combSort = new RadioButton("Comb Sort");
                         static RadioButton insertionSort = new RadioButton("Insertion Sort");
                         static RadioButton shellSort = new RadioButton("Shell Sort");
                         static RadioButton quickSort = new RadioButton("Quick Sort");
@@ -84,6 +85,7 @@ public class GUI{
             algorithmBox.getChildren().add(algorithmTitle);
                 algorithmBox.getChildren().add(selectionSort);
                 algorithmBox.getChildren().add(bubbleSort);
+                algorithmBox.getChildren().add(combSort);
                 algorithmBox.getChildren().add(insertionSort);
                 algorithmBox.getChildren().add(shellSort);
                 algorithmBox.getChildren().add(quickSort);
@@ -125,6 +127,7 @@ public class GUI{
         
         selectionSort.setToggleGroup(algorithms);
         bubbleSort.setToggleGroup(algorithms);
+        combSort.setToggleGroup(algorithms);
         insertionSort.setToggleGroup(algorithms);
         shellSort.setToggleGroup(algorithms);
         quickSort.setToggleGroup(algorithms);
@@ -154,6 +157,9 @@ public class GUI{
         bubbleSort.setOnAction(sort -> {
             Sort.sortingMethod = "bubbleSort";
             //System.out.println("bubbleSort");
+        });
+        combSort.setOnAction(sort -> {
+            Sort.sortingMethod = "combSort";
         });
         insertionSort.setOnAction(sort -> {
             Sort.sortingMethod = "insertionSort";
