@@ -70,7 +70,7 @@ public class Fork implements Runnable{
             Arrays.sort(this.array);
         }
         if(fork.equals("trumpSort")){
-            TrumpSort.makeSortingGreatAgain(this.array);
+            this.array = TrumpSort.makeSortingGreatAgain(this.array);
         }
         if(fork.equals("bernieSort")){
             BernieSort.spreadTheWealth(this.array);
