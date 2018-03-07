@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class RadixSort extends Sort{
 	//A function to do counting sort of arr[] according to
 	//the digit represented by exp.
-	static void countSort(Comparable arr[], int n, int exp){
+	static void countSort(int arr[], int n, int exp){
 		int output[] = new int[n]; // output array
 		int i;
 		int count[] = new int[10];
@@ -24,8 +24,8 @@ public class RadixSort extends Sort{
 
 		// Build the output array
 		for (i = n - 1; i >= 0; i--){
-			output[count[ (((int)arr[i])/exp)%10 ] - 1] = (int)arr[i];
-			count[ ((int)arr[i]/exp)%10 ]--;
+			output[count[ ((arr[i]) / exp) % 10 ] - 1] = arr[i];
+			count[(arr[i] / exp) % 10]--;
 		}
 
 		// Copy the output array to arr[], so that arr[] now
@@ -38,15 +38,15 @@ public class RadixSort extends Sort{
 
 	//The main function to that sorts arr[] of size n using
 	//Radix Sort
-	public static void radixSort(Comparable arr[]){
+	public static void radixSort(int array[]){
 		// Find the maximum number to know number of digits
-		int m = getMax(arr);
+		int m = getMax(array);
 
 		//Do counting sort for every digit. Note that instead
 		//of passing digit number, exp is passed. exp is 10^i
 		//where i is current digit number
 		for(int exp = 1; m / exp > 0; exp *= 10){
-			countSort(arr, arr.length, exp);
+			countSort(array, array.length, exp);
 		}
 
 	}

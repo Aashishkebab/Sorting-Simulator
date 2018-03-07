@@ -10,9 +10,9 @@ package sorting_algorithms;
  * @author Aashish Bharadwaj
  */
 public class HillarySort extends Sort{
-    public static void lieToEveryone(Comparable[] array){
+    public static void lieToEveryone(int[] array){
         for(int i = 0; i < array.length; i++){
-            array[i] = null;
+            array[i] = 0;
         }
     }
 }

@@ -17,17 +17,17 @@ public class MergeSort extends Sort{
      * @param array Array of generics that is passed in to the method
      * @return 
      */
-    public static Comparable[] mergeSort(Comparable[] array){
+    public static int[] mergeSort(int[] array){
         return splitData(array);
     }
 
-    public static Comparable[] splitData(Comparable[] array){
+    public static int[] splitData(int[] array){
         if(array.length <= 1){
             return array;
         }
         
-        Comparable[] newArray1 = new Comparable[(array.length) / 2];
-        Comparable[] newArray2 = new Comparable[(int)(Math.ceil(((float)(array.length)) / 2))];
+        int[] newArray1 = new int[(array.length) / 2];
+        int[] newArray2 = new int[(int)(Math.ceil(((float)(array.length)) / 2))];
         int i;
         
         for(i = 0; i < (array.length) / 2; i++){
@@ -43,7 +43,7 @@ public class MergeSort extends Sort{
         return mergeData(newArray1, newArray2);
     }
     
-    public static Comparable[] mergeData(Comparable[] part1, Comparable[] part2){
+    public static int[] mergeData(int[] part1, int[] part2){
         
         if(part1.length == 0){
             return part2;
@@ -51,7 +51,7 @@ public class MergeSort extends Sort{
             return part1;
         }
         
-        Comparable[] array = new Comparable[part1.length + part2.length];
+        int[] array = new int[part1.length + part2.length];
         
 //        System.out.println("Merging " + Arrays.toString(part1) + " with " + Arrays.toString(part2));    //System.out.println("");
         
@@ -60,7 +60,7 @@ public class MergeSort extends Sort{
         try{
             while(index1 < part1.length || index2 < part2.length){
                 try{
-                    if(part1[index1].compareTo(part2[index2]) <= 0){
+                    if(part1[index1] <= part2[index2]){
                         array[indexResult] = part1[index1];
                         index1++;
                     }else{
@@ -88,7 +88,7 @@ public class MergeSort extends Sort{
         return array;
     }
 
-    public static void addArrays(Comparable[] mainArray, int mainIndex, Comparable[] addition, int additionIndex){
+    public static void addArrays(int[] mainArray, int mainIndex, int[] addition, int additionIndex){
         //System.out.println("addArrays");
         
         while(true){

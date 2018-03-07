@@ -12,13 +12,11 @@ package sorting_algorithms;
 public class BernieSort extends Sort{
     public static int averageWealth;
     
-    public static Comparable[] spreadTheWealth(Comparable[] array){
-        Integer[] newArray = convertToIntegers(array);
-        
+    public static int[] spreadTheWealth(int[] array){
         long sum = 0;
         
         for(int i = 0; i < array.length; i++){
-            sum += newArray[i];
+            sum += array[i];
         }
         averageWealth = (int)(sum / (array.length));
         

@@ -28,16 +28,16 @@ public class Sort{
     
     public static Queue allBlocks;
     
-    public static void swapTwoValues(int valueOne, int valueTwo, Comparable[] array){
+    public static void swapTwoValues(int valueOne, int valueTwo, int[] array){
         try{
-            Comparable temp = array[valueOne];
+            int temp = array[valueOne];
             array[valueOne] = array[valueTwo];
             array[valueTwo] = temp;
         }catch(Exception e){}
     }
     
-    public static Integer[] incrementArray(int size) {
-        Integer[] array = new Integer[size];
+    public static int[] incrementArray(int size) {
+        int[] array = new int[size];
         
         for(int i = 0; i < size; i++){
             array[i] = i;
@@ -46,8 +46,8 @@ public class Sort{
         return array;
     }
     
-    public static Integer[] decrementArray(int size) {
-        Integer[] array = new Integer[size];
+    public static int[] decrementArray(int size) {
+        int[] array = new int[size];
         
         for(int i = size; i > 0; i--){
             array[(size - i)] = i;
@@ -56,8 +56,8 @@ public class Sort{
         return array;
     }
 
-    public static Integer[] randomizeArray(int size) {
-        Integer[] array = new Integer[size];
+    public static int[] randomizeArray(int size) {
+        int[] array = new int[size];
         
         for(int i = 0; i < size; i++){
             array[i] = (int)(Math.random() * size + 1);
@@ -67,11 +67,11 @@ public class Sort{
     }
 
 	// A utility function to get maximum value in arr[]
-	public static int getMax(Comparable arr[]){
-		int mx = (int)arr[0];
-		for (int i = 1; i < arr.length; i++)
-			if ((int)arr[i] > mx){
-				mx = (int)arr[i];
+	public static int getMax(int[] array){
+		int mx = (int)array[0];
+		for (int i = 1; i < array.length; i++)
+			if (array[i] > mx){
+				mx = (int)array[i];
 			}
 		return mx;
 	}
@@ -94,15 +94,15 @@ public class Sort{
             blocks = size;
         }
         
-        Integer[] array = createArray(size);    allBlocks = new ArrayBlockingQueue((int)(size/blocks) + 1);
+        int[] array = createArray(size);    allBlocks = new ArrayBlockingQueue((int)(size/blocks) + 1);
         
         //System.out.println(Arrays.toString(array));
         
         startSorting(array, size, blocks);
     }
 
-    public static Integer[] createArray(int size){
-        Integer[] createdArray;
+    public static int[] createArray(int size){
+        int[] createdArray;
         
         switch(inputMethod){
             case "randomOrder":
@@ -130,7 +130,7 @@ public class Sort{
         return createdArray;
     }
 
-    private static void startSorting(Integer[] array, int size, int blockSize){
+    private static void startSorting(int[] array, int size, int blockSize){
         startTime = Instant.now();
         
         if(blockSize >= size){
@@ -156,8 +156,8 @@ public class Sort{
         displayFinalResults(array);
     }
     
-    private static Comparable[] createCopy(Comparable[] array){ //This creates a copy of an array to avoid modifying the original repeatedly, which doesn't work
-        Comparable[] newArray = new Comparable[array.length];
+    private static int[] createCopy(int[] array){ //This creates a copy of an array to avoid modifying the original repeatedly, which doesn't work
+        int[] newArray = new int[array.length];
         
         for(int i = 0; i < array.length; i++){
             newArray[i] = array[i];
@@ -166,7 +166,7 @@ public class Sort{
         return newArray;
     }
 
-    private static void doTheMerge(Comparable[] array, int blockSize){
+    private static void doTheMerge(int[] array, int blockSize){
 //        System.out.println("doTheMerge");
 //        int blockSize = ((Comparable[])(allBlocks.peek())).length;
         
@@ -197,25 +197,25 @@ public class Sort{
         
     }
 
-    private static void setArray(Comparable[] array) {
-        array = (Comparable[])allBlocks.peek();
+    private static void setArray(int[] array) {
+        array = (int[])allBlocks.peek();
         //System.out.println("Copy the array over");
         
         for(int i = 0; i < array.length; i++){
-            array[i] = ((Comparable[])(allBlocks.peek()))[i];
+            array[i] = ((int[])(allBlocks.peek()))[i];
         }
     }
 
-    public static Comparable[] trimArray(Comparable[] array){
+    public static int[] trimArray(int[] array){
         int numOfValues = 0;
         
         for(int i = 0; i < array.length; i++){
-            if(array[i] != null){
+            if(array[i] != 0){
                 numOfValues++;
             }
         }
         
-        Comparable[] newArray = new Comparable[numOfValues];
+        int[] newArray = new int[numOfValues];
         for(int i = 0; i < numOfValues; i++){
             newArray[i] = array[i];
         }
@@ -231,7 +231,7 @@ public class Sort{
         }
     }
 
-    private static void displayFinalResults(Comparable[] array){
+    private static void displayFinalResults(int[] array){
         long endTime = Instant.now().toEpochMilli();
         System.out.println("");
         
@@ -252,14 +252,14 @@ public class Sort{
         
         alert("Operation finished", "The time taken is below", (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false);
 
-        System.out.println("Sorted array:\n" + SortingSimulator.truncate(Arrays.toString((Comparable[])(allBlocks.poll())), 3333));
+        System.out.println("Sorted array:\n" + SortingSimulator.truncate(Arrays.toString((int[])(allBlocks.poll())), 3333));
         System.out.println(""); System.out.println("");
     }
 
-    private static void sortByBlocks(Integer[] array, int size, int blockSize){
+    private static void sortByBlocks(int[] array, int size, int blockSize){
         ArrayList<Thread> sortThreads = new ArrayList<>();
 
-        Integer[] blockArray = new Integer[blockSize];
+        int[] blockArray = new int[blockSize];
         int threadNumber = 1;   int i;  int blockIndex = 0;
 
         for(i = 1; i <= array.length; i++){
@@ -284,8 +284,8 @@ public class Sort{
         joinThreads(sortThreads);
     }
 
-    private static void sortLeftovers(Integer[] array, int size, int blockSize, int blockIndex, int arrayLength) {
-        Integer[] newBlockArray = new Integer[size % blockSize];
+    private static void sortLeftovers(int[] array, int size, int blockSize, int blockIndex, int arrayLength) {
+        int[] newBlockArray = new int[size % blockSize];
 
         for(int t = (arrayLength - blockIndex) - 1; t < Integer.MAX_VALUE; t++){
             try{
@@ -314,10 +314,10 @@ public class Sort{
         }
     }
 
-    private static void mergeBlocks(int blockSize, Comparable[] array){
+    private static void mergeBlocks(int blockSize, int[] array){
         int i;  int newSize;
         
-        while(((Comparable[])(allBlocks.peek())).length < array.length){
+        while(((int[])(allBlocks.peek())).length < array.length){
             //System.out.println("size: " + allBlocks.size());
 
             newSize = allBlocks.size();
@@ -335,8 +335,6 @@ public class Sort{
 //                            Thread merge = new Thread(new Merger());
                     mergingThreads.add(new Thread(new Merger()));
                     mergingThreads.get(i).start();
-                    
-//                    System.out.println(Arrays.toString((Comparable[])(allBlocks.peek())));
 
 //                            merge.start();
 //                        merge.join();
@@ -344,45 +342,23 @@ public class Sort{
                 
 //                        System.out.println("Waiting for join");
                 joinThreads(mergingThreads);
-//                        System.out.println("Done joining");
                 
                 if(allBlocks.size() == 1){
-                    //System.out.println("");
-                    //System.out.println("break");
                     return;
                 }
-
-//                        while(true){
-//                            try{
-//                                while(allBlocks.size() - 1 != Math.floor(newSize / 2) && ((Comparable[])(allBlocks.peek())).length != newLength * 2){
-//            //                        //System.out.println(Arrays.toString(((Comparable[])(allBlocks.peek()))));
-//
-//            //                        //System.out.println("");
-//            //                        //System.out.println("allBlocks size: " + allBlocks.size());
-//            //                        //System.out.println("Comparator: " + Math.ceil(newSize / 2));
-//            //                        
-//            //                        //System.out.println("");
-//            //                        //System.out.println("Peek length: " + ((Comparable[])(allBlocks.peek())).length);
-//            //                        //System.out.println("Comparator: " + newLength);
-//                                }
-//                                break;
-//                            }catch(Exception e){
-//                                continue;
-//                            }
-//                        }
             }catch(Exception pleaseWait){}
         }
     }
 
-    public static Integer[] convertToIntegers(Comparable[] array){
-        Integer[] newArray = new Integer[array.length];
-        
-        for(int i = 0; i < array.length; i++){
-            newArray[i] = (Integer)(array[i]);
-        }
-        
-        return newArray;
-    }
+//    public static Integer[] convertToIntegers(Comparable[] array){
+//        Integer[] newArray = new Integer[array.length];
+//
+//        for(int i = 0; i < array.length; i++){
+//            newArray[i] = (Integer)(array[i]);
+//        }
+//
+//        return newArray;
+//    }
     
     private static class Merger implements Runnable{
         
@@ -403,7 +379,7 @@ public class Sort{
             }
             
             try{
-                allBlocks.offer(MergeSort.mergeData((Comparable[])(allBlocks.poll()), (Comparable[])(allBlocks.poll())));
+                allBlocks.offer(MergeSort.mergeData((int[])(allBlocks.poll()), (int[])(allBlocks.poll())));
             }catch(Exception foweijfeowifj){}
             
             try{

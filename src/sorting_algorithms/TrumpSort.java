@@ -15,15 +15,15 @@ public class TrumpSort extends Sort{
 
     static public int immigrants = 0;
 
-    public static Comparable[] makeSortingGreatAgain(Comparable[] array){
+    public static int[] makeSortingGreatAgain(int[] array){
         int wall = 0;
 
         for(int i = 0; i < array.length; i++){
             try{
-                if(array[wall].compareTo(array[i]) > 0){
+                if(array[wall] > array[i]){
                     array = deport(i, array);
                     i--;
-                }else if(array[wall].compareTo(array[i]) < 0){
+                }else if(array[wall] < array[i]){
                     wall = i;
                 }
             }catch(Exception e){}
@@ -34,8 +34,8 @@ public class TrumpSort extends Sort{
         return array;
     }
 
-    public static Comparable[] deport(int illegal, Comparable[] array) {
-        Comparable[] newArray = new Comparable[array.length - 1];
+    public static int[] deport(int illegal, int[] array) {
+        int[] newArray = new int[array.length - 1];
         immigrants++;
 
         for(int i = 0, j = 0; i < array.length; i++){

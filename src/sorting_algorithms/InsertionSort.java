@@ -10,7 +10,7 @@ package sorting_algorithms;
  * @author Aashish Bharadwaj
  */
 public class InsertionSort extends Sort{
-    public static void insertionSort(Comparable[] array){
+    public static void insertionSort(int[] array){
         int n = array.length;
         for (int i = 1; i < n; ++i){
             int key = (int)array[i];

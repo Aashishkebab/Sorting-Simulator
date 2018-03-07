@@ -10,7 +10,7 @@ package sorting_algorithms;
  * @author Aashish Bharadwaj
  */
 public class SelectionSort extends Sort{
-    public static void selectionSort(Comparable[] array){
+    public static void selectionSort(int[] array){
         int n = array.length;
 
         // One by one move boundary of unsorted subarray
@@ -18,14 +18,14 @@ public class SelectionSort extends Sort{
             // Find the minimum element in unsorted array
             int min_idx = i;
             for (int j = i+1; j < n; j++){
-				if((int)array[j] < (int)array[min_idx]){
+				if(array[j] < array[min_idx]){
 					 min_idx = j;
 				}
 			}
 
             // Swap the found minimum element with the first
             // element
-            int temp = (int)array[min_idx];
+            int temp = array[min_idx];
             array[min_idx] = array[i];
             array[i] = temp;
         }

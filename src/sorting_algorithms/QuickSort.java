@@ -16,27 +16,27 @@ import static sorting_algorithms.Sort.swapTwoValues;
  */
 public class QuickSort extends Sort{
 
-    private static Comparable[] array;
+    private static int[] array;
     public static int recurse = 0;
 
-    public static void quickSort(Comparable[] array){
+    public static void quickSort(int[] array){
         QuickSort.array = array;
         realQuickSort(array, 0, array.length - 1);
     }
     
-    private static Comparable[] actualQuickSort(int lower, int upper){  //Deprecated
+    private static int[] actualQuickSort(int lower, int upper){  //Deprecated
         if(array == null || array.length <= 0){
             return null;
         }
         
         int newLow = lower, newHigh = upper;
-        Comparable pivot = array[(int)(Math.random() * array.length)];
-        
+        int pivot = array[(int)(Math.random() * array.length)];
+
         while(newLow <= newHigh){
-            while(array[newLow].compareTo(pivot) < 0){
+            while(array[newLow] < pivot){
                 newLow++;
             }
-            while(array[newHigh].compareTo(pivot) > 0){
+            while(array[newHigh] > pivot){
                 newHigh--;
             }
             
@@ -67,7 +67,7 @@ public class QuickSort extends Sort{
         return array;
     }
     
-    static Comparable[] realQuickSort(Comparable[] array, int lower, int upper){
+    static int[] realQuickSort(int[] array, int lower, int upper){
         if(lower < upper){
             int pivot;
             
@@ -88,16 +88,16 @@ public class QuickSort extends Sort{
         return array;
     }
 
-    private static int partitionamafy(Comparable[] array, int lower, int upper) {
+    private static int partitionamafy(int[] array, int lower, int upper) {
         recurse++;
         //System.out.println(recurse);
         
-        Comparable pivot = array[upper];
+        int pivot = array[upper];
         int newLow = lower - 1;
         int i;
         
         for(i = lower; i < upper; i++){
-            if(array[i].compareTo(pivot) <= 0){
+            if(array[i] <= pivot){
                 newLow++;
                 swapTwoValues(i, newLow, array);
             }
@@ -120,10 +120,10 @@ class TooLargeQuick implements Runnable{
 
 class QuickThread implements Runnable{
     
-    Comparable[] array;
+    int[] array;
     int lower, upper;
     
-    public QuickThread(Comparable[] array, int lower, int upper){
+    public QuickThread(int[] array, int lower, int upper){
         this.array = array;
         this.lower = lower;
         this.upper = upper;

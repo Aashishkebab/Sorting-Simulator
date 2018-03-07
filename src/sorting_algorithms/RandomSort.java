@@ -13,7 +13,7 @@ import static sorting_algorithms.Sort.swapTwoValues;
  */
 public class RandomSort {
 
-    public static void randomSort(Comparable[] array){
+    public static void randomSort(int[] array){
         boolean sorted = true;
         int loops = 0;
         
@@ -23,7 +23,7 @@ public class RandomSort {
             swapTwoValues((int)(Math.random() * array.length), (int)(Math.random() * array.length), array);
             
             for(int i = 1; i < array.length; i++){
-                if(array[i].compareTo(array[i - 1]) < 0){
+                if(array[i] < (array[i - 1])){
                     sorted = false;
                     break;
                 }

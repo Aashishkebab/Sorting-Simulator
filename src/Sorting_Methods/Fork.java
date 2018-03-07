@@ -29,9 +29,9 @@ import static sorting_algorithms.Sort.allBlocks;
 public class Fork implements Runnable{
     
     String fork;
-    Comparable[] array;
+    int[] array;
     
-    public Fork(String fork, Comparable[] array){
+    public Fork(String fork, int[] array){
         this.fork = fork;
         this.array = array;
         Sort.startTime = Instant.now();
