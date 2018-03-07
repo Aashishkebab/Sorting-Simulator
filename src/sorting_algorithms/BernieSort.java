@@ -20,7 +20,7 @@ public class BernieSort extends Sort{
         for(int i = 0; i < array.length; i++){
             sum += newArray[i];
         }
-        averageWealth = sum / (array.length);
+        averageWealth = (int)(sum / (array.length));
         
         for(int i = 0; i < array.length; i++){
             array[i] = averageWealth;
