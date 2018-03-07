@@ -15,7 +15,7 @@ public class BernieSort extends Sort{
     public static Comparable[] spreadTheWealth(Comparable[] array){
         Integer[] newArray = convertToIntegers(array);
         
-        int sum = 0;
+        long sum = 0;
         
         for(int i = 0; i < array.length; i++){
             sum += newArray[i];
