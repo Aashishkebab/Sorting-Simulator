@@ -34,6 +34,7 @@ public class GUI{
                         static RadioButton selectionSort = new RadioButton("Selection Sort");
                         static RadioButton heapSort = new RadioButton("Heap Sort");
                         static RadioButton bubbleSort = new RadioButton("Bubble Sort");
+                        static RadioButton oddEvenSort = new RadioButton("Odd-Even Sort");
                         static RadioButton combSort = new RadioButton("Comb Sort");
                         static RadioButton insertionSort = new RadioButton("Insertion Sort");
                         static RadioButton shellSort = new RadioButton("Shell Sort");
@@ -87,6 +88,7 @@ public class GUI{
                 algorithmBox.getChildren().add(selectionSort);
                 algorithmBox.getChildren().add(heapSort);
                 algorithmBox.getChildren().add(bubbleSort);
+                algorithmBox.getChildren().add(oddEvenSort);
                 algorithmBox.getChildren().add(combSort);
                 algorithmBox.getChildren().add(insertionSort);
                 algorithmBox.getChildren().add(shellSort);
@@ -131,6 +133,7 @@ public class GUI{
         selectionSort.setToggleGroup(algorithms);
         heapSort.setToggleGroup(algorithms);
         bubbleSort.setToggleGroup(algorithms);
+        oddEvenSort.setToggleGroup(algorithms);
         combSort.setToggleGroup(algorithms);
         insertionSort.setToggleGroup(algorithms);
         shellSort.setToggleGroup(algorithms);
@@ -156,43 +159,38 @@ public class GUI{
     private static void setElementActions(){
         selectionSort.setOnAction(sort -> {
             Sort.sortingMethod = "selectionSort";
-            //System.out.println("selectionSort");
         });
         heapSort.setOnAction(sort -> {
             Sort.sortingMethod = "heapSort";
-            //System.out.println("selectionSort");
         });
         bubbleSort.setOnAction(sort -> {
             Sort.sortingMethod = "bubbleSort";
-            //System.out.println("bubbleSort");
+        });
+        oddEvenSort.setOnAction(sort -> {
+            Sort.sortingMethod = "oddEvenSort";
         });
         combSort.setOnAction(sort -> {
             Sort.sortingMethod = "combSort";
         });
         insertionSort.setOnAction(sort -> {
             Sort.sortingMethod = "insertionSort";
-            //System.out.println("insertionSort");
         });
         shellSort.setOnAction(sort -> {
             Sort.sortingMethod = "shellSort";
-            //System.out.println("shellSort");
         });
         quickSort.setOnAction(sort -> {
             Sort.sortingMethod = "quickSort";
-            //System.out.println("quickSort");
         });
         mergeSort.setOnAction(sort -> {
             Sort.sortingMethod = "mergeSort";
-            //System.out.println("mergeSort");
         });
         randomSort.setOnAction(sort -> {
 //            if(!randomExplained){
-//                alert("Explanation", "This algorithm may continue for infinity.\nIn such case, terminate the program execution", "This algorithm repeatedly:\nswaps two random values, then checks if the array is sorted.", "INFORMATION", true);
-//                randomExplained = true;
-//            }
+////                alert("Explanation", "This algorithm may continue for infinity.\nIn such case, terminate the program execution", "This algorithm repeatedly:\nswaps two random values, then checks if the array is sorted.", "INFORMATION", true);
+////                randomExplained = true;
+////            }
             
             Sort.sortingMethod = "randomSort";
-            //System.out.println("randomSort");
         });
         javaSort.setOnAction(sort -> {
             Sort.sortingMethod = "javaSort";
