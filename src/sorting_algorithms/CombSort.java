@@ -24,7 +24,7 @@ public class CombSort extends Sort{
 
 		// Keep running while gap is more than 1 and last
 		// iteration caused a swap
-		while(gap != 1 || swapped == true){
+		while(gap != 1 || swapped){
 			// Find next gap
 			gap = getNextGap(gap);
 

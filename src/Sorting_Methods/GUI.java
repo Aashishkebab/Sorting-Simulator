@@ -157,47 +157,18 @@ public class GUI{
 	}
 
 	private static void setElementActions(){
-		cycleSort.setOnAction(sort->{
-			Sort.sortingMethod = "cycleSort";
-		});
-		selectionSort.setOnAction(sort->{
-			Sort.sortingMethod = "selectionSort";
-		});
-		heapSort.setOnAction(sort->{
-			Sort.sortingMethod = "heapSort";
-		});
-		bubbleSort.setOnAction(sort->{
-			Sort.sortingMethod = "bubbleSort";
-		});
-		oddEvenSort.setOnAction(sort->{
-			Sort.sortingMethod = "oddEvenSort";
-		});
-		combSort.setOnAction(sort->{
-			Sort.sortingMethod = "combSort";
-		});
-		insertionSort.setOnAction(sort->{
-			Sort.sortingMethod = "insertionSort";
-		});
-		shellSort.setOnAction(sort->{
-			Sort.sortingMethod = "shellSort";
-		});
-		quickSort.setOnAction(sort->{
-			Sort.sortingMethod = "quickSort";
-		});
-		mergeSort.setOnAction(sort->{
-			Sort.sortingMethod = "mergeSort";
-		});
-		randomSort.setOnAction(sort->{
-//            if(!randomExplained){
-////                alert("Explanation", "This algorithm may continue for infinity.\nIn such case, terminate the program execution", "This algorithm repeatedly:\nswaps two random values, then checks if the array is sorted.", "INFORMATION", true);
-////                randomExplained = true;
-////            }
-
-			Sort.sortingMethod = "randomSort";
-		});
-		javaSort.setOnAction(sort->{
-			Sort.sortingMethod = "javaSort";
-		});
+		cycleSort.setOnAction(sort->Sort.sortingMethod = "cycleSort");
+		selectionSort.setOnAction(sort->Sort.sortingMethod = "selectionSort");
+		heapSort.setOnAction(sort->Sort.sortingMethod = "heapSort");
+		bubbleSort.setOnAction(sort->Sort.sortingMethod = "bubbleSort");
+		oddEvenSort.setOnAction(sort->Sort.sortingMethod = "oddEvenSort");
+		combSort.setOnAction(sort->Sort.sortingMethod = "combSort");
+		insertionSort.setOnAction(sort->Sort.sortingMethod = "insertionSort");
+		shellSort.setOnAction(sort->Sort.sortingMethod = "shellSort");
+		quickSort.setOnAction(sort->Sort.sortingMethod = "quickSort");
+		mergeSort.setOnAction(sort->Sort.sortingMethod = "mergeSort");
+		randomSort.setOnAction(sort->Sort.sortingMethod = "randomSort");
+		javaSort.setOnAction(sort->Sort.sortingMethod = "javaSort");
 		trumpSort.setOnAction(sort->{
 			if(!banned){
 				alert("PLEASE READ!", "This sort is entirely satire.\nPlease do not take it literally.",
@@ -208,34 +179,16 @@ public class GUI{
 
 			Sort.sortingMethod = "trumpSort";
 		});
-		bernieSort.setOnAction(sort->{
-			Sort.sortingMethod = "bernieSort";
-		});
-		hillarySort.setOnAction(sort->{
-			Sort.sortingMethod = "hillarySort";
-		});
-		radixSort.setOnAction(sort->{
-			Sort.sortingMethod = "radixSort";
-		});
-		bucketSort.setOnAction(sort->{
-			Sort.sortingMethod = "bucketSort";
-		});
-		countingSort.setOnAction(sort->{
-			Sort.sortingMethod = "countingSort";
-		});
-		pigeonSort.setOnAction(sort->{
-			Sort.sortingMethod = "pigeonSort";
-		});
+		bernieSort.setOnAction(sort->Sort.sortingMethod = "bernieSort");
+		hillarySort.setOnAction(sort->Sort.sortingMethod = "hillarySort");
+		radixSort.setOnAction(sort->Sort.sortingMethod = "radixSort");
+		bucketSort.setOnAction(sort->Sort.sortingMethod = "bucketSort");
+		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
+		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
 
-		alreadySorted.setOnAction(numbers->{
-			Sort.inputMethod = "alreadySorted";
-		});
-		reverseOrder.setOnAction(numbers->{
-			Sort.inputMethod = "reverseOrder";
-		});
-		randomOrder.setOnAction(numbers->{
-			Sort.inputMethod = "randomOrder";
-		});
+		alreadySorted.setOnAction(numbers->Sort.inputMethod = "alreadySorted");
+		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");
+		randomOrder.setOnAction(numbers->Sort.inputMethod = "randomOrder");
 
 		goButton.setOnAction(letsGo->{
 			try{

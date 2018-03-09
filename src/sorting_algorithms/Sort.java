@@ -71,10 +71,10 @@ public class Sort{
 
 	// A utility function to get maximum value in arr[]
 	public static int getMax(int[] array){
-		int mx = (int)array[0];
+		int mx = array[0];
 		for(int i = 1; i < array.length; i++){
 			if(array[i] > mx){
-				mx = (int)array[i];
+				mx = array[i];
 			}
 		}
 		return mx;
@@ -103,7 +103,7 @@ public class Sort{
 		}
 
 		int[] array = createArray(size);
-		allBlocks = new ArrayBlockingQueue((int)(size / blocks) + 1);
+		allBlocks = new ArrayBlockingQueue(size / blocks + 1);
 
 		//System.out.println(Arrays.toString(array));
 
@@ -163,8 +163,8 @@ public class Sort{
 		displayFinalResults(array);
 	}
 
-	private static int[] createCopy(
-			int[] array){ //This creates a copy of an array to avoid modifying the original repeatedly, which doesn't work
+	//This creates a copy of an array to avoid modifying the original repeatedly, which doesn't work
+	private static int[] createCopy(int[] array){
 		int[] newArray = new int[array.length];
 
 		for(int i = 0; i < array.length; i++){

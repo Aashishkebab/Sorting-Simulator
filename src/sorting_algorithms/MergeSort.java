@@ -15,7 +15,7 @@ public class MergeSort extends Sort{
 	 * This method exists solely to call the real method, but the name of this method is more friendly to programmers
 	 *
 	 * @param array Array of generics that is passed in to the method
-	 * @return
+	 * @return Resultant array
 	 */
 	public static int[] mergeSort(int[] array){
 		return splitData(array);
@@ -72,12 +72,6 @@ public class MergeSort extends Sort{
 				}catch(Exception arrayEmpty){
 					addArrays(array, indexResult, part1, index1);
 					addArrays(array, indexResult, part2, index2);
-
-					indexResult++;
-
-					//System.out.println("");
-					//System.out.println("Done merging a thing");
-					//System.out.println("Here are the results: " + Arrays.toString(array));
 
 					return Sort.trimArray(array);
 				}

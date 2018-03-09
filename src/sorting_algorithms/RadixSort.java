@@ -14,7 +14,7 @@ public class RadixSort extends Sort{
 
 		// Store count of occurrences in count[]
 		for(i = 0; i < n; i++){
-			count[((int)arr[i] / exp) % 10]++;
+			count[(arr[i] / exp) % 10]++;
 		}
 
 		//Change count[i] so that count[i] now contains

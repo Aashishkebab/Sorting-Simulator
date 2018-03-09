@@ -5,9 +5,6 @@
  */
 package sorting_algorithms;
 
-import static sorting_algorithms.Sort.swapTwoValues;
-
-
 /**
  * @author Aashish Bharadwaj
  */

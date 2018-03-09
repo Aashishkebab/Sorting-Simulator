@@ -7,7 +7,7 @@ public class OddEvenSort extends Sort{
 
 		while(!isSorted){
 			isSorted = true;
-			int temp = 0;
+			int temp;
 
 			// Perform Bubble sort on odd indexed element
 			for(int i = 1; i <= n - 2; i = i + 2){
