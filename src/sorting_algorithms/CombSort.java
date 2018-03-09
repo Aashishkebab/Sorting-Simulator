@@ -1,6 +1,6 @@
 package sorting_algorithms;
 
-public class CombSort{
+public class CombSort extends Sort{
 	// To find gap between elements
 	static int getNextGap(int gap){
 		// Shrink gap by Shrink factor

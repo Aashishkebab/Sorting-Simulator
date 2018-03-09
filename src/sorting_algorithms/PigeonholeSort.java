@@ -3,7 +3,7 @@ package sorting_algorithms;
 import java.util.Arrays;
 
 
-public class PigeonholeSort{
+public class PigeonholeSort extends Sort{
 	public static void pigeonholeSort(int array[]){
 		int min = array[0];
 		int max = array[0];

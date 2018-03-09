@@ -1,6 +1,6 @@
 package sorting_algorithms;
 
-public class ShellSort{
+public class ShellSort extends Sort{
 	/* function to sort arr using shellSort */
 	public static void shellSort(int[] array){
 		int n = array.length;

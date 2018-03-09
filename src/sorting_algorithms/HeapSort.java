@@ -1,6 +1,6 @@
 package sorting_algorithms;
 
-public class HeapSort{
+public class HeapSort extends Sort{
 	public static void heapSort(int[] array){
 		int n = array.length;
 

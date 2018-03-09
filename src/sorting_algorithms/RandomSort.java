@@ -11,7 +11,7 @@ import static sorting_algorithms.Sort.swapTwoValues;
 /**
  * @author Aashish Bharadwaj
  */
-public class RandomSort{
+public class RandomSort extends Sort{
 
 	public static void randomSort(int[] array){
 		boolean sorted = true;

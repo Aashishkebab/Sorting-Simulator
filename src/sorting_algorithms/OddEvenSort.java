@@ -1,6 +1,6 @@
 package sorting_algorithms;
 
-public class OddEvenSort{
+public class OddEvenSort extends Sort{
 	public static void oddEvenSort(int[] arr){
 		boolean isSorted = false; // Initially array is unsorted
 		int n = arr.length;
