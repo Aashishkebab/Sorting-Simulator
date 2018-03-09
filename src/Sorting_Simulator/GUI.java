@@ -39,6 +39,7 @@ public class GUI{
 	static RadioButton shellSort = new RadioButton("Shell Sort");
 	static RadioButton quickSort = new RadioButton("Quick Sort");
 	static RadioButton mergeSort = new RadioButton("Merge Sort");
+	static RadioButton timSort = new RadioButton("Tim Sort");
 	static RadioButton javaSort = new RadioButton("Java default sort");
 	static RadioButton randomSort = new RadioButton("Randomness Sort");
 	static RadioButton trumpSort = new RadioButton("Trump Sort (Illegal comparables)");
@@ -94,6 +95,7 @@ public class GUI{
 		algorithmBox.getChildren().add(shellSort);
 		algorithmBox.getChildren().add(quickSort);
 		algorithmBox.getChildren().add(mergeSort);
+		algorithmBox.getChildren().add(timSort);
 		algorithmBox.getChildren().add(javaSort);
 		algorithmBox.getChildren().add(randomSort);
 		algorithmBox.getChildren().add(trumpSort);
@@ -139,6 +141,7 @@ public class GUI{
 		shellSort.setToggleGroup(algorithms);
 		quickSort.setToggleGroup(algorithms);
 		mergeSort.setToggleGroup(algorithms);
+		timSort.setToggleGroup(algorithms);
 		randomSort.setToggleGroup(algorithms);
 		javaSort.setToggleGroup(algorithms);
 		trumpSort.setToggleGroup(algorithms);
@@ -167,6 +170,7 @@ public class GUI{
 		shellSort.setOnAction(sort->Sort.sortingMethod = "shellSort");
 		quickSort.setOnAction(sort->Sort.sortingMethod = "quickSort");
 		mergeSort.setOnAction(sort->Sort.sortingMethod = "mergeSort");
+		timSort.setOnAction(sort->Sort.sortingMethod = "timSort");
 		randomSort.setOnAction(sort->Sort.sortingMethod = "randomSort");
 		javaSort.setOnAction(sort->Sort.sortingMethod = "javaSort");
 		trumpSort.setOnAction(sort->{
