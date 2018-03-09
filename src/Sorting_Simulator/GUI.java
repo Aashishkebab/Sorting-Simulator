@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sorting_Methods;
+package Sorting_Simulator;
 
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import sorting_algorithms.Sort;
 
-import static Sorting_Methods.SortingSimulator.alert;
-import static Sorting_Methods.SortingSimulator.banned;
+import static Sorting_Simulator.SortingSimulator.alert;
+import static Sorting_Simulator.SortingSimulator.banned;
 
 
 /**

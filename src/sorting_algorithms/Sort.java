@@ -5,8 +5,8 @@
  */
 package sorting_algorithms;
 
-import Sorting_Methods.Fork;
-import Sorting_Methods.SortingSimulator;
+import Sorting_Simulator.Fork;
+import Sorting_Simulator.SortingSimulator;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -14,8 +14,8 @@ import java.util.Arrays;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
-import static Sorting_Methods.SortingSimulator.alert;
-import static Sorting_Methods.SortingSimulator.truncate;
+import static Sorting_Simulator.SortingSimulator.alert;
+import static Sorting_Simulator.SortingSimulator.truncate;
 import static sorting_algorithms.TrumpSort.immigrants;
 
 

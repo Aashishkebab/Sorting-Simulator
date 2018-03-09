@@ -7,7 +7,7 @@ package sorting_algorithms;
 
 import javafx.application.Platform;
 
-import static Sorting_Methods.SortingSimulator.alert;
+import static Sorting_Simulator.SortingSimulator.alert;
 import static sorting_algorithms.QuickSort.realQuickSort;
 
 
