@@ -1,7 +1,7 @@
 package sorting_algorithms;
 
 public class CountingSort extends Sort{
-	public static void countingSort(int[] array) {
+	public static void countingSort(int[] array){
 		int max = getMax(array);
 
 		//The output array that will have sorted array
@@ -10,7 +10,7 @@ public class CountingSort extends Sort{
 		//Create a count array to store count of individual
 		//numbers and initialize count array as 0
 		int count[] = new int[max + 1];
-		for(int i = 0; i < max; ++i) {
+		for(int i = 0; i < max; ++i){
 			count[i] = 0;
 		}
 

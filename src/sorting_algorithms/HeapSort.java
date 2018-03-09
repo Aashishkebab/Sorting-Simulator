@@ -1,16 +1,16 @@
 package sorting_algorithms;
 
-public class HeapSort {
+public class HeapSort{
 	public static void heapSort(int[] array){
 		int n = array.length;
 
 		// Build heap (rearrange array)
-		for (int i = n / 2 - 1; i >= 0; i--) {
+		for(int i = n / 2 - 1; i >= 0; i--){
 			heapify(array, n, i);
 		}
 
 		// One by one extract an element from heap
-		for (int i = n - 1; i >= 0; i--){
+		for(int i = n - 1; i >= 0; i--){
 			// Move current root to end
 			int temp = array[0];
 			array[0] = array[i];
@@ -29,16 +29,17 @@ public class HeapSort {
 		int r = 2 * i + 2;  // right = 2*i + 2
 
 		// If left child is larger than root
-		if (l < n && array[l] > array[largest])
+		if(l < n && array[l] > array[largest]){
 			largest = l;
+		}
 
 		// If right child is larger than largest so far
-		if (r < n && array[r] > array[largest])
+		if(r < n && array[r] > array[largest]){
 			largest = r;
+		}
 
 		// If largest is not root
-		if (largest != i)
-		{
+		if(largest != i){
 			int swap = array[i];
 			array[i] = array[largest];
 			array[largest] = swap;

@@ -5,7 +5,7 @@ public class CombSort{
 	static int getNextGap(int gap){
 		// Shrink gap by Shrink factor
 		gap = (gap * 10) / 13;
-		if (gap < 1){
+		if(gap < 1){
 			return 1;
 		}
 		return gap;
@@ -24,7 +24,7 @@ public class CombSort{
 
 		// Keep running while gap is more than 1 and last
 		// iteration caused a swap
-		while (gap != 1 || swapped == true){
+		while(gap != 1 || swapped == true){
 			// Find next gap
 			gap = getNextGap(gap);
 
@@ -33,8 +33,8 @@ public class CombSort{
 			swapped = false;
 
 			// Compare all elements with current gap
-			for (int i = 0; i < n - gap; i++){
-				if (array[i] > array[i + gap]){
+			for(int i = 0; i < n - gap; i++){
+				if(array[i] > array[i + gap]){
 					// Swap arr[i] and arr[i+gap]
 					int temp = array[i];
 					array[i] = array[i + gap];

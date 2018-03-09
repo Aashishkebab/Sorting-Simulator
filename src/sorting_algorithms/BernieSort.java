@@ -6,24 +6,23 @@
 package sorting_algorithms;
 
 /**
- *
  * @author Aashish Bharadwaj
  */
 public class BernieSort extends Sort{
-    public static int averageWealth;
-    
-    public static int[] spreadTheWealth(int[] array){
-        long sum = 0;
-        
-        for(int i = 0; i < array.length; i++){
-            sum += array[i];
-        }
-        averageWealth = (int)(sum / (array.length));
-        
-        for(int i = 0; i < array.length; i++){
-            array[i] = averageWealth;
-        }
-        
-        return array;
-    }
+	public static int averageWealth;
+
+	public static int[] spreadTheWealth(int[] array){
+		long sum = 0;
+
+		for(int i = 0; i < array.length; i++){
+			sum += array[i];
+		}
+		averageWealth = (int)(sum / (array.length));
+
+		for(int i = 0; i < array.length; i++){
+			array[i] = averageWealth;
+		}
+
+		return array;
+	}
 }

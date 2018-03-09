@@ -1,17 +1,17 @@
 package sorting_algorithms;
 
-public class OddEvenSort {
-	public static void oddEvenSort(int[] arr) {
+public class OddEvenSort{
+	public static void oddEvenSort(int[] arr){
 		boolean isSorted = false; // Initially array is unsorted
 		int n = arr.length;
 
-		while(!isSorted) {
+		while(!isSorted){
 			isSorted = true;
 			int temp = 0;
 
 			// Perform Bubble sort on odd indexed element
-			for(int i = 1; i <= n - 2; i = i + 2) {
-				if(arr[i] > arr[i + 1]) {
+			for(int i = 1; i <= n - 2; i = i + 2){
+				if(arr[i] > arr[i + 1]){
 					temp = arr[i];
 					arr[i] = arr[i + 1];
 					arr[i + 1] = temp;
@@ -20,8 +20,8 @@ public class OddEvenSort {
 			}
 
 			// Perform Bubble sort on even indexed element
-			for(int i = 0; i <= n - 2; i = i + 2) {
-				if(arr[i] > arr[i + 1]) {
+			for(int i = 0; i <= n - 2; i = i + 2){
+				if(arr[i] > arr[i + 1]){
 					temp = arr[i];
 					arr[i] = arr[i + 1];
 					arr[i + 1] = temp;

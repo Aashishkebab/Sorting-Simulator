@@ -2,7 +2,8 @@ package sorting_algorithms;
 
 import java.util.Arrays;
 
-public class PigeonholeSort {
+
+public class PigeonholeSort{
 	public static void pigeonholeSort(int array[]){
 		int min = array[0];
 		int max = array[0];
@@ -10,10 +11,10 @@ public class PigeonholeSort {
 		int n = array.length;
 
 		for(int a = 0; a < n; a++){
-			if(array[a] > max) {
+			if(array[a] > max){
 				max = array[a];
 			}
-			if(array[a] < min) {
+			if(array[a] < min){
 				min = array[a];
 			}
 		}

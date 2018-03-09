@@ -8,13 +8,13 @@ public class BucketSort extends Sort{
 			bucket[i] = 0;
 		}
 
-		for (int i = 0; i < array.length; i++){
+		for(int i = 0; i < array.length; i++){
 			bucket[array[i]]++;
 		}
 
 		int outPos = 0;
-        for(int i = 0; i < bucket.length; i++){
-			for (int j = 0; j < bucket[i]; j++){
+		for(int i = 0; i < bucket.length; i++){
+			for(int j = 0; j < bucket[i]; j++){
 				array[outPos++] = i;
 			}
 		}
