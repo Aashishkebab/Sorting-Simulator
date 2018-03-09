@@ -29,6 +29,7 @@ public class GUI{
 	static Label algorithmTitle = new Label("Sorting Algorithm");
 
 	static ToggleGroup algorithms = new ToggleGroup();
+	static RadioButton cycleSort = new RadioButton("Cycle Sort");
 	static RadioButton selectionSort = new RadioButton("Selection Sort");
 	static RadioButton heapSort = new RadioButton("Heap Sort");
 	static RadioButton bubbleSort = new RadioButton("Bubble Sort");
@@ -80,9 +81,10 @@ public class GUI{
 		mainInterface.getChildren().add(topCushion);
 
 		elements.getChildren().add(mainInterface);
-
 		mainInterface.getChildren().add(algorithmBox);
 		algorithmBox.getChildren().add(algorithmTitle);
+
+		algorithmBox.getChildren().add(cycleSort);
 		algorithmBox.getChildren().add(selectionSort);
 		algorithmBox.getChildren().add(heapSort);
 		algorithmBox.getChildren().add(bubbleSort);
@@ -127,6 +129,7 @@ public class GUI{
 		leftCushion.setMinWidth(17);
 		topCushion.setMinHeight(3);
 
+		cycleSort.setToggleGroup(algorithms);
 		selectionSort.setToggleGroup(algorithms);
 		heapSort.setToggleGroup(algorithms);
 		bubbleSort.setToggleGroup(algorithms);
@@ -154,6 +157,9 @@ public class GUI{
 	}
 
 	private static void setElementActions(){
+		cycleSort.setOnAction(sort->{
+			Sort.sortingMethod = "cycleSort";
+		});
 		selectionSort.setOnAction(sort->{
 			Sort.sortingMethod = "selectionSort";
 		});
