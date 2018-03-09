@@ -25,7 +25,7 @@ public class GUI{
 	static VBox mainInterface = new VBox(23);
 	static HBox topCushion = new HBox();
 
-	static VBox algorithmBox = new VBox(3);
+	static VBox algorithmBox = new VBox(1);
 	static Label algorithmTitle = new Label("Sorting Algorithm");
 
 	static ToggleGroup algorithms = new ToggleGroup();
@@ -94,7 +94,6 @@ public class GUI{
 		algorithmBox.getChildren().add(mergeSort);
 		algorithmBox.getChildren().add(javaSort);
 		algorithmBox.getChildren().add(randomSort);
-//                algorithmBox.getChildren().add(guessAndCheck);
 		algorithmBox.getChildren().add(trumpSort);
 		algorithmBox.getChildren().add(bernieSort);
 		algorithmBox.getChildren().add(hillarySort);
