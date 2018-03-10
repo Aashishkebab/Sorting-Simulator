@@ -80,6 +80,16 @@ public class Sort{
 		return mx;
 	}
 
+	public static int getMinIndex(int[] array){
+		int mx = 0;
+		for(int i = 0; i < array.length; i++){
+			if(array[i] < array[mx]){
+				mx = i;
+			}
+		}
+		return mx;
+	}
+
 	public static void letsSort(int size, int blocks){
 
 		if(size <= 0 || blocks <= 0){
