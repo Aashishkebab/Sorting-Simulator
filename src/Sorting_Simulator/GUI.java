@@ -53,8 +53,9 @@ public class GUI{
 	static RadioButton bucketSort = new RadioButton("Bucket Sort");
 	static RadioButton countingSort = new RadioButton("Counting Sort");
 	static RadioButton pigeonSort = new RadioButton("Pigeonhole Sort");
+	static RadioButton aashishSort2 = new RadioButton("Aashish Sort 2");
 
-	static VBox typeBox = new VBox(2);
+	static VBox typeBox = new VBox(1);
 	static Label typeTitle = new Label("Input Type");
 
 	static ToggleGroup types = new ToggleGroup();
@@ -62,7 +63,7 @@ public class GUI{
 	static RadioButton reverseOrder = new RadioButton("Reverse order");
 	static RadioButton randomOrder = new RadioButton("Random");
 
-	static VBox sizeBox = new VBox(3);
+	static VBox sizeBox = new VBox(1);
 	static HBox inputSizeBox = new HBox(17);
 	static Label inputSizeTitle = new Label("Input Size");
 	static TextField inputSize = new TextField("0");
@@ -113,6 +114,7 @@ public class GUI{
 		algorithmBox.getChildren().add(bucketSort);
 		algorithmBox.getChildren().add(countingSort);
 		algorithmBox.getChildren().add(pigeonSort);
+		algorithmBox.getChildren().add(aashishSort2);
 
 		javaSort.setSelected(true);
 
@@ -163,6 +165,7 @@ public class GUI{
 		bucketSort.setToggleGroup(algorithms);
 		countingSort.setToggleGroup(algorithms);
 		pigeonSort.setToggleGroup(algorithms);
+		aashishSort2.setToggleGroup(algorithms);
 
 		alreadySorted.setToggleGroup(types);
 		reverseOrder.setToggleGroup(types);
@@ -206,6 +209,12 @@ public class GUI{
 		bucketSort.setOnAction(sort->Sort.sortingMethod = "bucketSort");
 		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
 		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
+		aashishSort2.setOnAction(sort->{
+			alert("Sort Description", "Description of Aashish Sort 2",
+			      "Copies items from original array into new array in order\nby repeatedly parsing through original.", "INFORMATION", true
+			);
+			Sort.sortingMethod = "aashishSort2";
+		});
 
 		alreadySorted.setOnAction(numbers->Sort.inputMethod = "alreadySorted");
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");
