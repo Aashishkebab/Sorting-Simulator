@@ -101,6 +101,17 @@ public class Sort{
 		return newArray;
 	}
 
+	public static boolean isSorted(int[] array){
+		boolean sorted = true;
+		for(int i = 1; i < array.length; i++){
+			if(array[i] < (array[i - 1])){
+				sorted = false;
+				break;
+			}
+		}
+		return true;
+	}
+
 	public static boolean isNumberInArray(int number, int[] array){
 		for(int i = 0; i < array.length; i++){
 			if(array[i] == number){
