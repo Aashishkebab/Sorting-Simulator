@@ -211,14 +211,7 @@ public class GUI{
 		bucketSort.setOnAction(sort->Sort.sortingMethod = "bucketSort");
 		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
 		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
-		aashishSort2.setOnAction(sort->{
-			alert("Sort Description", "Description of Aashish Sort 2",
-			      "Copies items from original array into new array in order" +
-					      "\nby repeatedly parsing through original and" +
-					      "\nfinding the next smallest number.", "INFORMATION", true
-			);
-			Sort.sortingMethod = "aashishSort2";
-		});
+		aashishSort2.setOnAction(sort->Sort.sortingMethod = "aashishSort2");
 
 		alreadySorted.setOnAction(numbers->Sort.inputMethod = "alreadySorted");
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");
