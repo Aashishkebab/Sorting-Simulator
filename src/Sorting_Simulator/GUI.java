@@ -195,10 +195,9 @@ public class GUI{
 		javaSort.setOnAction(sort->Sort.sortingMethod = "javaSort");
 		trumpSort.setOnAction(sort->{
 			if(!banned){
-				alert("PLEASE READ!", "This sort is entirely satire." +
-						      "\nPlease do not take it literally.",
-				      "I myself am an immigrant." +
-						      "\nI have nothing against immigrants.",
+				alert("PLEASE READ!",
+				      "This sort is entirely satire." + "\nPlease do not take it literally.",
+				      "I myself am an immigrant." + "\nI have nothing against immigrants.",
 				      "INFORMATION", true
 				);
 				banned = true;
@@ -216,8 +215,7 @@ public class GUI{
 			alert("Sort Description", "Description of Aashish Sort 2",
 			      "Copies items from original array into new array in order" +
 					      "\nby repeatedly parsing through original and" +
-					      "\nfinding the next smallest number.",
-			      "INFORMATION", true
+					      "\nfinding the next smallest number.", "INFORMATION", true
 			);
 			Sort.sortingMethod = "aashishSort2";
 		});
@@ -228,10 +226,12 @@ public class GUI{
 
 		goButton.setOnAction(letsGo->{
 			try{
-				Sort.letsSort(Integer.parseInt(inputSize.getText()), Integer.parseInt(blockSize.getText()));
+				Sort.letsSort(Integer.parseInt(inputSize.getText()),
+				              Integer.parseInt(blockSize.getText())
+				);
 			}catch(NumberFormatException except){
-				alert("Incorrect Input", "You have not entered an integer.", "Please enter a positive integer",
-				      "WARNING", false
+				alert("Incorrect Input", "You have not entered an integer.",
+				      "Please enter a positive integer", "WARNING", false
 				);
 			}
 		});

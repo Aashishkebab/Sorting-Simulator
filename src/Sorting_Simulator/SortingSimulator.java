@@ -34,7 +34,8 @@ public class SortingSimulator extends Application{
 		pause.nextLine();
 	}
 
-	public static void alert(String title, String header, String content, String alertType, boolean wait){
+	public static void alert(String title, String header, String content, String alertType,
+	                         boolean wait){
 		Alert alert;
 		switch(alertType){
 			case "INFORMATION":
@@ -70,7 +71,8 @@ public class SortingSimulator extends Application{
 	 * @return Returns the truncated string
 	 */
 	public static String truncate(String string, int length){
-		if(string.length() > (length + 1)){ //If the string needs to be truncated because it is too long
+		if(string.length() >
+				(length + 1)){ //If the string needs to be truncated because it is too long
 			string = string.substring(0, length) +
 					"...";   //Shorten the string to specified length, then add three dots at the end
 		}

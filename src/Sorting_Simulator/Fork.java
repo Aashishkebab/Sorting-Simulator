@@ -114,7 +114,8 @@ public class Fork implements Runnable{
 		try{
 			allBlocks.offer(array);
 		}catch(StackOverflowError e){
-			System.out.println("Too many values were attempted to be sorted, and there was a stack overflow.");
+			System.out.println(
+					"Too many values were attempted to be sorted, and there was a stack overflow.");
 		}catch(NullPointerException e){
 			if(Sort.sortingMethod.equals("hillarySort")){
 				return;

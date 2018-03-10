@@ -259,7 +259,8 @@ public class Sort{
 			immigrants = 0;
 		}
 		if(sortingMethod.equals("bernieSort")){
-			System.out.println("The average wealth was " + truncate(Integer.toString(BernieSort.averageWealth), 3333));
+			System.out.println("The average wealth was " +
+					                   truncate(Integer.toString(BernieSort.averageWealth), 3333));
 			System.out.println("It has been split amongst all.");
 			System.out.println("");
 		}
@@ -272,8 +273,10 @@ public class Sort{
 		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false
 		);
 
-		System.out.println(
-				"Sorted array:\n" + SortingSimulator.truncate(Arrays.toString((int[])(allBlocks.poll())), 3333));
+		System.out.println("Sorted array:\n" +
+				                   SortingSimulator.truncate(Arrays.toString((int[])(allBlocks.poll())),
+				                                             3333
+				                   ));
 		System.out.println("");
 		System.out.println("");
 	}
@@ -308,7 +311,8 @@ public class Sort{
 		joinThreads(sortThreads);
 	}
 
-	private static void sortLeftovers(int[] array, int size, int blockSize, int blockIndex, int arrayLength){
+	private static void sortLeftovers(int[] array, int size, int blockSize, int blockIndex,
+	                                  int arrayLength){
 		int[] newBlockArray = new int[size % blockSize];
 
 		for(int t = (arrayLength - blockIndex) - 1; t < Integer.MAX_VALUE; t++){
