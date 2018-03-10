@@ -102,7 +102,6 @@ public class Sort{
 	}
 
 	public static boolean isSorted(int[] array){
-		boolean sorted = true;
 		for(int i = 1; i < array.length; i++){
 			if(array[i] < (array[i - 1])){
 				return false;
