@@ -195,8 +195,11 @@ public class GUI{
 		javaSort.setOnAction(sort->Sort.sortingMethod = "javaSort");
 		trumpSort.setOnAction(sort->{
 			if(!banned){
-				alert("PLEASE READ!", "This sort is entirely satire.\nPlease do not take it literally.",
-				      "I myself am an immigrant.\nI have nothing against immigrants.", "INFORMATION", true
+				alert("PLEASE READ!", "This sort is entirely satire." +
+						      "\nPlease do not take it literally.",
+				      "I myself am an immigrant." +
+						      "\nI have nothing against immigrants.",
+				      "INFORMATION", true
 				);
 				banned = true;
 			}
@@ -211,7 +214,9 @@ public class GUI{
 		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
 		aashishSort2.setOnAction(sort->{
 			alert("Sort Description", "Description of Aashish Sort 2",
-			      "Copies items from original array into new array in order\nby repeatedly parsing through original and finding the next smallest number.",
+			      "Copies items from original array into new array in order" +
+					      "\nby repeatedly parsing through original and" +
+					      "\nfinding the next smallest number.",
 			      "INFORMATION", true
 			);
 			Sort.sortingMethod = "aashishSort2";
