@@ -40,6 +40,9 @@ public class Fork implements Runnable{
 		if(fork.equals("cycleSort")){
 			CycleSort.cycleSort(this.array);
 		}
+		if(fork.equals("stoogeSort")){
+			StoogeSort.stoogeSort(this.array);
+		}
 		if(fork.equals("selectionSort")){
 			SelectionSort.selectionSort(this.array);
 		}

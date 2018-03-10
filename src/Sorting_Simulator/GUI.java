@@ -31,6 +31,7 @@ public class GUI{
 	static ToggleGroup algorithms = new ToggleGroup();
 	static RadioButton slowSort = new RadioButton("Slow Sort");
 	static RadioButton cycleSort = new RadioButton("Cycle Sort");
+	static RadioButton stoogeSort = new RadioButton("Stooge Sort");
 	static RadioButton selectionSort = new RadioButton("Selection Sort");
 	static RadioButton heapSort = new RadioButton("Heap Sort");
 	static RadioButton bubbleSort = new RadioButton("Bubble Sort");
@@ -89,6 +90,7 @@ public class GUI{
 
 		algorithmBox.getChildren().add(slowSort);
 		algorithmBox.getChildren().add(cycleSort);
+		algorithmBox.getChildren().add(stoogeSort);
 		algorithmBox.getChildren().add(selectionSort);
 		algorithmBox.getChildren().add(heapSort);
 		algorithmBox.getChildren().add(bubbleSort);
@@ -137,6 +139,7 @@ public class GUI{
 
 		slowSort.setToggleGroup(algorithms);
 		cycleSort.setToggleGroup(algorithms);
+		stoogeSort.setToggleGroup(algorithms);
 		selectionSort.setToggleGroup(algorithms);
 		heapSort.setToggleGroup(algorithms);
 		bubbleSort.setToggleGroup(algorithms);
@@ -167,8 +170,9 @@ public class GUI{
 
 	private static void setElementActions(){
 
-		slowSort.setOnAction(sort->Sort.sortingMethod = "cycleSort");
+		slowSort.setOnAction(sort->Sort.sortingMethod = "slowSort");
 		cycleSort.setOnAction(sort->Sort.sortingMethod = "cycleSort");
+		cycleSort.setOnAction(sort->Sort.sortingMethod = "stoogeSort");
 		selectionSort.setOnAction(sort->Sort.sortingMethod = "selectionSort");
 		heapSort.setOnAction(sort->Sort.sortingMethod = "heapSort");
 		bubbleSort.setOnAction(sort->Sort.sortingMethod = "bubbleSort");
