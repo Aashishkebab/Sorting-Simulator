@@ -22,7 +22,7 @@ public class GUI{
 	static HBox elements = new HBox(0);
 	static HBox leftCushion = new HBox();
 
-	static VBox mainInterface = new VBox(17);
+	static VBox mainInterface = new VBox(14);
 	static HBox topCushion = new HBox();
 
 	static VBox algorithmBox = new VBox(1);
@@ -34,6 +34,7 @@ public class GUI{
 	static RadioButton selectionSort = new RadioButton("Selection Sort");
 	static RadioButton heapSort = new RadioButton("Heap Sort");
 	static RadioButton bubbleSort = new RadioButton("Bubble Sort");
+	static RadioButton cocktailSort = new RadioButton("Cocktail Sort");
 	static RadioButton oddEvenSort = new RadioButton("Odd-Even Sort");
 	static RadioButton combSort = new RadioButton("Comb Sort");
 	static RadioButton insertionSort = new RadioButton("Insertion Sort");
@@ -91,6 +92,7 @@ public class GUI{
 		algorithmBox.getChildren().add(selectionSort);
 		algorithmBox.getChildren().add(heapSort);
 		algorithmBox.getChildren().add(bubbleSort);
+		algorithmBox.getChildren().add(cocktailSort);
 		algorithmBox.getChildren().add(oddEvenSort);
 		algorithmBox.getChildren().add(combSort);
 		algorithmBox.getChildren().add(insertionSort);
@@ -138,6 +140,7 @@ public class GUI{
 		selectionSort.setToggleGroup(algorithms);
 		heapSort.setToggleGroup(algorithms);
 		bubbleSort.setToggleGroup(algorithms);
+		cocktailSort.setToggleGroup(algorithms);
 		oddEvenSort.setToggleGroup(algorithms);
 		combSort.setToggleGroup(algorithms);
 		insertionSort.setToggleGroup(algorithms);
@@ -169,6 +172,7 @@ public class GUI{
 		selectionSort.setOnAction(sort->Sort.sortingMethod = "selectionSort");
 		heapSort.setOnAction(sort->Sort.sortingMethod = "heapSort");
 		bubbleSort.setOnAction(sort->Sort.sortingMethod = "bubbleSort");
+		cocktailSort.setOnAction(sort->Sort.sortingMethod = "cocktailSort");
 		oddEvenSort.setOnAction(sort->Sort.sortingMethod = "oddEvenSort");
 		combSort.setOnAction(sort->Sort.sortingMethod = "combSort");
 		insertionSort.setOnAction(sort->Sort.sortingMethod = "insertionSort");

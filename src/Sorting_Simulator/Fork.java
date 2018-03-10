@@ -49,6 +49,9 @@ public class Fork implements Runnable{
 		if(fork.equals("bubbleSort")){
 			BubbleSort.bubbleSort(this.array);
 		}
+		if(fork.equals("cocktailSort")){
+			CocktailSort.cocktailSort(this.array);
+		}
 		if(fork.equals("oddEvenSort")){
 			OddEvenSort.oddEvenSort(this.array);
 		}
