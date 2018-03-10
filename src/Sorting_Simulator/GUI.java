@@ -22,7 +22,7 @@ public class GUI{
 	static HBox elements = new HBox(0);
 	static HBox leftCushion = new HBox();
 
-	static VBox mainInterface = new VBox(9);
+	static VBox mainInterface = new VBox(6);
 	static HBox topCushion = new HBox();
 
 	static VBox algorithmBox = new VBox(1);
