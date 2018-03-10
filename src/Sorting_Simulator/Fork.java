@@ -109,6 +109,9 @@ public class Fork implements Runnable{
 		if(fork.equals("aashishSort2")){
 			this.array = AashishSort2.aashishSort2(this.array);
 		}
+		if(fork.equals("aashishSort5")){
+			this.array = AashishSort5.aashishSort5(this.array);
+		}
 
 		//System.out.println("Offer: " + Arrays.toString(array));
 		try{
