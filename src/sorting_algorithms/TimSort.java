@@ -1,6 +1,6 @@
 package sorting_algorithms;
 
-public class TimSort{
+public class TimSort extends Sort{
 	static final int RUN = 32;
 
 	// this function sorts array from left index to
