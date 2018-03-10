@@ -22,13 +22,14 @@ public class GUI{
 	static HBox elements = new HBox(0);
 	static HBox leftCushion = new HBox();
 
-	static VBox mainInterface = new VBox(23);
+	static VBox mainInterface = new VBox(17);
 	static HBox topCushion = new HBox();
 
 	static VBox algorithmBox = new VBox(1);
 	static Label algorithmTitle = new Label("Sorting Algorithm");
 
 	static ToggleGroup algorithms = new ToggleGroup();
+	static RadioButton slowSort = new RadioButton("Slow Sort");
 	static RadioButton cycleSort = new RadioButton("Cycle Sort");
 	static RadioButton selectionSort = new RadioButton("Selection Sort");
 	static RadioButton heapSort = new RadioButton("Heap Sort");
@@ -50,7 +51,7 @@ public class GUI{
 	static RadioButton countingSort = new RadioButton("Counting Sort");
 	static RadioButton pigeonSort = new RadioButton("Pigeonhole Sort");
 
-	static VBox typeBox = new VBox(7);
+	static VBox typeBox = new VBox(5);
 	static Label typeTitle = new Label("Input Type");
 
 	static ToggleGroup types = new ToggleGroup();
@@ -58,12 +59,12 @@ public class GUI{
 	static RadioButton reverseOrder = new RadioButton("Reverse order");
 	static RadioButton randomOrder = new RadioButton("Random");
 
-	static VBox sizeBox = new VBox(11);
-	static HBox inputSizeBox = new HBox(11);
+	static VBox sizeBox = new VBox(7);
+	static HBox inputSizeBox = new HBox(17);
 	static Label inputSizeTitle = new Label("Input Size");
 	static TextField inputSize = new TextField("0");
 
-	static HBox blockSizeBox = new HBox(11);
+	static HBox blockSizeBox = new HBox(17);
 	static Label blockSizeTitle = new Label("Block Size");
 	static TextField blockSize = new TextField("0");
 
@@ -85,6 +86,7 @@ public class GUI{
 		mainInterface.getChildren().add(algorithmBox);
 		algorithmBox.getChildren().add(algorithmTitle);
 
+		algorithmBox.getChildren().add(slowSort);
 		algorithmBox.getChildren().add(cycleSort);
 		algorithmBox.getChildren().add(selectionSort);
 		algorithmBox.getChildren().add(heapSort);
@@ -129,8 +131,9 @@ public class GUI{
 
 	private static void setElementSizing(){
 		leftCushion.setMinWidth(17);
-		topCushion.setMinHeight(3);
+		topCushion.setMinHeight(1);
 
+		slowSort.setToggleGroup(algorithms);
 		cycleSort.setToggleGroup(algorithms);
 		selectionSort.setToggleGroup(algorithms);
 		heapSort.setToggleGroup(algorithms);
@@ -160,6 +163,8 @@ public class GUI{
 	}
 
 	private static void setElementActions(){
+
+		slowSort.setOnAction(sort->Sort.sortingMethod = "cycleSort");
 		cycleSort.setOnAction(sort->Sort.sortingMethod = "cycleSort");
 		selectionSort.setOnAction(sort->Sort.sortingMethod = "selectionSort");
 		heapSort.setOnAction(sort->Sort.sortingMethod = "heapSort");
@@ -204,5 +209,4 @@ public class GUI{
 			}
 		});
 	}
-
 }
