@@ -2,7 +2,7 @@ package sorting_algorithms;
 
 public class CountingSort extends Sort{
 	public static void countingSort(int[] array){
-		int max = getMax(array);
+		int max = getMaxValue(array);
 
 		//The output array that will have sorted array
 		int output[] = new int[array.length];

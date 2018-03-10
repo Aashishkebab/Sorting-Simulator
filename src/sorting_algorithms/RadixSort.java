@@ -41,7 +41,7 @@ public class RadixSort extends Sort{
 	//Radix Sort
 	public static void radixSort(int array[]){
 		// Find the maximum number to know number of digits
-		int m = getMax(array);
+		int m = getMaxValue(array);
 
 		//Do counting sort for every digit. Note that instead
 		//of passing digit number, exp is passed. exp is 10^i

@@ -69,8 +69,7 @@ public class Sort{
 		return array;
 	}
 
-	// A utility function to get maximum value in arr[]
-	public static int getMax(int[] array){
+	public static int getMaxValue(int[] array){
 		int mx = array[0];
 		for(int i = 1; i < array.length; i++){
 			if(array[i] > mx){
