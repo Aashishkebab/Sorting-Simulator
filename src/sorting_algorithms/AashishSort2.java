@@ -1,5 +1,8 @@
 package sorting_algorithms;
 
+//  Worse case time complexity: 2n^3 + 3n
+//  This is equivalent to O(n^3).
+
 public class AashishSort2 extends Sort{
 	public static int[] aashishSort2(int[] array){
 		int[] indexArray = new int[array.length];
