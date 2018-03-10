@@ -81,10 +81,10 @@ public class SortingSimulator extends Application{
 	public void start(Stage primaryStage) throws Exception{
 		GUI.createUI();
 
-		primaryStage.setScene(new Scene(GUI.elements, 333, 666));
+		primaryStage.setScene(new Scene(GUI.elements, 333, 684));
 
 		primaryStage.setMinWidth(333);
-		primaryStage.setMinHeight(666);
+		primaryStage.setMinHeight(684);
 
 		primaryStage.show();
 	}
