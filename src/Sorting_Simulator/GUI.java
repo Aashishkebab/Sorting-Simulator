@@ -211,7 +211,8 @@ public class GUI{
 		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
 		aashishSort2.setOnAction(sort->{
 			alert("Sort Description", "Description of Aashish Sort 2",
-			      "Copies items from original array into new array in order\nby repeatedly parsing through original and finding the next smallest number.", "INFORMATION", true
+			      "Copies items from original array into new array in order\nby repeatedly parsing through original and finding the next smallest number.",
+			      "INFORMATION", true
 			);
 			Sort.sortingMethod = "aashishSort2";
 		});
