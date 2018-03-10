@@ -79,6 +79,16 @@ public class Sort{
 		return mx;
 	}
 
+	public static int getMinValue(int[] array){
+		int mn = array[0];
+		for(int i = 1; i < array.length; i++){
+			if(array[i] < mn){
+				mn = array[i];
+			}
+		}
+		return mn;
+	}
+
 	public static boolean isNumberInArray(int number, int[] array){
 		for(int i = 0; i < array.length; i++){
 			if(array[i] == number){
@@ -97,7 +107,8 @@ public class Sort{
 				);
 			}
 			if(blocks <= 0){
-				alert("Invalid input", "You have entered block size " + blocks + ", which is wrong.",
+				alert("Invalid input",
+				      "You have entered block size " + blocks + ", which is wrong.",
 				      "Please enter a value greater than zero.", "WARNING", false
 				);
 			}
@@ -272,10 +283,8 @@ public class Sort{
 		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false
 		);
 
-		System.out.println("Sorted array:\n" +
-				                   SortingSimulator.truncate(Arrays.toString((int[])(allBlocks.poll())),
-				                                             3333
-				                   ));
+		System.out.println("Sorted array:\n" + SortingSimulator.truncate(
+				Arrays.toString((int[])(allBlocks.poll())), 3333));
 		System.out.println("");
 		System.out.println("");
 	}
@@ -409,7 +418,8 @@ public class Sort{
 			}
 
 			try{
-				allBlocks.offer(MergeSort.mergeData((int[])(allBlocks.poll()), (int[])(allBlocks.poll())));
+				allBlocks.offer(
+						MergeSort.mergeData((int[])(allBlocks.poll()), (int[])(allBlocks.poll())));
 			}catch(Exception foweijfeowifj){
 			}
 
