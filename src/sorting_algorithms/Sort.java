@@ -80,14 +80,13 @@ public class Sort{
 		return mx;
 	}
 
-	public static int getMinIndex(int[] array){
-		int mx = 0;
+	public static boolean isNumberInArray(int number, int[] array){
 		for(int i = 0; i < array.length; i++){
-			if(array[i] < array[mx]){
-				mx = i;
+			if(array[i] == number){
+				return true;
 			}
 		}
-		return mx;
+		return false;
 	}
 
 	public static void letsSort(int size, int blocks){
