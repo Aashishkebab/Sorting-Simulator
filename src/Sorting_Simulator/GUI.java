@@ -54,6 +54,7 @@ public class GUI{
 	static RadioButton countingSort = new RadioButton("Counting Sort");
 	static RadioButton pigeonSort = new RadioButton("Pigeonhole Sort");
 	static RadioButton aashishSort2 = new RadioButton("Aashish Sort 2");
+	static RadioButton aashishSort5 = new RadioButton("Aashish Sort 5");
 
 	static VBox typeBox = new VBox(1);
 	static Label typeTitle = new Label("Input Type");
@@ -115,6 +116,7 @@ public class GUI{
 		algorithmBox.getChildren().add(countingSort);
 		algorithmBox.getChildren().add(pigeonSort);
 		algorithmBox.getChildren().add(aashishSort2);
+		algorithmBox.getChildren().add(aashishSort5);
 
 		javaSort.setSelected(true);
 
@@ -166,6 +168,7 @@ public class GUI{
 		countingSort.setToggleGroup(algorithms);
 		pigeonSort.setToggleGroup(algorithms);
 		aashishSort2.setToggleGroup(algorithms);
+		aashishSort5.setToggleGroup(algorithms);
 
 		alreadySorted.setToggleGroup(types);
 		reverseOrder.setToggleGroup(types);
@@ -212,6 +215,7 @@ public class GUI{
 		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
 		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
 		aashishSort2.setOnAction(sort->Sort.sortingMethod = "aashishSort2");
+		aashishSort5.setOnAction(sort->Sort.sortingMethod = "aashishSort5");
 
 		alreadySorted.setOnAction(numbers->Sort.inputMethod = "alreadySorted");
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");

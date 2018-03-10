@@ -89,6 +89,18 @@ public class Sort{
 		return mn;
 	}
 
+	public static int[] deleteIndex(int[] array, int index){
+		int[] newArray = new int[array.length - 1];
+
+		for(int i = 0; i < index; i++){
+			newArray[i] = array[i];
+		}
+		for(int i = index + 1; i < array.length; i++){
+			newArray[i - 1] = array[i];
+		}
+		return newArray;
+	}
+
 	public static boolean isNumberInArray(int number, int[] array){
 		for(int i = 0; i < array.length; i++){
 			if(array[i] == number){
