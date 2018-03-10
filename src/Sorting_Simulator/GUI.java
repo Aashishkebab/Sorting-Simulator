@@ -22,7 +22,7 @@ public class GUI{
 	static HBox elements = new HBox(0);
 	static HBox leftCushion = new HBox();
 
-	static VBox mainInterface = new VBox(5);
+	static VBox mainInterface = new VBox(9);
 	static HBox topCushion = new HBox();
 
 	static VBox algorithmBox = new VBox(1);
@@ -54,7 +54,7 @@ public class GUI{
 	static RadioButton countingSort = new RadioButton("Counting Sort");
 	static RadioButton pigeonSort = new RadioButton("Pigeonhole Sort");
 
-	static VBox typeBox = new VBox(5);
+	static VBox typeBox = new VBox(2);
 	static Label typeTitle = new Label("Input Type");
 
 	static ToggleGroup types = new ToggleGroup();
@@ -62,7 +62,7 @@ public class GUI{
 	static RadioButton reverseOrder = new RadioButton("Reverse order");
 	static RadioButton randomOrder = new RadioButton("Random");
 
-	static VBox sizeBox = new VBox(5);
+	static VBox sizeBox = new VBox(3);
 	static HBox inputSizeBox = new HBox(17);
 	static Label inputSizeTitle = new Label("Input Size");
 	static TextField inputSize = new TextField("0");
