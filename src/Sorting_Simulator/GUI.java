@@ -22,7 +22,7 @@ public class GUI{
 	static HBox elements = new HBox(0);
 	static HBox leftCushion = new HBox();
 
-	static VBox mainInterface = new VBox(14);
+	static VBox mainInterface = new VBox(5);
 	static HBox topCushion = new HBox();
 
 	static VBox algorithmBox = new VBox(1);
@@ -45,6 +45,7 @@ public class GUI{
 	static RadioButton timSort = new RadioButton("Tim Sort");
 	static RadioButton javaSort = new RadioButton("Java default sort");
 	static RadioButton randomSort = new RadioButton("Randomness Sort");
+	static RadioButton gravitySort = new RadioButton("Gravity/Bead Sort");
 	static RadioButton trumpSort = new RadioButton("Trump Sort (Illegal comparables)");
 	static RadioButton bernieSort = new RadioButton("Bernie Sort (Democratic socialism)");
 	static RadioButton hillarySort = new RadioButton("Hillary Sort (Wipe the server)");
@@ -61,7 +62,7 @@ public class GUI{
 	static RadioButton reverseOrder = new RadioButton("Reverse order");
 	static RadioButton randomOrder = new RadioButton("Random");
 
-	static VBox sizeBox = new VBox(7);
+	static VBox sizeBox = new VBox(5);
 	static HBox inputSizeBox = new HBox(17);
 	static Label inputSizeTitle = new Label("Input Size");
 	static TextField inputSize = new TextField("0");
@@ -104,6 +105,7 @@ public class GUI{
 		algorithmBox.getChildren().add(timSort);
 		algorithmBox.getChildren().add(javaSort);
 		algorithmBox.getChildren().add(randomSort);
+		algorithmBox.getChildren().add(gravitySort);
 		algorithmBox.getChildren().add(trumpSort);
 		algorithmBox.getChildren().add(bernieSort);
 		algorithmBox.getChildren().add(hillarySort);
@@ -153,6 +155,7 @@ public class GUI{
 		timSort.setToggleGroup(algorithms);
 		randomSort.setToggleGroup(algorithms);
 		javaSort.setToggleGroup(algorithms);
+		gravitySort.setToggleGroup(algorithms);
 		trumpSort.setToggleGroup(algorithms);
 		bernieSort.setToggleGroup(algorithms);
 		hillarySort.setToggleGroup(algorithms);
@@ -185,6 +188,7 @@ public class GUI{
 		mergeSort.setOnAction(sort->Sort.sortingMethod = "mergeSort");
 		timSort.setOnAction(sort->Sort.sortingMethod = "timSort");
 		randomSort.setOnAction(sort->Sort.sortingMethod = "randomSort");
+		gravitySort.setOnAction(sort->Sort.sortingMethod = "gravitySort");
 		javaSort.setOnAction(sort->Sort.sortingMethod = "javaSort");
 		trumpSort.setOnAction(sort->{
 			if(!banned){

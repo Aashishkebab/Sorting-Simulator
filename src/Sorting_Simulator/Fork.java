@@ -79,6 +79,9 @@ public class Fork implements Runnable{
 		if(fork.equals("randomSort")){
 			RandomSort.randomSort(this.array);
 		}
+		if(fork.equals("gravitySort")){
+			this.array = GravitySort.gravitySort(this.array);
+		}
 		if(fork.equals("javaSort")){
 			Arrays.sort(this.array);
 		}
