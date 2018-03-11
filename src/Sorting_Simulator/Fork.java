@@ -145,8 +145,7 @@ class OhNoOutOfMemory implements Runnable{
 
 	@Override
 	public void run(){
-		SortingSimulator.alert("Fatal Error", "Out of memory",
-		      "The input size was too " + "large\nfor the chosen algorithm to handle.", "WARNING",
-		      true);
+		SortingSimulator.alert("Fatal Error", "Out of memory", "The input size was too " +
+				"large\nfor the chosen algorithm to handle.", "WARNING", true);
 	}
 }

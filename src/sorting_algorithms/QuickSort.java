@@ -88,21 +88,21 @@ public class QuickSort extends Sort{
 
 	private static int partitionamafy(int[] array, int lower, int upper){
 
-			int pivot = array[upper];
+		int pivot = array[upper];
 
 
-			int newLow = lower - 1;
-			int i;
+		int newLow = lower - 1;
+		int i;
 
-			for(i = lower; i < upper; i++){
-				if(array[i] <= pivot){
-					newLow++;
-					swapTwoValues(i, newLow, array);
-				}
+		for(i = lower; i < upper; i++){
+			if(array[i] <= pivot){
+				newLow++;
+				swapTwoValues(i, newLow, array);
 			}
+		}
 
-			swapTwoValues(newLow + 1, upper, array);
-			return newLow + 1;
+		swapTwoValues(newLow + 1, upper, array);
+		return newLow + 1;
 
 	}
 
@@ -113,7 +113,7 @@ class TooLargeQuick implements Runnable{
 	@Override
 	public void run(){
 		alert("Cannot Sort", "You have overloaded the quickSort algorithm.",
-		      "Please enter a smaller list size or block size.", "WARNING", true);
+		      "Please enter a smaller list size or block size.", "ERROR", true);
 	}
 
 }

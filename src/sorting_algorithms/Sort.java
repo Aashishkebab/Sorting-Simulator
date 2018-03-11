@@ -25,6 +25,7 @@ import static sorting_algorithms.TrumpSort.immigrants;
 public class Sort{
 	public static String sortingMethod = "javaSort";
 	public static String inputMethod = "randomOrder";
+	public static boolean printArrays = false;
 
 	public static Instant startTime;
 
@@ -65,7 +66,7 @@ public class Sort{
 			array = new int[size];
 		}catch(OutOfMemoryError e){
 			alert("Cannot Sort", "You have entered too large of an input size.",
-			      "Please enter a smaller list size.", "WARNING", false);
+			      "Please enter a smaller list size.", "ERROR", false);
 			return null;
 		}
 
@@ -187,8 +188,10 @@ public class Sort{
 				return null;
 		}
 
-		System.out.println("Initial array:\n" + truncate(Arrays.toString(createdArray), 3333));
-		System.out.println("");
+		if(printArrays){
+			System.out.println("Initial array:\n" + truncate(Arrays.toString(createdArray), 3333));
+			System.out.println("");
+		}
 
 		return createdArray;
 	}
@@ -203,6 +206,7 @@ public class Sort{
 			try{
 				singleSort.join();
 			}catch(InterruptedException ex){
+				alert("Crap", "Fatal error has ocurred!", "InterruptedException", "ERROR", true);
 			}
 
 		}else{
@@ -257,6 +261,7 @@ public class Sort{
 			try{
 				threads.get(i).join();
 			}catch(InterruptedException ex){
+				alert("Crap", "Fatal error has ocurred!", "InterruptedException", "ERROR", true);
 			}
 		}
 	}
@@ -265,29 +270,34 @@ public class Sort{
 		long endTime = Instant.now().toEpochMilli();
 		System.out.println("");
 
-		if(sortingMethod.equals("trumpSort")){
-			System.out.println(immigrants + " foreign items deported.");
-			System.out.println("");
-			immigrants = 0;
-		}
-		if(sortingMethod.equals("bernieSort")){
-			System.out.println("The average wealth was " +
-					                   truncate(Integer.toString(BernieSort.averageWealth), 3333));
-			System.out.println("It has been split amongst all.");
-			System.out.println("");
-		}
-		if(sortingMethod.equals("hillarySort")){
-			System.out.println("All suspicious items have been deleted.");
-			System.out.println("");
+		if(printArrays){
+			if(sortingMethod.equals("trumpSort")){
+				System.out.println(immigrants + " foreign items deported.");
+				System.out.println("");
+				immigrants = 0;
+			}
+			if(sortingMethod.equals("bernieSort")){
+				System.out.println("The average wealth was " +
+						                   truncate(Integer.toString(BernieSort.averageWealth),
+						                            3333));
+				System.out.println("It has been split amongst all.");
+				System.out.println("");
+			}
+			if(sortingMethod.equals("hillarySort")){
+				System.out.println("All suspicious items have been deleted.");
+				System.out.println("");
+			}
 		}
 
 		alert("Operation finished", "The time taken is below",
 		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false);
 
-		System.out.println("Sorted array:\n" + SortingSimulator.truncate(
-				Arrays.toString((int[])(allBlocks.poll())), 3333));
-		System.out.println("");
-		System.out.println("");
+		if(printArrays){
+			System.out.println("Sorted array:\n" + SortingSimulator.truncate(
+					Arrays.toString((int[])(allBlocks.poll())), 3333));
+			System.out.println("");
+			System.out.println("");
+		}
 	}
 
 	private static void sortByBlocks(int[] array, int size, int blockSize){
@@ -333,7 +343,8 @@ public class Sort{
 				try{
 					leftovers.join();
 				}catch(InterruptedException ex){
-					System.out.println("Join exception");
+					alert("Crap", "Fatal error has ocurred!", "InterruptedException", "ERROR",
+					      true);
 				}
 
 				break;
@@ -367,7 +378,9 @@ public class Sort{
 				if(allBlocks.size() == 1){
 					return;
 				}
-			}catch(Exception pleaseWait){
+			}catch(NullPointerException pleaseWait){
+				alert("Crap", "Programmer is probably an idiot...", "NullPointerException", "ERROR",
+				      true);
 			}
 		}
 	}
@@ -387,6 +400,8 @@ public class Sort{
 				allBlocks.offer(
 						MergeSort.mergeData((int[])(allBlocks.poll()), (int[])(allBlocks.poll())));
 			}catch(Exception foweijfeowifj){
+				alert("Crap", "Programmer is stupid...",
+				      "Did you try unplugging it\nand plugging it back in?", "ERROR", true);
 			}
 		}
 	}

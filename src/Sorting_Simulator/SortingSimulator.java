@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class SortingSimulator extends Application{
 
 	public static boolean banned = false;
-	public static boolean randomExplained = false;
+//	public static boolean randomExplained = false;
 
 	/**
 	 * @param args the command line arguments
@@ -44,6 +44,8 @@ public class SortingSimulator extends Application{
 			case "WARNING":
 				alert = new Alert(Alert.AlertType.WARNING);
 				break;
+			case "ERROR":
+				alert = new Alert(Alert.AlertType.ERROR);
 			default:
 				return;
 		}
