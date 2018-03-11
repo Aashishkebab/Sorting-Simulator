@@ -45,7 +45,7 @@ public class AashishSort1 extends Sort{
 	 */
 	public static int[] splitByDigit(int[] array, short numberOfDigits){
 //	public static int[] splitByDigit(int[] array, int modulus, short numberOfDigits){
-	//  Use above method signature if using modulus variable, which is redundant.
+		//  Use above method signature if using modulus variable, which is redundant.
 
 		int[][] digitArray = new int[10][array.length]; // Create ten 'buckets'
 		int[] digitArrayIndexes = new int[10];  // Create list to store number of items per bucket.
@@ -58,8 +58,8 @@ public class AashishSort1 extends Sort{
 			// Essentially takes the modulus of the array item and then divides it by the number
 			// of decimal places to take into account
 
-			int digit = (array[j] % (int)Math.pow(10, numberOfDigits + 1)) / (int)Math.pow(10,
-			                                                                               numberOfDigits);
+			int modulus = (int)Math.pow(10, numberOfDigits);
+			int digit = (array[j] % (modulus * 10)) / modulus;
 //			int digit = (array[j] % modulus) / (int)Math.pow(10, numberOfDigits);
 //			int digit = (10 * array[j] % modulus) / modulus;
 			// Both of the above commented out versions are equivalent to the one in use.
