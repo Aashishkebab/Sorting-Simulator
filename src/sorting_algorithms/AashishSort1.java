@@ -28,8 +28,8 @@ public class AashishSort1 extends Sort{
 	 * @param array   The array to be sorted.
 	 * @return  The sorted array.
 	 */
-	public static int[] aashishSort1(int[] array){
-		return splitByDigit(array, (int)(Math.pow(10, (int)(Math.log10(getMaxValue(array)) + 1))),
+	public static void aashishSort1(int[] array){
+		splitByDigit(array, (int)(Math.pow(10, (int)(Math.log10(getMaxValue(array)) + 1))),
 		                    (short)Math.log10(getMaxValue(array))
 		);
 	}
