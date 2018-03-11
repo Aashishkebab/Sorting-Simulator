@@ -22,8 +22,7 @@ public class GUI{
 	static HBox elements = new HBox(0);
 	static HBox leftCushion = new HBox();
 
-	static VBox mainInterface = new VBox(6);
-	static HBox topCushion = new HBox();
+	static VBox mainInterface = new VBox(1);
 
 	static VBox algorithmBox = new VBox(1);
 	static Label algorithmTitle = new Label("Sorting Algorithm");
@@ -53,6 +52,7 @@ public class GUI{
 	static RadioButton bucketSort = new RadioButton("Bucket Sort");
 	static RadioButton countingSort = new RadioButton("Counting Sort");
 	static RadioButton pigeonSort = new RadioButton("Pigeonhole Sort");
+	static RadioButton aashishSort1 = new RadioButton("Aashish Sort 1");
 	static RadioButton aashishSort2 = new RadioButton("Aashish Sort 2");
 	static RadioButton aashishSort5 = new RadioButton("Aashish Sort 5");
 	static RadioButton aashishSort4 = new RadioButton("Aashish Sort 4");
@@ -86,7 +86,6 @@ public class GUI{
 
 	private static void addElementsToInterface(){
 		elements.getChildren().add(leftCushion);
-		mainInterface.getChildren().add(topCushion);
 
 		elements.getChildren().add(mainInterface);
 		mainInterface.getChildren().add(algorithmBox);
@@ -116,6 +115,7 @@ public class GUI{
 		algorithmBox.getChildren().add(bucketSort);
 		algorithmBox.getChildren().add(countingSort);
 		algorithmBox.getChildren().add(pigeonSort);
+		algorithmBox.getChildren().add(aashishSort1);
 		algorithmBox.getChildren().add(aashishSort2);
 		algorithmBox.getChildren().add(aashishSort5);
 		algorithmBox.getChildren().add(aashishSort4);
@@ -143,7 +143,6 @@ public class GUI{
 
 	private static void setElementSizing(){
 		leftCushion.setMinWidth(17);
-		topCushion.setMinHeight(1);
 
 		slowSort.setToggleGroup(algorithms);
 		cycleSort.setToggleGroup(algorithms);
@@ -169,6 +168,7 @@ public class GUI{
 		bucketSort.setToggleGroup(algorithms);
 		countingSort.setToggleGroup(algorithms);
 		pigeonSort.setToggleGroup(algorithms);
+		aashishSort1.setToggleGroup(algorithms);
 		aashishSort2.setToggleGroup(algorithms);
 		aashishSort5.setToggleGroup(algorithms);
 		aashishSort4.setToggleGroup(algorithms);
@@ -217,6 +217,7 @@ public class GUI{
 		bucketSort.setOnAction(sort->Sort.sortingMethod = "bucketSort");
 		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
 		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
+		aashishSort1.setOnAction(sort->Sort.sortingMethod = "aashishSort1");
 		aashishSort2.setOnAction(sort->Sort.sortingMethod = "aashishSort2");
 		aashishSort5.setOnAction(sort->Sort.sortingMethod = "aashishSort5");
 		aashishSort4.setOnAction(sort->Sort.sortingMethod = "aashishSort4");
