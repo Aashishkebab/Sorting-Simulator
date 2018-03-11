@@ -72,18 +72,17 @@ public class QuickSort extends Sort{
 		if(lower < upper){
 			int pivot;
 
-			pivot = partitionamafy(array, lower, upper);
+			try{
+				pivot = partitionamafy(array, lower, upper);
 
-//            Thread part1 = new Thread(new QuickThread(array, lower, pivot - 1));
-//            Thread part2 = new Thread(new QuickThread(array, pivot + 1, upper));
-//            
-//            part1.start();  part2.start();
-//            try{
-//                part1.join();   part2.join();
-//            }catch(InterruptedException e){}
+				array = realQuickSort(array, lower, pivot - 1);
+				array = realQuickSort(array, pivot + 1, upper);
 
-			array = realQuickSort(array, lower, pivot - 1);
-			array = realQuickSort(array, pivot + 1, upper);
+			}catch(StackOverflowError e){
+				Platform.runLater(new TooLargeQuick());
+				array = null;
+				return null;
+			}
 		}
 
 		return array;
