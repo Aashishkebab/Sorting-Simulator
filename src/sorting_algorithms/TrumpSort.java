@@ -16,43 +16,46 @@ public class TrumpSort extends Sort{
 
 	public static int[] makeSortingGreatAgain(int[] array){
 		int wall = 0;
+		boolean[] registryOfIllegals = new boolean[array.length];
 
 		for(int i = 0; i < array.length; i++){
 			try{
 				if(array[wall] > array[i]){
 					//array = deport(i, array);
 					//i--;
-					array[i] = 0;
+					registryOfIllegals[i] = true;
 				}else if(array[wall] < array[i]){
 					wall = i;
 				}
 			}catch(Exception e){
 			}
 		}
-		array = deportAll(array);
+		array = deportAll(array, registryOfIllegals);
 
 //        System.out.println("Here it is:\n" + Arrays.toString(array));
 
 		return array;
 	}
 
-	static int[] deportAll(int[] array){
-		int[] newArray = new int[array.length - getNumberOfImmigrants(array)];
+	static int[] deportAll(int[] array, boolean[] registry){
+		int[] newArray = new int[array.length - getNumberOfImmigrants(registry)];
 
 		int j = 0;
 		for(int i = 0; i < array.length; i++){
-			if(array[i] != 0){
+			if(!registry[i]){
 				newArray[j] = array[i];
 				j++;
+			}else{
+				immigrants++;
 			}
 		}
 		return newArray;
 	}
 
-	static int getNumberOfImmigrants(int[] array){
+	static int getNumberOfImmigrants(boolean[] array){
 		int illegals = 0;
 		for(int i = 0; i < array.length; i++){
-			if(array[i] == 0){
+			if(array[i]){
 				illegals++;
 			}
 		}
