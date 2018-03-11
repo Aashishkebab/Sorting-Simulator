@@ -180,7 +180,7 @@ public class GUI{
 	}
 
 	private static void setElementAssociations(){
-		leftCushion.setMinWidth(17);
+		leftCushion.setMinWidth(19);
 
 		javaSort.setSelected(true);
 		randomOrder.setSelected(true);
