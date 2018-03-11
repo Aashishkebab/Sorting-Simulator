@@ -25,27 +25,28 @@ public class AashishSort1 extends Sort{
 
 	/**
 	 * Calculates the appropriate parameters and initiates sorting.
-	 * @param array   The array to be sorted.
-	 * @return  The sorted array.
+	 *
+	 * @param array The array to be sorted.
+	 * @return The sorted array.
 	 */
 	public static void aashishSort1(int[] array){
-		splitByDigit(array, (int)(Math.pow(10, (int)(Math.log10(getMaxValue(array)) + 1))),
-		                    (short)Math.log10(getMaxValue(array))
-		);
+		splitByDigit(array, (short)Math.log10(getMaxValue(array)));
+//		splitByDigit(array, (int)(Math.pow(10, (int)(Math.log10(getMaxValue(array)) + 1))),
+//		             (short)Math.log10(getMaxValue(array))));
 	}
 
 	/**
 	 * Splits the array into multiple arrays based on a significant digit.
-	 * @param array             Array to be split into multiple arrays.
-	 * @param modulus           Number to use as an eliminator for unwanted preceding digits.
-	 *                             Should always use a power of ten. Specifically, use 10 to the
-	 *                             power of number of digits that are wanted, starting at the
-	 *                             least significant digit.
-	 * @param numberOfDigits    The number of digits that are being looked at. Closely related to
-	 *                            modulus.
-	 * @return  The array split into digits.
+	 *
+	 * @param array          Array to be split into multiple arrays.
+	 * @param numberOfDigits The number of digits that are being looked at, starting at the least
+	 *                       significant digit and going backwards.
+	 * @return The array split into digits.
 	 */
-	public static int[] splitByDigit(int[] array, int modulus, short numberOfDigits){
+	public static int[] splitByDigit(int[] array, short numberOfDigits){
+//	public static int[] splitByDigit(int[] array, int modulus, short numberOfDigits){
+	//  Use above method signature if using modulus variable, which is redundant.
+
 		int[][] digitArray = new int[10][array.length]; // Create ten 'buckets'
 		int[] digitArrayIndexes = new int[10];  // Create list to store number of items per bucket.
 		// We're assuming that digitArrayIndexes is automatically initialized to all zeroes in Java.
@@ -54,7 +55,16 @@ public class AashishSort1 extends Sort{
 		for(int j = 0; j < array.length; j++){
 			// Take a certain number of digits of an element of array and divides by most
 			// significant decimal to obtain most usable. significant digit.
-			int digit = (array[j] % modulus) / (int)Math.pow(10, numberOfDigits);
+			// Essentially takes the modulus of the array item and then divides it by the number
+			// of decimal places to take into account
+
+			int digit = (array[j] % (int)Math.pow(10, numberOfDigits + 1)) / (int)Math.pow(10,
+			                                                                               numberOfDigits);
+//			int digit = (array[j] % modulus) / (int)Math.pow(10, numberOfDigits);
+//			int digit = (10 * array[j] % modulus) / modulus;
+			// Both of the above commented out versions are equivalent to the one in use.
+
+
 			// Stores the number in the array in the appropriate 'bucket', right after the
 			// previous one stored in the same bucket. digitArrayIndexes keeps track of how many
 			// are stored in each bucket, which is now incremented.
@@ -73,13 +83,15 @@ public class AashishSort1 extends Sort{
 			return newArray;
 		}
 
-		modulus /= 10;
+//		modulus /= 10;
 		for(int p = 0; p < 10; p++){
 			// Redo the algorithm on only one bucket (aka one Most Significant Digit).
 			// Also reduce the number of digits being used by one.
-			digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]), modulus,
-			                             (short)(numberOfDigits - 1)
-			);
+			digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]),
+			                             (short)(numberOfDigits - 1));
+//			digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]), modulus,
+//			                             (short)(numberOfDigits - 1));
+			// Use version above if using modulus instead of numberOfDigits
 		}
 
 		int arrayIndex = 0;
@@ -93,9 +105,10 @@ public class AashishSort1 extends Sort{
 
 	/**
 	 * Create array with only items from original array, and not proceeding zeroes.
+	 *
 	 * @param array Array to pull data from
 	 * @param end   Where data should stop being pulled
-	 * @return  Ending array
+	 * @return Ending array
 	 */
 	public static int[] trimUnused(int[] array, int end){
 		int[] newArray = new int[end];
@@ -108,8 +121,9 @@ public class AashishSort1 extends Sort{
 
 	/**
 	 * Sums the integers in an array
-	 * @param indexArray    Array to pull numbers from
-	 * @return  Sum
+	 *
+	 * @param indexArray Array to pull numbers from
+	 * @return Sum
 	 */
 	public static int sumArray(int[] indexArray){
 		int numberOfElements = 0;
