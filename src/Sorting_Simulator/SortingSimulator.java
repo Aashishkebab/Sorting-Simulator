@@ -56,7 +56,7 @@ public class SortingSimulator extends Application{
 
 		alert.setResizable(false);
 
-		if(wait == true){
+		if(wait){
 			alert.showAndWait();
 		}else{
 			alert.show();
