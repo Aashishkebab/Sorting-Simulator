@@ -41,7 +41,7 @@ public class GUI{
 	static RadioButton shellSort = new RadioButton("Shell Sort");
 	static RadioButton quickSort = new RadioButton("Quick Sort");
 	static RadioButton mergeSort = new RadioButton("Merge Sort");
-//	static RadioButton timSort = new RadioButton("Tim Sort");
+	//	static RadioButton timSort = new RadioButton("Tim Sort");
 	static RadioButton javaSort = new RadioButton("Java default sort");
 	static RadioButton randomSort = new RadioButton("Randomness Sort");
 	static RadioButton gravitySort = new RadioButton("Gravity/Bead Sort");
