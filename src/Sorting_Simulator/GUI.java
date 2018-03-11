@@ -43,11 +43,11 @@ public class GUI{
 	static RadioButton mergeSort = new RadioButton("Merge Sort");
 	//	static RadioButton timSort = new RadioButton("Tim Sort");
 	static RadioButton javaSort = new RadioButton("Java default sort");
-	static RadioButton gravitySort = new RadioButton("Gravity/Bead Sort");
 	static RadioButton randomSort = new RadioButton("Randomness Sort");
 	static RadioButton trumpSort = new RadioButton("Trump Sort (Illegal comparables)");
 	static RadioButton bernieSort = new RadioButton("Bernie Sort (Democratic socialism)");
 	static RadioButton hillarySort = new RadioButton("Hillary Sort (Wipe the server)");
+	static RadioButton gravitySort = new RadioButton("Gravity/Bead Sort");
 	static RadioButton radixSort = new RadioButton("Radix Sort");
 	static RadioButton bucketSort = new RadioButton("Bucket Sort");
 	static RadioButton countingSort = new RadioButton("Counting Sort");
@@ -106,11 +106,11 @@ public class GUI{
 		algorithmBox.getChildren().add(mergeSort);
 //		algorithmBox.getChildren().add(timSort);
 		algorithmBox.getChildren().add(javaSort);
-		algorithmBox.getChildren().add(gravitySort);
 		algorithmBox.getChildren().add(randomSort);
 		algorithmBox.getChildren().add(trumpSort);
 		algorithmBox.getChildren().add(bernieSort);
 		algorithmBox.getChildren().add(hillarySort);
+		algorithmBox.getChildren().add(gravitySort);
 		algorithmBox.getChildren().add(radixSort);
 		algorithmBox.getChildren().add(bucketSort);
 		algorithmBox.getChildren().add(countingSort);
@@ -159,11 +159,11 @@ public class GUI{
 		mergeSort.setToggleGroup(algorithms);
 //		timSort.setToggleGroup(algorithms);
 		javaSort.setToggleGroup(algorithms);
-		gravitySort.setToggleGroup(algorithms);
 		randomSort.setToggleGroup(algorithms);
 		trumpSort.setToggleGroup(algorithms);
 		bernieSort.setToggleGroup(algorithms);
 		hillarySort.setToggleGroup(algorithms);
+		gravitySort.setToggleGroup(algorithms);
 		radixSort.setToggleGroup(algorithms);
 		bucketSort.setToggleGroup(algorithms);
 		countingSort.setToggleGroup(algorithms);
@@ -197,7 +197,6 @@ public class GUI{
 		mergeSort.setOnAction(sort->Sort.sortingMethod = "mergeSort");
 //		timSort.setOnAction(sort->Sort.sortingMethod = "timSort");
 		javaSort.setOnAction(sort->Sort.sortingMethod = "javaSort");
-		gravitySort.setOnAction(sort->Sort.sortingMethod = "gravitySort");
 		randomSort.setOnAction(sort->Sort.sortingMethod = "randomSort");
 		trumpSort.setOnAction(sort->{
 			if(!banned){
@@ -212,6 +211,7 @@ public class GUI{
 		});
 		bernieSort.setOnAction(sort->Sort.sortingMethod = "bernieSort");
 		hillarySort.setOnAction(sort->Sort.sortingMethod = "hillarySort");
+		gravitySort.setOnAction(sort->Sort.sortingMethod = "gravitySort");
 		radixSort.setOnAction(sort->Sort.sortingMethod = "radixSort");
 		bucketSort.setOnAction(sort->Sort.sortingMethod = "bucketSort");
 		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
