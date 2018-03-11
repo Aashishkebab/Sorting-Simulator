@@ -184,7 +184,7 @@ public class GUI{
 
 		slowSort.setOnAction(sort->Sort.sortingMethod = "slowSort");
 		cycleSort.setOnAction(sort->Sort.sortingMethod = "cycleSort");
-		cycleSort.setOnAction(sort->Sort.sortingMethod = "stoogeSort");
+		stoogeSort.setOnAction(sort->Sort.sortingMethod = "stoogeSort");
 		selectionSort.setOnAction(sort->Sort.sortingMethod = "selectionSort");
 		heapSort.setOnAction(sort->Sort.sortingMethod = "heapSort");
 		bubbleSort.setOnAction(sort->Sort.sortingMethod = "bubbleSort");
