@@ -29,10 +29,8 @@ public class AashishSort1 extends Sort{
 	 * @param array The array to be sorted.
 	 * @return The sorted array.
 	 */
-	public static void aashishSort1(int[] array){
-		splitByDigit(array, (short)Math.log10(getMaxValue(array)));
-//		splitByDigit(array, (int)(Math.pow(10, (int)(Math.log10(getMaxValue(array)) + 1))),
-//		             (short)Math.log10(getMaxValue(array))));
+	public static int[] aashishSort1(int[] array){
+		return splitByDigit(array, (short)Math.log10(getMaxValue(array)));
 	}
 
 	/**
@@ -44,7 +42,6 @@ public class AashishSort1 extends Sort{
 	 * @return The array split into digits.
 	 */
 	public static int[] splitByDigit(int[] array, short numberOfDigits){
-//	public static int[] splitByDigit(int[] array, int modulus, short numberOfDigits){
 		//  Use above method signature if using modulus variable, which is redundant.
 
 		int[][] digitArray = new int[10][array.length]; // Create ten 'buckets'
@@ -52,17 +49,16 @@ public class AashishSort1 extends Sort{
 		// We're assuming that digitArrayIndexes is automatically initialized to all zeroes in Java.
 		// Ports to other languages may require manually filling the array with zeroes.
 
+		int modulus;
+		int digit;
 		for(int j = 0; j < array.length; j++){
 			// Take a certain number of digits of an element of array and divides by most
 			// significant decimal to obtain most usable. significant digit.
 			// Essentially takes the modulus of the array item and then divides it by the number
 			// of decimal places to take into account
 
-			int modulus = (int)Math.pow(10, numberOfDigits);
-			int digit = (array[j] % (modulus * 10)) / modulus;
-//			int digit = (array[j] % modulus) / (int)Math.pow(10, numberOfDigits);
-//			int digit = (10 * array[j] % modulus) / modulus;
-			// Both of the above commented out versions are equivalent to the one in use.
+			modulus = (int)Math.pow(10, numberOfDigits);
+			digit = (array[j] % (modulus * 10)) / modulus;
 
 
 			// Stores the number in the array in the appropriate 'bucket', right after the
@@ -83,15 +79,11 @@ public class AashishSort1 extends Sort{
 			return newArray;
 		}
 
-//		modulus /= 10;
 		for(int p = 0; p < 10; p++){
 			// Redo the algorithm on only one bucket (aka one Most Significant Digit).
 			// Also reduce the number of digits being used by one.
 			digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]),
 			                             (short)(numberOfDigits - 1));
-//			digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]), modulus,
-//			                             (short)(numberOfDigits - 1));
-			// Use version above if using modulus instead of numberOfDigits
 		}
 
 		int arrayIndex = 0;

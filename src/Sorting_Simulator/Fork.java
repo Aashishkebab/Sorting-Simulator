@@ -109,7 +109,7 @@ public class Fork implements Runnable{
 				PigeonholeSort.pigeonholeSort(this.array);
 			}
 			if(fork.equals("aashishSort1")){
-				AashishSort1.aashishSort1(this.array);
+				this.array = AashishSort1.aashishSort1(this.array);
 			}
 			if(fork.equals("aashishSort2")){
 				this.array = AashishSort2.aashishSort2(this.array);
