@@ -8,10 +8,12 @@ package Sorting_Simulator;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextAlignment;
 import sorting_algorithms.Sort;
 
 import static Sorting_Simulator.SortingSimulator.alert;
 import static Sorting_Simulator.SortingSimulator.banned;
+import static Sorting_Simulator.SortingSimulator.main;
 
 
 /**
@@ -21,11 +23,24 @@ public class GUI{
 
 	static HBox elements = new HBox(0);
 	static HBox leftCushion = new HBox();
+	static VBox topCushion = new VBox();
 
-	static VBox mainInterface = new VBox(1);
+	static VBox mainInterface = new VBox(44);
 
-	static VBox algorithmBox = new VBox(1);
+	static HBox algorithmBox = new HBox(55);
 	static Label algorithmTitle = new Label("Sorting Algorithm");
+
+	static VBox iteratives = new VBox(7);
+	static Label iterativeLabel = new Label("Iterative Algorithms");
+
+	static VBox recursives = new VBox(7);
+	static Label recursiveLabel = new Label("Recursive Algorithms");
+
+	static VBox mathematicals = new VBox(7);
+	static Label mathematicalLabel = new Label("Mathematical (non-comparitive) Algorithms");
+
+	static VBox garbages = new VBox(7);
+	static Label garbageLabel = new Label("Garbage Algorithms");
 
 	static ToggleGroup algorithms = new ToggleGroup();
 	static RadioButton slowSort = new RadioButton("Slow Sort");
@@ -44,9 +59,9 @@ public class GUI{
 	//	static RadioButton timSort = new RadioButton("Tim Sort");
 	static RadioButton javaSort = new RadioButton("Java default sort");
 	static RadioButton randomSort = new RadioButton("Randomness Sort");
-	static RadioButton trumpSort = new RadioButton("Trump Sort (Illegal comparables)");
-	static RadioButton bernieSort = new RadioButton("Bernie Sort (Democratic socialism)");
-	static RadioButton hillarySort = new RadioButton("Hillary Sort (Wipe the server)");
+	static RadioButton trumpSort = new RadioButton("Trump Sort");
+	static RadioButton bernieSort = new RadioButton("Bernie Sort");
+	static RadioButton hillarySort = new RadioButton("Hillary Sort");
 	static RadioButton gravitySort = new RadioButton("Gravity/Bead Sort");
 	static RadioButton radixSort = new RadioButton("Radix Sort");
 	static RadioButton bucketSort = new RadioButton("Bucket Sort");
@@ -57,7 +72,7 @@ public class GUI{
 	static RadioButton aashishSort5 = new RadioButton("Aashish Sort 5");
 	static RadioButton aashishSort4 = new RadioButton("Aashish Sort 4");
 
-	static VBox typeBox = new VBox(1);
+	static VBox typeBox = new VBox(9);
 	static Label typeTitle = new Label("Input Type");
 
 	static ToggleGroup types = new ToggleGroup();
@@ -65,7 +80,11 @@ public class GUI{
 	static RadioButton reverseOrder = new RadioButton("Reverse order");
 	static RadioButton randomOrder = new RadioButton("Random");
 
-	static VBox sizeBox = new VBox(1);
+	static HBox bottomItems = new HBox(43);
+
+	static VBox sizeBox = new VBox(17);
+	static Label inputLabel = new Label("Input Parameters");
+
 	static HBox inputSizeBox = new HBox(17);
 	static Label inputSizeTitle = new Label("Input Size");
 	static TextField inputSize = new TextField("0");
@@ -80,7 +99,7 @@ public class GUI{
 		//System.out.println("Creating UI");
 
 		addElementsToInterface();
-		setElementSizing();
+		setElementAssociations();
 		setElementActions();
 	}
 
@@ -88,49 +107,68 @@ public class GUI{
 		elements.getChildren().add(leftCushion);
 
 		elements.getChildren().add(mainInterface);
+//		mainInterface.getChildren().add(algorithmTitle);
+
+		mainInterface.getChildren().add(topCushion);
 		mainInterface.getChildren().add(algorithmBox);
-		algorithmBox.getChildren().add(algorithmTitle);
 
-		algorithmBox.getChildren().add(slowSort);
-		algorithmBox.getChildren().add(cycleSort);
-		algorithmBox.getChildren().add(stoogeSort);
-		algorithmBox.getChildren().add(selectionSort);
-		algorithmBox.getChildren().add(heapSort);
-		algorithmBox.getChildren().add(bubbleSort);
-		algorithmBox.getChildren().add(cocktailSort);
-		algorithmBox.getChildren().add(oddEvenSort);
-		algorithmBox.getChildren().add(combSort);
-		algorithmBox.getChildren().add(insertionSort);
-		algorithmBox.getChildren().add(shellSort);
-		algorithmBox.getChildren().add(quickSort);
-		algorithmBox.getChildren().add(mergeSort);
-//		algorithmBox.getChildren().add(timSort);
-		algorithmBox.getChildren().add(javaSort);
-		algorithmBox.getChildren().add(randomSort);
-		algorithmBox.getChildren().add(trumpSort);
-		algorithmBox.getChildren().add(bernieSort);
-		algorithmBox.getChildren().add(hillarySort);
-		algorithmBox.getChildren().add(gravitySort);
-		algorithmBox.getChildren().add(radixSort);
-		algorithmBox.getChildren().add(bucketSort);
-		algorithmBox.getChildren().add(countingSort);
-		algorithmBox.getChildren().add(pigeonSort);
-		algorithmBox.getChildren().add(aashishSort1);
-		algorithmBox.getChildren().add(aashishSort2);
-		algorithmBox.getChildren().add(aashishSort5);
-		algorithmBox.getChildren().add(aashishSort4);
 
-		javaSort.setSelected(true);
+		algorithmBox.getChildren().add(iteratives);
+		iteratives.getChildren().add(iterativeLabel);
 
-		mainInterface.getChildren().add(typeBox);
+		iteratives.getChildren().add(cycleSort);
+		iteratives.getChildren().add(selectionSort);
+		iteratives.getChildren().add(bubbleSort);
+		iteratives.getChildren().add(cocktailSort);
+		iteratives.getChildren().add(oddEvenSort);
+		iteratives.getChildren().add(combSort);
+		iteratives.getChildren().add(insertionSort);
+		iteratives.getChildren().add(shellSort);
+		iteratives.getChildren().add(aashishSort5);
+		iteratives.getChildren().add(aashishSort4);
+
+
+		algorithmBox.getChildren().add(recursives);
+		recursives.getChildren().add(recursiveLabel);
+//		recursives.getChildren().add(timSort);
+		recursives.getChildren().add(javaSort);
+		recursives.getChildren().add(slowSort);
+		recursives.getChildren().add(stoogeSort);
+		recursives.getChildren().add(heapSort);
+		recursives.getChildren().add(quickSort);
+		recursives.getChildren().add(mergeSort);
+
+
+		algorithmBox.getChildren().add(mathematicals);
+		mathematicals.getChildren().add(mathematicalLabel);
+
+		mathematicals.getChildren().add(gravitySort);
+		mathematicals.getChildren().add(radixSort);
+		mathematicals.getChildren().add(bucketSort);
+		mathematicals.getChildren().add(countingSort);
+		mathematicals.getChildren().add(pigeonSort);
+		mathematicals.getChildren().add(aashishSort1);
+
+
+		algorithmBox.getChildren().add(garbages);
+		garbages.getChildren().add(garbageLabel);
+
+		iteratives.getChildren().add(aashishSort2);
+		garbages.getChildren().add(randomSort);
+		garbages.getChildren().add(trumpSort);
+		garbages.getChildren().add(bernieSort);
+		garbages.getChildren().add(hillarySort);
+
+
+		mainInterface.getChildren().add(bottomItems);
+		bottomItems.getChildren().add(typeBox);
 		typeBox.getChildren().add(typeTitle);
 		typeBox.getChildren().add(alreadySorted);
 		typeBox.getChildren().add(reverseOrder);
 		typeBox.getChildren().add(randomOrder);
 
-		randomOrder.setSelected(true);
-
-		mainInterface.getChildren().add(sizeBox);
+		bottomItems.getChildren().add(sizeBox);
+		sizeBox.getChildren().add(inputLabel);
 		sizeBox.getChildren().add(inputSizeBox);
 		inputSizeBox.getChildren().add(inputSizeTitle);
 		inputSizeBox.getChildren().add(inputSize);
@@ -138,11 +176,14 @@ public class GUI{
 		blockSizeBox.getChildren().add(blockSizeTitle);
 		blockSizeBox.getChildren().add(blockSize);
 
-		mainInterface.getChildren().add(goButton);
+		bottomItems.getChildren().add(goButton);
 	}
 
-	private static void setElementSizing(){
+	private static void setElementAssociations(){
 		leftCushion.setMinWidth(17);
+
+		javaSort.setSelected(true);
+		randomOrder.setSelected(true);
 
 		slowSort.setToggleGroup(algorithms);
 		cycleSort.setToggleGroup(algorithms);
@@ -177,7 +218,12 @@ public class GUI{
 		reverseOrder.setToggleGroup(types);
 		randomOrder.setToggleGroup(types);
 
-		goButton.setMinWidth(299);
+
+		goButton.setMinWidth(333);
+		goButton.setMaxWidth(333);
+
+		goButton.setMinHeight(111);
+		goButton.setMaxHeight(111);
 	}
 
 	private static void setElementActions(){
