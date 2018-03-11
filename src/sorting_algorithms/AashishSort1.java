@@ -49,16 +49,14 @@ public class AashishSort1 extends Sort{
 		// We're assuming that digitArrayIndexes is automatically initialized to all zeroes in Java.
 		// Ports to other languages may require manually filling the array with zeroes.
 
-		int modulus;
-		int digit;
 		for(int j = 0; j < array.length; j++){
 			// Take a certain number of digits of an element of array and divides by most
 			// significant decimal to obtain most usable. significant digit.
 			// Essentially takes the modulus of the array item and then divides it by the number
 			// of decimal places to take into account
 
-			modulus = (int)Math.pow(10, numberOfDigits);
-			digit = (array[j] % (modulus * 10)) / modulus;
+			int modulus = (int)Math.pow(10, numberOfDigits);
+			int digit = (array[j] % (modulus * 10)) / modulus;
 
 
 			// Stores the number in the array in the appropriate 'bucket', right after the
