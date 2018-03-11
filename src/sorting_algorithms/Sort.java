@@ -112,8 +112,9 @@ public class Sort{
 
 	/**
 	 * Sums the integers in an array
-	 * @param indexArray    Array to pull numbers from
-	 * @return  Sum
+	 *
+	 * @param indexArray Array to pull numbers from
+	 * @return Sum
 	 */
 	public static int sumArray(int[] indexArray){
 		int numberOfElements = 0;
@@ -137,14 +138,12 @@ public class Sort{
 		if(size <= 0 || blocks <= 0){
 			if(size <= 0){
 				alert("Invalid input", "You have entered list size " + size + ", which is wrong.",
-				      "Please enter a value greater than zero.", "WARNING", false
-				);
+				      "Please enter a value greater than zero.", "WARNING", false);
 			}
 			if(blocks <= 0){
 				alert("Invalid input",
 				      "You have entered block size " + blocks + ", which is wrong.",
-				      "Please enter a value greater than zero.", "WARNING", false
-				);
+				      "Please enter a value greater than zero.", "WARNING", false);
 			}
 
 			return;
@@ -314,8 +313,7 @@ public class Sort{
 		}
 
 		alert("Operation finished", "The time taken is below",
-		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false
-		);
+		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false);
 
 		System.out.println("Sorted array:\n" + SortingSimulator.truncate(
 				Arrays.toString((int[])(allBlocks.poll())), 3333));

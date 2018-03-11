@@ -204,8 +204,7 @@ public class GUI{
 				alert("PLEASE READ!",
 				      "This sort is entirely satire." + "\nPlease do not take it literally.",
 				      "I myself am an immigrant." + "\nI have nothing against immigrants.",
-				      "INFORMATION", true
-				);
+				      "INFORMATION", true);
 				banned = true;
 			}
 
@@ -229,12 +228,10 @@ public class GUI{
 		goButton.setOnAction(letsGo->{
 			try{
 				Sort.letsSort(Integer.parseInt(inputSize.getText()),
-				              Integer.parseInt(blockSize.getText())
-				);
+				              Integer.parseInt(blockSize.getText()));
 			}catch(NumberFormatException except){
 				alert("Incorrect Input", "You have not entered an integer.",
-				      "Please enter a positive integer", "WARNING", false
-				);
+				      "Please enter a positive integer", "WARNING", false);
 			}
 		});
 	}

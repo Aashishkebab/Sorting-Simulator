@@ -115,8 +115,7 @@ class TooLargeQuick implements Runnable{
 	@Override
 	public void run(){
 		alert("Cannot Sort", "You have overloaded the quickSort algorithm.",
-		      "Please enter a smaller list size or block size.", "WARNING", false
-		);
+		      "Please enter a smaller list size or block size.", "WARNING", false);
 	}
 
 }

@@ -18,8 +18,7 @@ public class RandomSort extends Sort{
 			loops++;
 
 			swapTwoValues((int)(Math.random() * array.length), (int)(Math.random() * array.length),
-			              array
-			);
+			              array);
 
 			if(isSorted(array)){
 				break;
