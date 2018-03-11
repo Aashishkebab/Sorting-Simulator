@@ -110,6 +110,19 @@ public class Sort{
 		return true;
 	}
 
+	/**
+	 * Sums the integers in an array
+	 * @param indexArray    Array to pull numbers from
+	 * @return  Sum
+	 */
+	public static int sumArray(int[] indexArray){
+		int numberOfElements = 0;
+		for(int i = 0; i < indexArray.length; i++){
+			numberOfElements += indexArray[i];
+		}
+		return numberOfElements;
+	}
+
 	public static boolean isNumberInArray(int number, int[] array){
 		for(int i = 0; i < array.length; i++){
 			if(array[i] == number){
