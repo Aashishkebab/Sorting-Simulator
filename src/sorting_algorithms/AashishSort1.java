@@ -1,13 +1,34 @@
 package sorting_algorithms;
 
+/**
+ * This sorting algorithm makes no comparisons.
+ * Rather, it uses properties of mathematics to sort the data.
+ *
+ * The algorithm finds the number of digits in the largest item in the array.
+ * Then, it splits the data into groups, or 'buckets', based on the most significant digit.
+ * It stores these groups in a two dimensional array.
+ *
+ * It then recursively calls itself on each digit with an increasing modulus (to ignore preceding
+ * digits), and a decreasing 'numberOfDigits'.
+ * Once the numberOfDigits equals zero, the program copies the data in the 2-d array, and returns
+ * it.
+ *
+ * The easiest way to think of it is a purely recursive Bucket Sort, from which this algorithms
+ * was inspired.
+ *
+ * The assumption is that the numeric system is in base 10.
+ *
+ * Author: Aashish Bharadwaj
+ */
+
 public class AashishSort1 extends Sort{
-	public static int[] aashishSort1(int[] array){   //Assuming base 10
-		return doAashishSort1(array, (int)(Math.pow(10, (int)(Math.log10(getMaxValue(array)) + 1))),
-		                      (short)Math.log10(getMaxValue(array))
+	public static int[] aashishSort1(int[] array){
+		return splitByDigit(array, (int)(Math.pow(10, (int)(Math.log10(getMaxValue(array)) + 1))),
+		                    (short)Math.log10(getMaxValue(array))
 		);
 	}
 
-	public static int[] doAashishSort1(int[] array, int modulus, short numberOfDigits){
+	public static int[] splitByDigit(int[] array, int modulus, short numberOfDigits){
 		int[][] digitArray = new int[10][array.length];
 		int[] digitArrayIndexes = new int[10];
 
@@ -34,8 +55,8 @@ public class AashishSort1 extends Sort{
 
 		modulus /= 10;
 		for(int p = 0; p < 10; p++){
-			digitArray[p] = doAashishSort1(trimUnused(digitArray[p], digitArrayIndexes[p]), modulus,
-			                               (short)(numberOfDigits - 1)
+			digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]), modulus,
+			                             (short)(numberOfDigits - 1)
 			);
 		}
 
