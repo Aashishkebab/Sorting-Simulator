@@ -224,14 +224,7 @@ public class Sort{
 	}
 
 	private static void doTheMerge(int[] array, int blockSize){
-		while(true){
-			try{
-				mergeBlocks(blockSize, array);
-				break;
-			}catch(Exception e){
-				continue;
-			}
-		}
+		mergeBlocks(blockSize, array);
 	}
 
 	private static void setArray(int[] array){
