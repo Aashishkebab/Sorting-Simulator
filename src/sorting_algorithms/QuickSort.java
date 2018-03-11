@@ -16,15 +16,11 @@ import static sorting_algorithms.QuickSort.realQuickSort;
  */
 public class QuickSort extends Sort{
 
-	public static int recurse = 0;
-	private static int[] array;
-
 	public static void quickSort(int[] array){
-		QuickSort.array = array;
 		realQuickSort(array, 0, array.length - 1);
 	}
 
-	private static int[] actualQuickSort(int lower, int upper){  //Deprecated
+	private static int[] actualQuickSort(int[] array, int lower, int upper){  //Deprecated
 		if(array == null || array.length <= 0){
 			return null;
 		}
@@ -51,12 +47,12 @@ public class QuickSort extends Sort{
 		try{
 			if(lower < newHigh){
 				if((newHigh - lower) > 1){
-					actualQuickSort(lower, newHigh);
+					actualQuickSort(array, lower, newHigh);
 				}
 			}
 			if(newLow < upper){
 				if((upper - newLow) > 1){
-					actualQuickSort(newLow, upper);
+					actualQuickSort(array, newLow, upper);
 				}
 			}
 		}catch(StackOverflowError tooLarge){
@@ -82,6 +78,8 @@ public class QuickSort extends Sort{
 				Platform.runLater(new TooLargeQuick());
 				array = null;
 				return null;
+			}catch(NullPointerException e){
+				return null;
 			}
 		}
 
@@ -89,22 +87,23 @@ public class QuickSort extends Sort{
 	}
 
 	private static int partitionamafy(int[] array, int lower, int upper){
-		recurse++;
-		//System.out.println(recurse);
 
-		int pivot = array[upper];
-		int newLow = lower - 1;
-		int i;
+			int pivot = array[upper];
 
-		for(i = lower; i < upper; i++){
-			if(array[i] <= pivot){
-				newLow++;
-				swapTwoValues(i, newLow, array);
+
+			int newLow = lower - 1;
+			int i;
+
+			for(i = lower; i < upper; i++){
+				if(array[i] <= pivot){
+					newLow++;
+					swapTwoValues(i, newLow, array);
+				}
 			}
-		}
 
-		swapTwoValues(newLow + 1, upper, array);
-		return newLow + 1;
+			swapTwoValues(newLow + 1, upper, array);
+			return newLow + 1;
+
 	}
 
 }
@@ -114,7 +113,7 @@ class TooLargeQuick implements Runnable{
 	@Override
 	public void run(){
 		alert("Cannot Sort", "You have overloaded the quickSort algorithm.",
-		      "Please enter a smaller list size or block size.", "WARNING", false);
+		      "Please enter a smaller list size or block size.", "WARNING", true);
 	}
 
 }
