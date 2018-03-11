@@ -8,12 +8,10 @@ package Sorting_Simulator;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.TextAlignment;
 import sorting_algorithms.Sort;
 
 import static Sorting_Simulator.SortingSimulator.alert;
 import static Sorting_Simulator.SortingSimulator.banned;
-import static Sorting_Simulator.SortingSimulator.main;
 
 
 /**
@@ -25,7 +23,7 @@ public class GUI{
 	static HBox leftCushion = new HBox();
 	static VBox topCushion = new VBox();
 
-	static VBox mainInterface = new VBox(44);
+	static VBox mainInterface = new VBox(37);
 
 	static HBox algorithmBox = new HBox(55);
 	static Label algorithmTitle = new Label("Sorting Algorithm");
@@ -80,20 +78,24 @@ public class GUI{
 	static RadioButton reverseOrder = new RadioButton("Reverse order");
 	static RadioButton randomOrder = new RadioButton("Random");
 
-	static HBox bottomItems = new HBox(43);
+	static HBox bottomItems = new HBox(44);
 
 	static VBox sizeBox = new VBox(17);
 	static Label inputLabel = new Label("Input Parameters");
 
-	static HBox inputSizeBox = new HBox(17);
+	static HBox inputSizeBox = new HBox(13);
 	static Label inputSizeTitle = new Label("Input Size");
 	static TextField inputSize = new TextField("0");
 
-	static HBox blockSizeBox = new HBox(17);
+	static HBox blockSizeBox = new HBox(13);
 	static Label blockSizeTitle = new Label("Block Size");
 	static TextField blockSize = new TextField("0");
 
 	static Button goButton = new Button("Go");
+
+	static HBox printConsoleBox = new HBox(4);
+	static Label printConsoleLabel = new Label("Print to console");
+	static CheckBox printConsole = new CheckBox();
 
 	public static void createUI(){
 		//System.out.println("Creating UI");
@@ -177,6 +179,11 @@ public class GUI{
 		blockSizeBox.getChildren().add(blockSize);
 
 		bottomItems.getChildren().add(goButton);
+
+		mainInterface.getChildren().add(printConsoleBox);
+		printConsoleBox.getChildren().add(printConsoleLabel);
+		printConsoleBox.getChildren().add(printConsole);
+
 	}
 
 	private static void setElementAssociations(){
@@ -280,5 +287,7 @@ public class GUI{
 				      "Please enter a positive integer", "WARNING", false);
 			}
 		});
+
+		printConsole.setOnAction(reduceOverhead->Sort.printArrays = printConsole.isSelected());
 	}
 }
