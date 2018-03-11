@@ -60,7 +60,14 @@ public class Sort{
 	}
 
 	public static int[] randomizeArray(int size){
-		int[] array = new int[size];
+		int[] array;
+		try{
+			array = new int[size];
+		}catch(OutOfMemoryError e){
+			alert("Cannot Sort", "You have entered too large of an input size.",
+			      "Please enter a smaller list size.", "WARNING", false);
+			return null;
+		}
 
 		for(int i = 0; i < size; i++){
 			array[i] = (int)(Math.random() * size + 1);
