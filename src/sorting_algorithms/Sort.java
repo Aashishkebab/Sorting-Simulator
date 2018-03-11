@@ -157,14 +157,12 @@ public class Sort{
 		}
 
 //        size++;
-		if((size / blocks) < 1){  //SO that the number of threads isn't zero
+		if((size / blocks) < 1){  //So that the number of threads isn't zero
 			blocks = size;
 		}
 
 		int[] array = createArray(size);
 		allBlocks = new ArrayBlockingQueue(size / blocks + 1);
-
-		//System.out.println(Arrays.toString(array));
 
 		startSorting(array, size, blocks);
 	}
@@ -212,17 +210,9 @@ public class Sort{
 			doTheMerge(array, blockSize);
 		}
 
-//        while(allBlocks.size() < size/blockSize){
-////            //System.out.println("waiting");
-////            //System.out.println(allBlocks.size());
-////            //System.out.println(size/blockSize);
-//        }  //There's got to be a better way...
-		//Make sure the above actually works before starting the merging
-
 		displayFinalResults(array);
 	}
 
-	//This creates a copy of an array to avoid modifying the original repeatedly, which doesn't work
 	private static int[] createCopy(int[] array){
 		int[] newArray = new int[array.length];
 
@@ -234,17 +224,6 @@ public class Sort{
 	}
 
 	private static void doTheMerge(int[] array, int blockSize){
-//        System.out.println("doTheMerge");
-//        int blockSize = ((Comparable[])(allBlocks.peek())).length;
-
-//        if(newArraySize == array.length){
-//            setArray(array);
-//            //System.out.println("we done " + Arrays.toString(array));
-//            return;
-//        }
-
-//        while(newArraySize < array.length){
-
 		while(true){
 			try{
 				mergeBlocks(blockSize, array);
@@ -253,20 +232,10 @@ public class Sort{
 				continue;
 			}
 		}
-
-//        while(allBlocks.size() > i/2 + 1){
-//            //System.out.println(allBlocks.size());
-//            //System.out.println(i - 1);
-//        }
-
-
-		//System.out.println(Arrays.toString((Comparable[])(allBlocks.peek())));
-
 	}
 
 	private static void setArray(int[] array){
 		array = (int[])allBlocks.peek();
-		//System.out.println("Copy the array over");
 
 		for(int i = 0; i < array.length; i++){
 			array[i] = ((int[])(allBlocks.peek()))[i];
@@ -344,7 +313,6 @@ public class Sort{
 				sortThreads.add(new Thread(new Fork(sortingMethod, createCopy(blockArray))));
 				sortThreads.get(threadNumber - 1).start();
 
-				//System.out.println("Thread: " + threadNumber);
 				threadNumber++;
 
 				blockIndex = 0;
@@ -364,19 +332,10 @@ public class Sort{
 
 		for(int t = (arrayLength - blockIndex) - 1; t < Integer.MAX_VALUE; t++){
 			try{
-				//System.out.println("value1: " + array[t]);
-				//System.out.println("value2: " + t);
-				//System.out.println("value3: " + (t - (i - blockIndex - 1)));
-
 				newBlockArray[(t - (arrayLength - blockIndex - 1))] = array[t];
 			}catch(Exception e){
 				Thread leftovers = new Thread(new Fork(sortingMethod, createCopy(newBlockArray)));
 				leftovers.start();
-
-				//System.out.println("Thread after: " + threadNumber);
-
-				//System.out.println(Arrays.toString(newBlockArray));
-//                    pause();
 
 				try{
 					leftovers.join();
@@ -394,8 +353,6 @@ public class Sort{
 		int newSize;
 
 		while(((int[])(allBlocks.peek())).length < array.length){
-			//System.out.println("size: " + allBlocks.size());
-
 			newSize = allBlocks.size();
 
 			try{
@@ -408,15 +365,10 @@ public class Sort{
 				double numberOfMerges = Math.ceil(((float)newSize) / ((float)blockSize));
 
 				for(i = 0; i < numberOfMerges; i++){
-//                            Thread merge = new Thread(new Merger());
 					mergingThreads.add(new Thread(new Merger()));
 					mergingThreads.get(i).start();
-
-//                            merge.start();
-//                        merge.join();
 				}
 
-//                        System.out.println("Waiting for join");
 				joinThreads(mergingThreads);
 
 				if(allBlocks.size() == 1){
@@ -427,16 +379,6 @@ public class Sort{
 		}
 	}
 
-//    public static Integer[] convertToIntegers(Comparable[] array){
-//        Integer[] newArray = new Integer[array.length];
-//
-//        for(int i = 0; i < array.length; i++){
-//            newArray[i] = (Integer)(array[i]);
-//        }
-//
-//        return newArray;
-//    }
-
 	private static class Merger implements Runnable{
 
 		public Merger(){
@@ -444,14 +386,6 @@ public class Sort{
 
 		@Override
 		public synchronized void run(){
-
-			//System.out.println("Merge thread");
-			//System.out.println("allBlocks size before: " + allBlocks.size());
-
-			//System.out.println(""); //System.out.println(""); //System.out.println("");
-
-//            displayTest();
-
 			if(allBlocks.size() < 2){
 				return;
 			}
@@ -460,25 +394,6 @@ public class Sort{
 				allBlocks.offer(
 						MergeSort.mergeData((int[])(allBlocks.poll()), (int[])(allBlocks.poll())));
 			}catch(Exception foweijfeowifj){
-			}
-
-			try{
-				//System.out.println("Lenghth of peek: " + ((Comparable[])(allBlocks.peek())).length);
-			}catch(Exception e){
-			}
-
-			//System.out.println("allBlocks size after: " + allBlocks.size());
-			//System.out.println("Finish merge thread");
-
-			//System.out.println(Arrays.toString((Comparable[])(allBlocks.peek())));
-		}
-
-		public void displayTest(){
-			for(int i = 0; i < Integer.MAX_VALUE; i++){
-				try{
-					//System.out.println(Arrays.toString((Comparable[])(allBlocks.poll())));
-				}catch(Exception e){
-				}
 			}
 		}
 	}
