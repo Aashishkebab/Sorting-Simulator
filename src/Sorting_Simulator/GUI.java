@@ -80,24 +80,32 @@ public class GUI{
 
 	static HBox bottomItems = new HBox(44);
 
-	static VBox sizeBox = new VBox(3);
+	static HBox sizeBox = new HBox(23);
 	static Label inputLabel = new Label("Input Parameters");
 
-	static HBox inputSizeBox = new HBox(13);
+//	static HBox inputSizeBox = new HBox(13);
+
+
+//	static HBox minInputSizeBox = new HBox(13);
+
+	static VBox sizeLabels = new VBox(17);
 	static Label inputSizeTitle = new Label("Input Size");
-	static TextField inputSize = new TextField("0");
-
-	static HBox minInputSizeBox = new HBox(13);
 	static Label minInputSizeTitle = new Label("Smallest Number");
-	static TextField minInputSize = new TextField("0");
-
-	static HBox maxInputSizeBox = new HBox(13);
 	static Label maxInputSizeTitle = new Label("Largest Number");
-	static TextField maxInputSize = new TextField("0");
-
-	static HBox blockSizeBox = new HBox(13);
 	static Label blockSizeTitle = new Label("Block Size");
+
+	static VBox sizeFields = new VBox(7);
+	static TextField inputSize = new TextField("0");
+	static TextField minInputSize = new TextField("0");
+	static TextField maxInputSize = new TextField("0");
 	static TextField blockSize = new TextField("0");
+
+//	static HBox maxInputSizeBox = new HBox(13);
+
+
+
+//	static HBox blockSizeBox = new HBox(13);
+
 
 	static Button goButton = new Button("Go");
 
@@ -179,23 +187,25 @@ public class GUI{
 
 		bottomItems.getChildren().add(sizeBox);
 
-		sizeBox.getChildren().add(inputLabel);
-		sizeBox.getChildren().add(inputSizeBox);
-		inputSizeBox.getChildren().add(inputSizeTitle);
-		inputSizeBox.getChildren().add(inputSize);
+//		sizeBox.getChildren().add(inputLabel);
+		sizeBox.getChildren().add(sizeLabels);
+		sizeBox.getChildren().add(sizeFields);
 
-		sizeBox.getChildren().add(minInputSizeBox);
-		minInputSizeBox.getChildren().add(minInputSizeTitle);
-		minInputSizeBox.getChildren().add(minInputSize);
+		sizeLabels.getChildren().add(inputSizeTitle);
+		sizeFields.getChildren().add(inputSize);
 
-		sizeBox.getChildren().add(maxInputSizeBox);
-		maxInputSizeBox.getChildren().add(maxInputSizeTitle);
-		maxInputSizeBox.getChildren().add(maxInputSize);
+//		sizeBox.getChildren().add(minInputSizeBox);
+		sizeLabels.getChildren().add(minInputSizeTitle);
+		sizeFields.getChildren().add(minInputSize);
+
+//		sizeBox.getChildren().add(maxInputSizeBox);
+		sizeLabels.getChildren().add(maxInputSizeTitle);
+		sizeFields.getChildren().add(maxInputSize);
 
 
-		sizeBox.getChildren().add(blockSizeBox);
-		blockSizeBox.getChildren().add(blockSizeTitle);
-		blockSizeBox.getChildren().add(blockSize);
+//		sizeBox.getChildren().add(blockSizeBox);
+		sizeLabels.getChildren().add(blockSizeTitle);
+		sizeFields.getChildren().add(blockSize);
 
 		bottomItems.getChildren().add(goButton);
 
