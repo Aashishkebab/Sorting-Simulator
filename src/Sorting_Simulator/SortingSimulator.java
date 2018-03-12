@@ -11,8 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.util.Scanner;
+import java.awt.Toolkit;
 
 
 /**
@@ -28,11 +27,6 @@ public class SortingSimulator extends Application{
 	 */
 	public static void main(String[] args){
 		Application.launch(args);
-	}
-
-	public static void pause(){
-		Scanner pause = new Scanner(System.in);
-		pause.nextLine();
 	}
 
 	public static void alert(String title, String header, String content, String alertType,
@@ -52,12 +46,8 @@ public class SortingSimulator extends Application{
 				alert = new Alert(Alert.AlertType.NONE);
 		}
 
-//		Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds();
 		double height = Screen.getPrimary().getVisualBounds().getHeight();
 		double width = Screen.getPrimary().getVisualBounds().getWidth();
-
-//		double windowHeight = Math.min(height * 0.8, Math.max(
-//				Math.log(Math.pow(content.length(), content.length() * 0.77) * height), 137));
 
 		double windowHeight = Math.min(height * 0.2 + (content.length() / 3), height * 0.8);
 
