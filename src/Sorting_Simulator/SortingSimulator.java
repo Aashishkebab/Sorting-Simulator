@@ -47,6 +47,7 @@ public class SortingSimulator extends Application{
 				break;
 			case "ERROR":
 				alert = new Alert(Alert.AlertType.ERROR);
+				break;
 			default:
 				alert = new Alert(Alert.AlertType.NONE);
 		}
