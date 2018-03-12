@@ -326,6 +326,13 @@ public class GUI{
 		bucketSort.setDisable(true);
 		countingSort.setDisable(true);
 		aashishSort1.setDisable(true);
+
+		if(gravitySort.isSelected() || radixSort.isSelected() || bucketSort.isSelected() ||
+				countingSort.isSelected() || aashishSort1.isSelected()){
+			javaSort.setSelected(true);
+			alert("Algorithm Changed", "Your selected algorithm does not work with negatives.",
+			      "The selection has been reverted to Java default Sort", "INFORMATION", false);
+		}
 	}
 
 	private static void enableNonNegatives(){
