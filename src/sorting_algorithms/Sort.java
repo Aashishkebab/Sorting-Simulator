@@ -285,7 +285,7 @@ public class Sort{
 		System.out.println("");
 
 		alert("Operation finished", "The time taken is below",
-		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false);
+		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", true);
 
 		if(sortingMethod.equals("trumpSort")){
 			alert("Make Sorting Great Again!", "Wall has been built!",
@@ -303,9 +303,6 @@ public class Sort{
 		}
 
 		if(printArrays){
-//			System.out.println("Sorted array:\n" + SortingSimulator.truncate(
-//					Arrays.toString((int[])(allBlocks.poll())), 3333));
-
 			alert("Results", "Here is the sorted array",
 			      SortingSimulator.truncate(Arrays.toString((int[])(allBlocks.poll())), 2222),
 			      "INFORMATION", false);
