@@ -102,7 +102,7 @@ public class GUI{
 	static Button goButton = new Button("Go");
 
 	static HBox printConsoleBox = new HBox(4);
-	static Label printConsoleLabel = new Label("Print to console");
+	static Label printConsoleLabel = new Label("Display array");
 	static CheckBox printConsole = new CheckBox();
 
 	public static void createUI(){
@@ -312,7 +312,7 @@ public class GUI{
 				Sort.letsSort(Integer.parseInt(inputSize.getText()),
 				              Integer.parseInt(blockSize.getText()));
 			}catch(NumberFormatException except){
-				alert("Incorrect Input", "You have not entered an integer.",
+				alert("Incorrect Input", "Invalid input in one of the fields.",
 				      "Please enter an integer", "WARNING", false);
 			}
 		});

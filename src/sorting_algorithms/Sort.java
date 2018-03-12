@@ -163,7 +163,7 @@ public class Sort{
 			}
 		}catch(OutOfMemoryError e){
 			alert("Cannot Sort", "You have entered too large of an input size.",
-			      "Please enter a smaller list size.", "ERROR", false);
+			      "Please enter a smaller list size.", "ERROR", true);
 			return;
 		}
 
@@ -199,8 +199,12 @@ public class Sort{
 		}
 
 		if(printArrays){
-			System.out.println("Initial array:\n" + truncate(Arrays.toString(createdArray), 3333));
-			System.out.println("");
+//			System.out.println("Initial array:\n" + truncate(Arrays.toString(createdArray), 3333));
+//			System.out.println("");
+
+			alert("Start", "Here is the initial array",
+			      SortingSimulator.truncate(Arrays.toString(createdArray), 2222), "INFORMATION",
+			      true);
 		}
 
 		return createdArray;
@@ -280,33 +284,31 @@ public class Sort{
 		long endTime = Instant.now().toEpochMilli();
 		System.out.println("");
 
-		if(printArrays){
-			if(sortingMethod.equals("trumpSort")){
-				System.out.println(immigrants + " foreign items deported.");
-				System.out.println("");
-				immigrants = 0;
-			}
-			if(sortingMethod.equals("bernieSort")){
-				System.out.println("The average wealth was " +
-						                   truncate(Integer.toString(BernieSort.averageWealth),
-						                            3333));
-				System.out.println("It has been split amongst all.");
-				System.out.println("");
-			}
-			if(sortingMethod.equals("hillarySort")){
-				System.out.println("All suspicious items have been deleted.");
-				System.out.println("");
-			}
-		}
-
 		alert("Operation finished", "The time taken is below",
 		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", false);
 
+		if(sortingMethod.equals("trumpSort")){
+			alert("Make Sorting Great Again!", "Wall has been built!",
+			      immigrants + " foreign items deported.", "INFORMATION", true);
+		}
+		if(sortingMethod.equals("bernieSort")){
+			alert("Feel the Bern!", "Wealth has been distributed equally.",
+			      "The average wealth was " +
+					      truncate(Integer.toString(BernieSort.averageWealth), 333), "INFORMATION",
+			      true);
+		}
+		if(sortingMethod.equals("hillarySort")){
+			alert("Watch out Bill!", "Server has been erased.", "Bribery was successful.",
+			      "INFORMATION", true);
+		}
+
 		if(printArrays){
-			System.out.println("Sorted array:\n" + SortingSimulator.truncate(
-					Arrays.toString((int[])(allBlocks.poll())), 3333));
-			System.out.println("");
-			System.out.println("");
+//			System.out.println("Sorted array:\n" + SortingSimulator.truncate(
+//					Arrays.toString((int[])(allBlocks.poll())), 3333));
+
+			alert("Results", "Here is the sorted array",
+			      SortingSimulator.truncate(Arrays.toString((int[])(allBlocks.poll())), 2222),
+			      "INFORMATION", false);
 		}
 	}
 
