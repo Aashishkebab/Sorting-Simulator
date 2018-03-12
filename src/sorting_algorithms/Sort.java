@@ -27,6 +27,9 @@ public class Sort{
 	public static String inputMethod = "randomOrder";
 	public static boolean printArrays = false;
 
+	public static int minSize;
+	public static int maxSize;
+
 	public static Instant startTime;
 
 	public static Queue allBlocks;
@@ -40,38 +43,34 @@ public class Sort{
 		}
 	}
 
-	public static int[] incrementArray(int size){
+	public static int[] incrementArray(int size, int min, int max){
 		int[] array = new int[size];
+		int numElements = 1 + max - min;
 
 		for(int i = 0; i < size; i++){
-			array[i] = i;
+			array[i] = (i * numElements) / size + min;
 		}
 
 		return array;
 	}
 
-	public static int[] decrementArray(int size){
+	public static int[] decrementArray(int size, int min, int max){
 		int[] array = new int[size];
+		int numElements = 1 + max - min;
 
 		for(int i = size; i > 0; i--){
-			array[(size - i)] = i;
+			array[(size - i)] = (i * numElements) / size + min;
 		}
 
 		return array;
 	}
 
-	public static int[] randomizeArray(int size){
+	public static int[] randomizeArray(int size, int min, int max){
 		int[] array;
-		try{
-			array = new int[size];
-		}catch(OutOfMemoryError e){
-			alert("Cannot Sort", "You have entered too large of an input size.",
-			      "Please enter a smaller list size.", "ERROR", false);
-			return null;
-		}
+		array = new int[size];
 
 		for(int i = 0; i < size; i++){
-			array[i] = (int)(Math.random() * size + 1);
+			array[i] = min + (int)(Math.random() * ((max - min) + 1));
 		}
 
 		return array;
@@ -142,18 +141,29 @@ public class Sort{
 	}
 
 	public static void letsSort(int size, int blocks){
+		try{
+			if(size <= 0 || blocks <= 0 || minSize > maxSize){
+				if(size <= 0){
+					alert("Invalid input",
+					      "You have entered list size " + size + ", which is wrong.",
+					      "Please enter a value greater than zero.", "WARNING", true);
+				}
+				if(blocks <= 0){
+					alert("Invalid input",
+					      "You have entered block size " + blocks + ", which is wrong.",
+					      "Please enter a value greater than zero.", "WARNING", true);
+				}
+				if(minSize > maxSize){
+					alert("Invalid input", "Please fix your input.",
+					      "Largest number must be greater than\nor equal to smallest number.",
+					      "WARNING", true);
+				}
 
-		if(size <= 0 || blocks <= 0){
-			if(size <= 0){
-				alert("Invalid input", "You have entered list size " + size + ", which is wrong.",
-				      "Please enter a value greater than zero.", "WARNING", false);
+				return;
 			}
-			if(blocks <= 0){
-				alert("Invalid input",
-				      "You have entered block size " + blocks + ", which is wrong.",
-				      "Please enter a value greater than zero.", "WARNING", false);
-			}
-
+		}catch(OutOfMemoryError e){
+			alert("Cannot Sort", "You have entered too large of an input size.",
+			      "Please enter a smaller list size.", "ERROR", false);
 			return;
 		}
 
@@ -173,15 +183,15 @@ public class Sort{
 
 		switch(inputMethod){
 			case "randomOrder":{
-				createdArray = randomizeArray(size);
+				createdArray = randomizeArray(size, minSize, maxSize);
 				break;
 			}
 			case "alreadySorted":{
-				createdArray = incrementArray(size);
+				createdArray = incrementArray(size, minSize, maxSize);
 				break;
 			}
 			case "reverseOrder":{
-				createdArray = decrementArray(size);
+				createdArray = decrementArray(size, minSize, maxSize);
 				break;
 			}
 			default:

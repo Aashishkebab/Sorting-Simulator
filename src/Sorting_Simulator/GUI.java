@@ -80,12 +80,20 @@ public class GUI{
 
 	static HBox bottomItems = new HBox(44);
 
-	static VBox sizeBox = new VBox(17);
+	static VBox sizeBox = new VBox(3);
 	static Label inputLabel = new Label("Input Parameters");
 
 	static HBox inputSizeBox = new HBox(13);
 	static Label inputSizeTitle = new Label("Input Size");
 	static TextField inputSize = new TextField("0");
+
+	static HBox minInputSizeBox = new HBox(13);
+	static Label minInputSizeTitle = new Label("Smallest Number");
+	static TextField minInputSize = new TextField("0");
+
+	static HBox maxInputSizeBox = new HBox(13);
+	static Label maxInputSizeTitle = new Label("Largest Number");
+	static TextField maxInputSize = new TextField("0");
 
 	static HBox blockSizeBox = new HBox(13);
 	static Label blockSizeTitle = new Label("Block Size");
@@ -170,10 +178,21 @@ public class GUI{
 		typeBox.getChildren().add(randomOrder);
 
 		bottomItems.getChildren().add(sizeBox);
+
 		sizeBox.getChildren().add(inputLabel);
 		sizeBox.getChildren().add(inputSizeBox);
 		inputSizeBox.getChildren().add(inputSizeTitle);
 		inputSizeBox.getChildren().add(inputSize);
+
+		sizeBox.getChildren().add(minInputSizeBox);
+		minInputSizeBox.getChildren().add(minInputSizeTitle);
+		minInputSizeBox.getChildren().add(minInputSize);
+
+		sizeBox.getChildren().add(maxInputSizeBox);
+		maxInputSizeBox.getChildren().add(maxInputSizeTitle);
+		maxInputSizeBox.getChildren().add(maxInputSize);
+
+
 		sizeBox.getChildren().add(blockSizeBox);
 		blockSizeBox.getChildren().add(blockSizeTitle);
 		blockSizeBox.getChildren().add(blockSize);
@@ -278,16 +297,55 @@ public class GUI{
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");
 		randomOrder.setOnAction(numbers->Sort.inputMethod = "randomOrder");
 
+		minInputSize.setOnKeyTyped(negatives->{
+			disableAppropriateItems();
+		});
+		maxInputSize.setOnKeyTyped(negatives->{
+			disableAppropriateItems();
+		});
+
 		goButton.setOnAction(letsGo->{
 			try{
+				Sort.minSize = Integer.parseInt(minInputSize.getText());
+				Sort.maxSize = Integer.parseInt(maxInputSize.getText());
+
 				Sort.letsSort(Integer.parseInt(inputSize.getText()),
 				              Integer.parseInt(blockSize.getText()));
 			}catch(NumberFormatException except){
 				alert("Incorrect Input", "You have not entered an integer.",
-				      "Please enter a positive integer", "WARNING", false);
+				      "Please enter an integer", "WARNING", false);
 			}
 		});
 
 		printConsole.setOnAction(reduceOverhead->Sort.printArrays = printConsole.isSelected());
+	}
+
+	private static void disableNonNegatives(){
+		gravitySort.setDisable(true);
+		radixSort.setDisable(true);
+		bucketSort.setDisable(true);
+		countingSort.setDisable(true);
+		aashishSort1.setDisable(true);
+	}
+
+	private static void enableNonNegatives(){
+		gravitySort.setDisable(false);
+		radixSort.setDisable(false);
+		bucketSort.setDisable(false);
+		countingSort.setDisable(false);
+		aashishSort1.setDisable(false);
+	}
+
+	private static void disableAppropriateItems(){
+		try{
+			if(Integer.parseInt(minInputSize.getText()) < 0 || Integer.parseInt(
+					maxInputSize.getText()) < 0){
+				disableNonNegatives();
+			}else{
+				enableNonNegatives();
+			}
+		}catch(NumberFormatException e){
+
+		}
 	}
 }
