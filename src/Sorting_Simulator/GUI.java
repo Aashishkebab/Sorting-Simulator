@@ -330,6 +330,7 @@ public class GUI{
 		if(gravitySort.isSelected() || radixSort.isSelected() || bucketSort.isSelected() ||
 				countingSort.isSelected() || aashishSort1.isSelected()){
 			javaSort.setSelected(true);
+			Sort.sortingMethod = "javaSort";
 			alert("Algorithm Changed", "Your selected algorithm does not work with negatives.",
 			      "The selection has been reverted to Java default Sort", "INFORMATION", false);
 		}
