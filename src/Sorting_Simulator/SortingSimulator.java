@@ -8,6 +8,7 @@ package Sorting_Simulator;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -47,8 +48,19 @@ public class SortingSimulator extends Application{
 			case "ERROR":
 				alert = new Alert(Alert.AlertType.ERROR);
 			default:
-				return;
+				alert = new Alert(Alert.AlertType.NONE);
 		}
+
+//		Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds();
+		double height = Screen.getPrimary().getVisualBounds().getHeight();
+		double width = Screen.getPrimary().getVisualBounds().getWidth();
+
+		double windowHeight = Math.min(height * 0.8,
+		                               Math.max(content.length() * height * 0.01, 137));
+
+		alert.setY((height - windowHeight) / 3);
+		alert.setX(width / 3);
+		alert.getDialogPane().setPrefHeight(windowHeight);
 
 		alert.setTitle(title);
 		alert.setHeaderText(header);
@@ -56,7 +68,7 @@ public class SortingSimulator extends Application{
 
 		Toolkit.getDefaultToolkit().beep();
 
-		alert.setResizable(false);
+		alert.setResizable(true);
 
 		if(wait){
 			alert.showAndWait();
