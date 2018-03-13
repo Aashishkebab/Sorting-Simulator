@@ -30,8 +30,6 @@ public class Sort{
 	public static String inputMethod = "randomOrder";
 	public static boolean printArrays = false;
 
-	public static Alert pleaseWait = new Alert(Alert.AlertType.INFORMATION);
-
 	public static int minSize;
 	public static int maxSize;
 
@@ -190,13 +188,7 @@ public class Sort{
 
 	public static void pleaseWait(){
 		GUI.goButton.setDisable(true);
-
-		pleaseWait.setResizable(false);
-		pleaseWait.setTitle("Please wait...");
-		pleaseWait.setHeaderText("Currently sorting...");
-		pleaseWait.setContentText("This may take a while...");
-
-		pleaseWait.show();
+		GUI.goButton.setText("Sorting...");
 	}
 
 	public static int[] createArray(int size){
@@ -306,8 +298,6 @@ public class Sort{
 	}
 
 	private static void displayFinalResults(long endTime){
-		pleaseWait.close();
-
 		alert("Operation finished", "The time taken is below",
 		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", true);
 
@@ -333,6 +323,7 @@ public class Sort{
 		}
 
 		GUI.goButton.setDisable(false);
+		GUI.goButton.setText("Go");
 	}
 
 	private static void sortByBlocks(int[] array, int size, int blockSize){
