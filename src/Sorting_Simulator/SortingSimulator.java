@@ -11,7 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.awt.Toolkit;
+import java.awt.*;
 
 
 /**
@@ -102,6 +102,8 @@ public class SortingSimulator extends Application{
 
 		primaryStage.setMinWidth(837);
 		primaryStage.setMinHeight(555);
+
+		primaryStage.setOnCloseRequest(close->System.exit(0));
 
 		primaryStage.show();
 	}
