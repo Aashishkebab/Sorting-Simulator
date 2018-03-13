@@ -33,9 +33,11 @@ public class CountingSort extends Sort{
 
 		// Copy the output array, so that it now
 		//contains sorted numbers
-		for(int i = 0; i < array.length; ++i){
-			array[i] = output[i];
-		}
+		System.arraycopy(output, 0, array, 0, array.length);
+
+//		for(int i = 0; i < array.length; ++i){
+//			array[i] = output[i];
+//		}
 		return;
 	}
 }

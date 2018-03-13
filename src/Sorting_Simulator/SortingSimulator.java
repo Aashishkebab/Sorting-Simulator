@@ -45,7 +45,7 @@ public class SortingSimulator extends Application{
 	}
 
 	@Override
-	public void start(Stage primaryStage) throws Exception{
+	public void start(Stage primaryStage){
 		if(Screen.getPrimary().getVisualBounds().getHeight() < 720){
 			alert("Low Resolution Warning", "Your screen resolution is low.",
 			      "Some items " + "may\n" + "not display correctly.", "WARNING", true);

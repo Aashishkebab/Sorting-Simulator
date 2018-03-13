@@ -101,12 +101,8 @@ public class Sort{
 	public static int[] deleteIndex(int[] array, int index){
 		int[] newArray = new int[array.length - 1];
 
-		for(int i = 0; i < index; i++){
-			newArray[i] = array[i];
-		}
-		for(int i = index + 1; i < array.length; i++){
-			newArray[i - 1] = array[i];
-		}
+		System.arraycopy(array, 0, newArray, 0, index);
+		System.arraycopy(array, index + 1, newArray, index, array.length - (index + 1));
 		return newArray;
 	}
 
@@ -125,10 +121,10 @@ public class Sort{
 	 * @param indexArray Array to pull numbers from
 	 * @return Sum
 	 */
-	public static int sumArray(int[] indexArray){
+	public static int sumArray(int[] array){
 		int numberOfElements = 0;
-		for(int i = 0; i < indexArray.length; i++){
-			numberOfElements += indexArray[i];
+		for(int i = 0; i < array.length; i++){
+			numberOfElements += array[i];
 		}
 		return numberOfElements;
 	}
@@ -248,9 +244,11 @@ public class Sort{
 	private static int[] createCopy(int[] array){
 		int[] newArray = new int[array.length];
 
-		for(int i = 0; i < array.length; i++){
-			newArray[i] = array[i];
-		}
+		System.arraycopy(array, 0, newArray, 0, array.length);
+
+//		for(int i = 0; i < array.length; i++){
+//			newArray[i] = array[i];
+//		}
 
 		return newArray;
 	}
@@ -277,9 +275,7 @@ public class Sort{
 		}
 
 		int[] newArray = new int[numOfValues];
-		for(int i = 0; i < numOfValues; i++){
-			newArray[i] = array[i];
-		}
+		System.arraycopy(array, 0, newArray, 0, numOfValues);
 
 		return newArray;
 	}

@@ -16,7 +16,6 @@ import sorting_algorithms.Sort;
 
 import java.awt.*;
 
-import static Sorting_Simulator.GUI.alert;
 import static Sorting_Simulator.SortingSimulator.banned;
 
 
@@ -294,12 +293,8 @@ public class GUI{
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");
 		randomOrder.setOnAction(numbers->Sort.inputMethod = "randomOrder");
 
-		minInputSize.setOnKeyTyped(negatives->{
-			disableAppropriateItems();
-		});
-		maxInputSize.setOnKeyTyped(negatives->{
-			disableAppropriateItems();
-		});
+		minInputSize.setOnKeyTyped(negatives->disableAppropriateItems());
+		maxInputSize.setOnKeyTyped(negatives->disableAppropriateItems());
 
 		goButton.setOnAction(letsGo->{
 			try{

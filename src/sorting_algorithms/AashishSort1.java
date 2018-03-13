@@ -41,7 +41,7 @@ public class AashishSort1 extends Sort{
 	 *                       significant digit and going backwards.
 	 * @return The array split into digits.
 	 */
-	public static int[] splitByDigit(int[] array, short numberOfDigits){
+	private static int[] splitByDigit(int[] array, short numberOfDigits){
 		//  Use above method signature if using modulus variable, which is redundant.
 
 		int[][] digitArray = new int[10][array.length]; // Create ten 'buckets'
@@ -100,12 +100,14 @@ public class AashishSort1 extends Sort{
 	 * @param end   Where data should stop being pulled
 	 * @return Ending array
 	 */
-	public static int[] trimUnused(int[] array, int end){
+	private static int[] trimUnused(int[] array, int end){
 		int[] newArray = new int[end];
 
-		for(int i = 0; i < end; i++){
-			newArray[i] = array[i];
-		}
+		System.arraycopy(array, 0, newArray, 0, end);
+
+//		for(int i = 0; i < end; i++){   //Manual copy for other languages
+//			newArray[i] = array[i];
+//		}
 		return newArray;
 	}
 

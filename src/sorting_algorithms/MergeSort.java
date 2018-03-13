@@ -33,9 +33,7 @@ public class MergeSort extends Sort{
 		for(i = 0; i < (array.length) / 2; i++){
 			newArray1[i] = array[i];
 		}
-		for(int j = i; j < array.length; j++){
-			newArray2[j - i] = array[j];
-		}
+		System.arraycopy(array, i, newArray2, 0, array.length - i);
 
 		newArray1 = splitData(newArray1);
 		newArray2 = splitData(newArray2);

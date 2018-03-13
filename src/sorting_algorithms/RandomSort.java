@@ -6,7 +6,6 @@
 package sorting_algorithms;
 
 import Sorting_Simulator.GUI;
-import Sorting_Simulator.SortingSimulator;
 
 
 /**
@@ -28,8 +27,8 @@ public class RandomSort extends Sort{
 			}
 
 			if(loops >= (Integer.MAX_VALUE / 17)){
-				GUI.alert("I'm out of patience", "Took to long.",
-				          "What did you " + "expect?" + "", "INFORMATION", false);
+				GUI.alert("I'm out of patience", "Took to long.", "What did you " + "expect?" + "",
+				          "INFORMATION", false);
 				return;
 			}
 		}

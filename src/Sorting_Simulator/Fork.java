@@ -151,8 +151,9 @@ class OhNoOutOfMemory implements Runnable{
 
 	@Override
 	public void run(){
-		GUI.alert("Fatal Error", "Out of memory", "The input size was too " +
-				"large\nfor the chosen algorithm to handle.", "WARNING", true);
+		GUI.alert("Fatal Error", "Out of memory",
+		          "The input size was too " + "large\nfor the chosen algorithm to handle.",
+		          "WARNING", true);
 		Platform.runLater(new SetGoState(false));
 	}
 }
@@ -163,7 +164,7 @@ class OhNoStackOverflow implements Runnable{
 	@Override
 	public void run(){
 		GUI.alert("Fatal Error", "Stack has overflowed",
-		                       "The algorithm has\n" + "recursed too many times.", "WARNING", true);
+		          "The algorithm has\n" + "recursed too many times.", "WARNING", true);
 		Platform.runLater(new SetGoState(false));
 	}
 }
@@ -173,8 +174,8 @@ class OfferedTooMuch implements Runnable{
 
 	@Override
 	public void run(){
-		GUI.alert("Fatal Error", "Stack has overflowed",
-		                       "Too many blocks were created.", "WARNING", true);
+		GUI.alert("Fatal Error", "Stack has overflowed", "Too many blocks were created.", "WARNING",
+		          true);
 		Platform.runLater(new SetGoState(false));
 	}
 }
@@ -184,8 +185,7 @@ class NullPointer implements Runnable{
 
 	@Override
 	public void run(){
-		GUI.alert("Fatal Error", "Null pointer", "An array contained null.", "WARNING",
-		                       true);
+		GUI.alert("Fatal Error", "Null pointer", "An array contained null.", "WARNING", true);
 		Platform.runLater(new SetGoState(false));
 	}
 }
@@ -195,8 +195,8 @@ class ExceptException implements Runnable{
 
 	@Override
 	public void run(){
-		GUI.alert("Fatal Error", "Programmer is idiot",
-		                       "Something unknown has " + "ocurred.", "WARNING", true);
+		GUI.alert("Fatal Error", "Programmer is idiot", "Something unknown has " + "ocurred.",
+		          "WARNING", true);
 		Platform.runLater(new SetGoState(false));
 	}
 }
