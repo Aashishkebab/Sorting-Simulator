@@ -125,17 +125,23 @@ public class Fork implements Runnable{
 			try{
 				allBlocks.offer(array);
 			}catch(StackOverflowError e){
-				System.out.println(
-						"Too many values were attempted to be sorted, and there was a stack overflow.");
-			}catch(NullPointerException e){
-				if(Sort.sortingMethod.equals("hillarySort")){
-					return;
-				}else{
-					System.out.println("Null pointer. Apologies.");
-				}
+				Platform.runLater(new OfferedTooMuch());
 			}
+
 		}catch(OutOfMemoryError e){
 			Platform.runLater(new OhNoOutOfMemory());
+			return;
+		}catch(StackOverflowError e){
+			Platform.runLater(new OhNoStackOverflow());
+			return;
+		}catch(NullPointerException e){
+			if(Sort.sortingMethod.equals("hillarySort")){
+				return;
+			}else{
+				Platform.runLater(new NullPointer());
+			}
+		}catch(Exception e){
+			Platform.runLater(new ExceptException());
 		}
 	}
 }
@@ -147,5 +153,50 @@ class OhNoOutOfMemory implements Runnable{
 	public void run(){
 		SortingSimulator.alert("Fatal Error", "Out of memory", "The input size was too " +
 				"large\nfor the chosen algorithm to handle.", "WARNING", true);
+		Platform.runLater(new SetGoState(false));
+	}
+}
+
+class OhNoStackOverflow implements Runnable{
+
+
+	@Override
+	public void run(){
+		SortingSimulator.alert("Fatal Error", "Stack has overflowed",
+		                       "The algorithm has\n" + "recursed too many times.", "WARNING", true);
+		Platform.runLater(new SetGoState(false));
+	}
+}
+
+class OfferedTooMuch implements Runnable{
+
+
+	@Override
+	public void run(){
+		SortingSimulator.alert("Fatal Error", "Stack has overflowed",
+		                       "Too many blocks were created.", "WARNING", true);
+		Platform.runLater(new SetGoState(false));
+	}
+}
+
+class NullPointer implements Runnable{
+
+
+	@Override
+	public void run(){
+		SortingSimulator.alert("Fatal Error", "Null pointer", "An array contained null.", "WARNING",
+		                       true);
+		Platform.runLater(new SetGoState(false));
+	}
+}
+
+class ExceptException implements Runnable{
+
+
+	@Override
+	public void run(){
+		SortingSimulator.alert("Fatal Error", "Programmer is idiot",
+		                       "Something unknown has " + "ocurred.", "WARNING", true);
+		Platform.runLater(new SetGoState(false));
 	}
 }

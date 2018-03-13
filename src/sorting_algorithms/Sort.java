@@ -182,13 +182,13 @@ public class Sort{
 		}catch(OutOfMemoryError e){
 			alert("Cannot Sort", "You have entered too large of an input size.",
 			      "Please enter a smaller list size.", "ERROR", true);
+			Platform.runLater(new SetGoState(false));
 			return;
 		}
 	}
 
 	public static void pleaseWait(){
-		GUI.goButton.setDisable(true);
-		GUI.goButton.setText("Sorting...");
+		Platform.runLater(new SetGoState(true));
 	}
 
 	public static int[] createArray(int size){
@@ -322,8 +322,7 @@ public class Sort{
 			      "INFORMATION", false);
 		}
 
-		GUI.goButton.setDisable(false);
-		GUI.goButton.setText("Go");
+		Platform.runLater(new SetGoState(false));
 	}
 
 	private static void sortByBlocks(int[] array, int size, int blockSize){
@@ -371,6 +370,7 @@ public class Sort{
 				}catch(InterruptedException ex){
 					alert("Crap", "Fatal error has ocurred!", "InterruptedException", "ERROR",
 					      true);
+					Platform.runLater(new SetGoState(false));
 				}
 
 				break;
@@ -407,6 +407,7 @@ public class Sort{
 			}catch(NullPointerException pleaseWait){
 				alert("Crap", "Programmer is probably an idiot...", "NullPointerException", "ERROR",
 				      true);
+				Platform.runLater(new SetGoState(false));
 			}
 		}
 	}
@@ -428,6 +429,7 @@ public class Sort{
 			}catch(Exception foweijfeowifj){
 				alert("Crap", "Programmer is stupid...",
 				      "Did you try unplugging it\nand plugging it back in?", "ERROR", true);
+				Platform.runLater(new SetGoState(false));
 			}
 		}
 	}
@@ -461,6 +463,26 @@ public class Sort{
 		@Override
 		public synchronized void run(){
 			displayFinalResults(endTime);
+		}
+	}
+}
+
+class SetGoState implements Runnable{
+
+	boolean isDisabled;
+
+	public SetGoState(boolean isDisabled){
+		this.isDisabled = isDisabled;
+	}
+
+
+	@Override
+	public void run(){
+		GUI.goButton.setDisable(isDisabled);
+		if(isDisabled){
+			GUI.goButton.setText("Sorting...");
+		}else{
+			GUI.goButton.setText("Go");
 		}
 	}
 }

@@ -19,27 +19,21 @@ import static Sorting_Simulator.SortingSimulator.banned;
  */
 public class GUI{
 
+	public static Button goButton = new Button("Go");
 	static HBox elements = new HBox(0);
 	static HBox leftCushion = new HBox();
 	static VBox topCushion = new VBox();
-
 	static VBox mainInterface = new VBox(37);
-
 	static HBox algorithmBox = new HBox(55);
 	static Label algorithmTitle = new Label("Sorting Algorithm");
-
 	static VBox iteratives = new VBox(7);
 	static Label iterativeLabel = new Label("Iterative Algorithms");
-
 	static VBox recursives = new VBox(7);
 	static Label recursiveLabel = new Label("Recursive Algorithms");
-
 	static VBox mathematicals = new VBox(7);
 	static Label mathematicalLabel = new Label("Mathematical (non-comparitive) Algorithms");
-
 	static VBox garbages = new VBox(7);
 	static Label garbageLabel = new Label("Garbage Algorithms");
-
 	static ToggleGroup algorithms = new ToggleGroup();
 	static RadioButton slowSort = new RadioButton("Slow Sort");
 	static RadioButton cycleSort = new RadioButton("Cycle Sort");
@@ -69,45 +63,35 @@ public class GUI{
 	static RadioButton aashishSort2 = new RadioButton("Aashish Sort 2");
 	static RadioButton aashishSort5 = new RadioButton("Aashish Sort 5");
 	static RadioButton aashishSort4 = new RadioButton("Aashish Sort 4");
-
 	static VBox typeBox = new VBox(9);
 	static Label typeTitle = new Label("Input Type");
-
 	static ToggleGroup types = new ToggleGroup();
 	static RadioButton alreadySorted = new RadioButton("Already sorted");
 	static RadioButton reverseOrder = new RadioButton("Reverse order");
 	static RadioButton randomOrder = new RadioButton("Random");
-
 	static HBox bottomItems = new HBox(44);
-
 	static HBox sizeBox = new HBox(23);
-	static Label inputLabel = new Label("Input Parameters");
 
 //	static HBox inputSizeBox = new HBox(13);
 
 
-//	static HBox minInputSizeBox = new HBox(13);
-
+	//	static HBox minInputSizeBox = new HBox(13);
+	static Label inputLabel = new Label("Input Parameters");
 	static VBox sizeLabels = new VBox(17);
 	static Label inputSizeTitle = new Label("Input Size");
 	static Label minInputSizeTitle = new Label("Smallest Number");
 	static Label maxInputSizeTitle = new Label("Largest Number");
 	static Label blockSizeTitle = new Label("Block Size");
-
 	static VBox sizeFields = new VBox(7);
 	static TextField inputSize = new TextField("0");
 	static TextField minInputSize = new TextField("0");
 	static TextField maxInputSize = new TextField("0");
-	static TextField blockSize = new TextField("0");
 
 //	static HBox maxInputSizeBox = new HBox(13);
 
 
-//	static HBox blockSizeBox = new HBox(13);
-
-
-	public static Button goButton = new Button("Go");
-
+	//	static HBox blockSizeBox = new HBox(13);
+	static TextField blockSize = new TextField("0");
 	static HBox printConsoleBox = new HBox(4);
 	static Label printConsoleLabel = new Label("Display array");
 	static CheckBox printConsole = new CheckBox();
@@ -363,6 +347,26 @@ public class GUI{
 			}
 		}catch(NumberFormatException e){
 
+		}
+	}
+}
+
+class SetGoState implements Runnable{
+
+	boolean isDisabled;
+
+	public SetGoState(boolean isDisabled){
+		this.isDisabled = isDisabled;
+	}
+
+
+	@Override
+	public void run(){
+		GUI.goButton.setDisable(isDisabled);
+		if(isDisabled){
+			GUI.goButton.setText("Sorting...");
+		}else{
+			GUI.goButton.setText("Go");
 		}
 	}
 }
