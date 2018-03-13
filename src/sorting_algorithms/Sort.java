@@ -177,10 +177,10 @@ public class Sort{
 			blocks = size;
 		}
 
+		pleaseWait();
+
 		int[] array = createArray(size);
 		allBlocks = new ArrayBlockingQueue(size / blocks + 1);
-
-		pleaseWait();
 
 //		Thread sorter = new Thread(new Sorter(array, size, blocks));
 //		sorter.start();
