@@ -103,7 +103,6 @@ public class GUI{
 //	static HBox maxInputSizeBox = new HBox(13);
 
 
-
 //	static HBox blockSizeBox = new HBox(13);
 
 

@@ -7,6 +7,8 @@ package sorting_algorithms;
 
 import Sorting_Simulator.Fork;
 import Sorting_Simulator.SortingSimulator;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ public class Sort{
 	public static String sortingMethod = "javaSort";
 	public static String inputMethod = "randomOrder";
 	public static boolean printArrays = false;
+
+	public static Alert pleaseWait = new Alert(Alert.AlertType.INFORMATION);
 
 	public static int minSize;
 	public static int maxSize;
@@ -175,7 +179,21 @@ public class Sort{
 		int[] array = createArray(size);
 		allBlocks = new ArrayBlockingQueue(size / blocks + 1);
 
-		startSorting(array, size, blocks);
+		pleaseWait();
+
+//		Thread sorter = new Thread(new Sorter(array, size, blocks));
+//		sorter.start();
+
+		new Thread(new Sorter(array, size, blocks)).start();
+	}
+
+	public static void pleaseWait(){
+		pleaseWait.setResizable(false);
+		pleaseWait.setTitle("Please wait...");
+		pleaseWait.setHeaderText("Currently sorting...");
+		pleaseWait.setContentText("This may take a while...");
+
+		pleaseWait.show();
 	}
 
 	public static int[] createArray(int size){
@@ -228,7 +246,11 @@ public class Sort{
 			doTheMerge(array, blockSize);
 		}
 
-		displayFinalResults(array);
+		long endTime = Instant.now().toEpochMilli();
+		Thread displayResults = new Thread(new Displayer(endTime));
+		Platform.runLater(displayResults);
+
+//		Platform.runLater(new Thread(new Displayer(Instant.now().toEpochMilli())));
 	}
 
 	private static int[] createCopy(int[] array){
@@ -280,9 +302,8 @@ public class Sort{
 		}
 	}
 
-	private static void displayFinalResults(int[] array){
-		long endTime = Instant.now().toEpochMilli();
-		System.out.println("");
+	private static void displayFinalResults(long endTime){
+		pleaseWait.close();
 
 		alert("Operation finished", "The time taken is below",
 		      (endTime - Sort.startTime.toEpochMilli()) + " milliseconds", "INFORMATION", true);
@@ -412,6 +433,38 @@ public class Sort{
 				alert("Crap", "Programmer is stupid...",
 				      "Did you try unplugging it\nand plugging it back in?", "ERROR", true);
 			}
+		}
+	}
+
+	private static class Sorter implements Runnable{
+
+		int[] array;
+		int size;
+		int blocks;
+
+		public Sorter(int[] array, int size, int blocks){
+			this.array = array;
+			this.size = size;
+			this.blocks = blocks;
+		}
+
+		@Override
+		public synchronized void run(){
+			startSorting(array, size, blocks);
+		}
+	}
+
+	private static class Displayer implements Runnable{
+
+		long endTime;
+
+		public Displayer(long endTime){
+			this.endTime = endTime;
+		}
+
+		@Override
+		public synchronized void run(){
+			displayFinalResults(endTime);
 		}
 	}
 }
