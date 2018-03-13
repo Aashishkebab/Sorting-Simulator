@@ -369,13 +369,15 @@ public class GUI{
 		double height = Screen.getPrimary().getVisualBounds().getHeight();
 		double width = Screen.getPrimary().getVisualBounds().getWidth();
 
-		double windowHeight = Math.min(Math.max((content.length() / 3), height * 0.2),
-		                               height * 0.8);
+		double windowHeight = Math.min(
+				Math.max((height / 5) + Math.sqrt(content.length()) * Math.log1p(content.length()),
+				         height / 5), height * 0.8);
 
 		alert.setY((height - windowHeight) / 3);
 		alert.setX(width / 3);
 
-		alert.getDialogPane().setMinHeight(height * 0.2);
+		alert.getDialogPane().setMinHeight(height / 5);
+
 		if(height < 720){
 			alert.getDialogPane().setMinHeight(height / 2);
 		}
