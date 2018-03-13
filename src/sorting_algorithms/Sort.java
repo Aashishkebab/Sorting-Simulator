@@ -9,7 +9,6 @@ import Sorting_Simulator.Fork;
 import Sorting_Simulator.GUI;
 import Sorting_Simulator.SortingSimulator;
 import javafx.application.Platform;
-import javafx.scene.control.Alert;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -164,21 +163,22 @@ public class Sort{
 
 				return;
 			}
+
+			pleaseWait();
+
+//        size++;
+			if((size / blocks) < 1){  //So that the number of threads isn't zero
+				blocks = size;
+			}
+
+			int[] array = createArray(size);
+			allBlocks = new ArrayBlockingQueue(size / blocks + 1);
+
 		}catch(OutOfMemoryError e){
 			alert("Cannot Sort", "You have entered too large of an input size.",
 			      "Please enter a smaller list size.", "ERROR", true);
 			return;
 		}
-
-//        size++;
-		if((size / blocks) < 1){  //So that the number of threads isn't zero
-			blocks = size;
-		}
-
-		pleaseWait();
-
-		int[] array = createArray(size);
-		allBlocks = new ArrayBlockingQueue(size / blocks + 1);
 
 //		Thread sorter = new Thread(new Sorter(array, size, blocks));
 //		sorter.start();
