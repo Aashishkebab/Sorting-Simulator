@@ -106,7 +106,7 @@ public class GUI{
 //	static HBox blockSizeBox = new HBox(13);
 
 
-	static Button goButton = new Button("Go");
+	public static Button goButton = new Button("Go");
 
 	static HBox printConsoleBox = new HBox(4);
 	static Label printConsoleLabel = new Label("Display array");

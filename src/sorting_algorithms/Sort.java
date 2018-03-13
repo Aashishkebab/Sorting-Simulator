@@ -6,6 +6,7 @@
 package sorting_algorithms;
 
 import Sorting_Simulator.Fork;
+import Sorting_Simulator.GUI;
 import Sorting_Simulator.SortingSimulator;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
@@ -188,6 +189,8 @@ public class Sort{
 	}
 
 	public static void pleaseWait(){
+		GUI.goButton.setDisable(true);
+
 		pleaseWait.setResizable(false);
 		pleaseWait.setTitle("Please wait...");
 		pleaseWait.setHeaderText("Currently sorting...");
@@ -328,6 +331,8 @@ public class Sort{
 			      SortingSimulator.truncate(Arrays.toString((int[])(allBlocks.poll())), 2222),
 			      "INFORMATION", false);
 		}
+
+		GUI.goButton.setDisable(false);
 	}
 
 	private static void sortByBlocks(int[] array, int size, int blockSize){
