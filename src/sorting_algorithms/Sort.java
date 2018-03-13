@@ -50,7 +50,7 @@ public class Sort{
 		int numElements = 1 + max - min;
 
 		for(int i = 0; i < size; i++){
-			array[i] = (i * numElements) / size + min;
+			array[i] = min + (i * numElements) / size;
 		}
 
 		return array;
