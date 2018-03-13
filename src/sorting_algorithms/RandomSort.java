@@ -5,13 +5,15 @@
  */
 package sorting_algorithms;
 
+import Sorting_Simulator.SortingSimulator;
+
+
 /**
  * @author Aashish Bharadwaj
  */
 public class RandomSort extends Sort{
 
 	public static void randomSort(int[] array){
-		boolean sorted = true;
 		int loops = 0;
 
 		while(true){
@@ -25,12 +27,10 @@ public class RandomSort extends Sort{
 			}
 
 			if(loops >= (Integer.MAX_VALUE / 17)){
-				System.out.println("");
-				System.out.println("Took too long, here's what we got.");
+				SortingSimulator.alert("I'm out of patience", "Took to long.",
+				                       "What did you " + "expect?" + "", "INFORMATION", false);
 				return;
 			}
-			sorted = true;
-
 		}
 	}
 

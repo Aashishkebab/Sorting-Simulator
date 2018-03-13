@@ -212,9 +212,6 @@ public class Sort{
 		}
 
 		if(printArrays){
-//			System.out.println("Initial array:\n" + truncate(Arrays.toString(createdArray), 3333));
-//			System.out.println("");
-
 			alert("Start", "Here is the initial array",
 			      SortingSimulator.truncate(Arrays.toString(createdArray), 2222), "INFORMATION",
 			      true);

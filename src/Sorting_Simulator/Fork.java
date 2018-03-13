@@ -121,7 +121,6 @@ public class Fork implements Runnable{
 				AashishSort4.aashishSort4(this.array);
 			}
 
-			//System.out.println("Offer: " + Arrays.toString(array));
 			try{
 				allBlocks.offer(array);
 			}catch(StackOverflowError e){

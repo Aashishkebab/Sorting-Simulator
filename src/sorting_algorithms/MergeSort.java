@@ -52,9 +52,6 @@ public class MergeSort extends Sort{
 		}
 
 		int[] array = new int[part1.length + part2.length];
-
-//        System.out.println("Merging " + Arrays.toString(part1) + " with " + Arrays.toString(part2));    //System.out.println("");
-
 		int index1 = 0, index2 = 0;
 		int indexResult = 0;
 
@@ -78,15 +75,13 @@ public class MergeSort extends Sort{
 
 				indexResult++;
 			}
-		}catch(Exception nothingToMerge){
+		}catch(NullPointerException nothingToMerge){
 		}
 
 		return array;
 	}
 
 	public static void addArrays(int[] mainArray, int mainIndex, int[] addition, int additionIndex){
-		//System.out.println("addArrays");
-
 		while(true){
 			try{
 				mainArray[mainIndex] = addition[additionIndex];
@@ -94,7 +89,7 @@ public class MergeSort extends Sort{
 				mainIndex++;
 				additionIndex++;
 			}catch(Exception arrayEmpty){
-				return; //May need to return the array
+				return;
 			}
 		}
 	}

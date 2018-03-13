@@ -56,7 +56,6 @@ public class SortingSimulator extends Application{
 		alert.setX(width / 3);
 
 		alert.getDialogPane().setMinHeight(height * 0.2);
-		System.out.println(height);
 		if(height < 720){
 			alert.getDialogPane().setMinHeight(height / 2);
 		}

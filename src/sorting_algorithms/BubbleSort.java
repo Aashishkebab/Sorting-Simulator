@@ -12,11 +12,9 @@ public class BubbleSort extends Sort{
 	public static void bubbleSort(int[] array){
 		for(int i = array.length - 1; i >= 0; i--){
 			for(int j = array.length - 1; j >= 0; j--){
-//                try{
 				if(array[i] > array[j]){
 					swapTwoValues(i, j, array);
 				}
-//                }catch(Exception e){}
 			}
 		}
 		return;

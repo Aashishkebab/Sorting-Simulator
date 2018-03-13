@@ -97,8 +97,6 @@ public class GUI{
 	static CheckBox printConsole = new CheckBox();
 
 	public static void createUI(){
-		//System.out.println("Creating UI");
-
 		addElementsToInterface();
 		setElementAssociations();
 		setElementActions();
