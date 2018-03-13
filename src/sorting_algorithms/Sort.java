@@ -174,16 +174,16 @@ public class Sort{
 			int[] array = createArray(size);
 			allBlocks = new ArrayBlockingQueue(size / blocks + 1);
 
+			//		Thread sorter = new Thread(new Sorter(array, size, blocks));
+			//		sorter.start();
+
+			new Thread(new Sorter(array, size, blocks)).start();
+
 		}catch(OutOfMemoryError e){
 			alert("Cannot Sort", "You have entered too large of an input size.",
 			      "Please enter a smaller list size.", "ERROR", true);
 			return;
 		}
-
-//		Thread sorter = new Thread(new Sorter(array, size, blocks));
-//		sorter.start();
-
-		new Thread(new Sorter(array, size, blocks)).start();
 	}
 
 	public static void pleaseWait(){
