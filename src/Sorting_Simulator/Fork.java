@@ -141,6 +141,7 @@ public class Fork implements Runnable{
 				Platform.runLater(new NullPointer());
 			}
 		}catch(Exception e){
+			e.printStackTrace();
 			Platform.runLater(new ExceptException());
 		}
 	}

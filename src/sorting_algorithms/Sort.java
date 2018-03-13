@@ -60,8 +60,8 @@ public class Sort{
 		int[] array = new int[size];
 		int numElements = 1 + max - min;
 
-		for(int i = size; i > 0; i--){
-			array[(size - i)] = (i * numElements) / size + min;
+		for(int i = 0; i < size; i++){
+			array[i] = max - (i * numElements) / size;
 		}
 
 		return array;
