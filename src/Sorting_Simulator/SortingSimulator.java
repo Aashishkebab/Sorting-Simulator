@@ -49,12 +49,17 @@ public class SortingSimulator extends Application{
 		double height = Screen.getPrimary().getVisualBounds().getHeight();
 		double width = Screen.getPrimary().getVisualBounds().getWidth();
 
-		double windowHeight = Math.min(height * 0.2 + (content.length() / 3), height * 0.8);
+		double windowHeight = Math.min(Math.max((content.length() / 3), height * 0.2),
+		                               height * 0.8);
 
 		alert.setY((height - windowHeight) / 3);
 		alert.setX(width / 3);
 
 		alert.getDialogPane().setMinHeight(height * 0.2);
+		System.out.println(height);
+		if(height < 720){
+			alert.getDialogPane().setMinHeight(height / 2);
+		}
 		alert.getDialogPane().setMaxHeight(height * 0.8);
 		alert.getDialogPane().setPrefHeight(windowHeight);
 
