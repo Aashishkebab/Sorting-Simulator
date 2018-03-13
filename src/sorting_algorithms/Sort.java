@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
-import static Sorting_Simulator.SortingSimulator.alert;
+import static Sorting_Simulator.GUI.alert;
 import static Sorting_Simulator.SortingSimulator.truncate;
 import static sorting_algorithms.TrumpSort.immigrants;
 

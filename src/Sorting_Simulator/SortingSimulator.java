@@ -7,11 +7,10 @@ package Sorting_Simulator;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.awt.*;
+import static Sorting_Simulator.GUI.alert;
 
 
 /**
@@ -27,54 +26,6 @@ public class SortingSimulator extends Application{
 	 */
 	public static void main(String[] args){
 		Application.launch(args);
-	}
-
-	public static void alert(String title, String header, String content, String alertType,
-	                         boolean wait){
-		Alert alert;
-		switch(alertType){
-			case "INFORMATION":
-				alert = new Alert(Alert.AlertType.INFORMATION);
-				break;
-			case "WARNING":
-				alert = new Alert(Alert.AlertType.WARNING);
-				break;
-			case "ERROR":
-				alert = new Alert(Alert.AlertType.ERROR);
-				break;
-			default:
-				alert = new Alert(Alert.AlertType.NONE);
-		}
-
-		double height = Screen.getPrimary().getVisualBounds().getHeight();
-		double width = Screen.getPrimary().getVisualBounds().getWidth();
-
-		double windowHeight = Math.min(Math.max((content.length() / 3), height * 0.2),
-		                               height * 0.8);
-
-		alert.setY((height - windowHeight) / 3);
-		alert.setX(width / 3);
-
-		alert.getDialogPane().setMinHeight(height * 0.2);
-		if(height < 720){
-			alert.getDialogPane().setMinHeight(height / 2);
-		}
-		alert.getDialogPane().setMaxHeight(height * 0.8);
-		alert.getDialogPane().setPrefHeight(windowHeight);
-
-		alert.setTitle(title);
-		alert.setHeaderText(header);
-		alert.setContentText(content);
-
-		Toolkit.getDefaultToolkit().beep();
-
-		alert.setResizable(true);
-
-		if(wait){
-			alert.showAndWait();
-		}else{
-			alert.show();
-		}
 	}
 
 	/**
