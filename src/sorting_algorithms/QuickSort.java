@@ -5,12 +5,6 @@
  */
 package sorting_algorithms;
 
-import javafx.application.Platform;
-
-import static Sorting_Simulator.SortingSimulator.alert;
-import static sorting_algorithms.QuickSort.realQuickSort;
-
-
 /**
  * @author Aashish Bharadwaj
  */
@@ -44,21 +38,15 @@ public class QuickSort extends Sort{
 			}
 		}
 
-		try{
-			if(lower < newHigh){
-				if((newHigh - lower) > 1){
-					actualQuickSort(array, lower, newHigh);
-				}
+		if(lower < newHigh){
+			if((newHigh - lower) > 1){
+				actualQuickSort(array, lower, newHigh);
 			}
-			if(newLow < upper){
-				if((upper - newLow) > 1){
-					actualQuickSort(array, newLow, upper);
-				}
+		}
+		if(newLow < upper){
+			if((upper - newLow) > 1){
+				actualQuickSort(array, newLow, upper);
 			}
-		}catch(StackOverflowError tooLarge){
-			Platform.runLater(new TooLargeQuick());
-			array = null;
-			return null;
 		}
 
 		return array;
@@ -68,19 +56,11 @@ public class QuickSort extends Sort{
 		if(lower < upper){
 			int pivot;
 
-			try{
-				pivot = partitionamafy(array, lower, upper);
+			pivot = partitionamafy(array, lower, upper);
 
-				array = realQuickSort(array, lower, pivot - 1);
-				array = realQuickSort(array, pivot + 1, upper);
+			array = realQuickSort(array, lower, pivot - 1);
+			array = realQuickSort(array, pivot + 1, upper);
 
-			}catch(StackOverflowError e){
-				Platform.runLater(new TooLargeQuick());
-				array = null;
-				return null;
-			}catch(NullPointerException e){
-				return null;
-			}
 		}
 
 		return array;
@@ -104,34 +84,6 @@ public class QuickSort extends Sort{
 		swapTwoValues(newLow + 1, upper, array);
 		return newLow + 1;
 
-	}
-
-}
-
-class TooLargeQuick implements Runnable{
-
-	@Override
-	public void run(){
-		alert("Cannot Sort", "You have overloaded the quickSort algorithm.",
-		      "Please enter a smaller list size or block size.", "ERROR", true);
-	}
-
-}
-
-class QuickThread implements Runnable{
-
-	int[] array;
-	int lower, upper;
-
-	public QuickThread(int[] array, int lower, int upper){
-		this.array = array;
-		this.lower = lower;
-		this.upper = upper;
-	}
-
-	@Override
-	public void run(){
-		this.array = realQuickSort(array, lower, upper);
 	}
 
 }
