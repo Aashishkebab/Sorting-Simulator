@@ -10,10 +10,13 @@ package sorting_algorithms;
  */
 public class BubbleSort extends Sort{
 	public static void bubbleSort(int[] array){
-		for(int i = array.length - 1; i >= 0; i--){
-			for(int j = array.length - 1; j >= 0; j--){
-				if(array[i] > array[j]){
-					swapTwoValues(i, j, array);
+		boolean haveSwapped = true;
+		for(int i = 0; i < array.length && haveSwapped; i++){
+			haveSwapped = false;
+			for(int j = 1; j < array.length - i; j++){
+				if(array[j - 1] > array[j]){
+					haveSwapped = true;
+					swapTwoValues(j - 1, j, array);
 				}
 			}
 		}
