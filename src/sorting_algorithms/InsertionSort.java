@@ -9,7 +9,7 @@ package sorting_algorithms;
  * @author Aashish Bharadwaj
  */
 public class InsertionSort extends Sort{
-	public static void insertionSort(int[] array){
+	public static int[] insertionSort(int[] array){
 		int n = array.length;
 		for(int i = 1; i < n; ++i){
 			int key = array[i];
@@ -24,6 +24,6 @@ public class InsertionSort extends Sort{
 			}
 			array[j + 1] = key;
 		}
-		return;
+		return array;
 	}
 }

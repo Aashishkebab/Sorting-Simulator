@@ -69,6 +69,7 @@ public class GUI{
 	static RadioButton aashishSort5 = new RadioButton("Aashish Sort 5");
 	static RadioButton pancakeSort = new RadioButton("Pancake Sort");
 	static RadioButton intelligentDesignSort = new RadioButton("Intelligent Design Sort");
+	static RadioButton flashSort = new RadioButton("Flash Sort (doesn't work)");
 
 	static VBox typeBox = new VBox(9);
 	static Label typeTitle = new Label("Input Type");
@@ -146,6 +147,7 @@ public class GUI{
 		recursives.getChildren().add(heapSort);
 		recursives.getChildren().add(quickSort);
 		recursives.getChildren().add(mergeSort);
+		recursives.getChildren().add(flashSort);
 
 
 		algorithmBox.getChildren().add(mathematicals);
@@ -240,6 +242,7 @@ public class GUI{
 		aashishSort5.setToggleGroup(algorithms);
 		pancakeSort.setToggleGroup(algorithms);
 		intelligentDesignSort.setToggleGroup(algorithms);
+		flashSort.setToggleGroup(algorithms);
 
 		alreadySorted.setToggleGroup(types);
 		reverseOrder.setToggleGroup(types);
@@ -294,6 +297,7 @@ public class GUI{
 		aashishSort5.setOnAction(sort->Sort.sortingMethod = "aashishSort5");
 		pancakeSort.setOnAction(sort->Sort.sortingMethod = "pancakeSort");
 		intelligentDesignSort.setOnAction(sort->Sort.sortingMethod = "intelligentDesignSort");
+		flashSort.setOnAction(sort->Sort.sortingMethod = "flashSort");
 
 		alreadySorted.setOnAction(numbers->Sort.inputMethod = "alreadySorted");
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");
