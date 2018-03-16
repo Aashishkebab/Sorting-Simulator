@@ -67,6 +67,7 @@ public class GUI{
 	static RadioButton aashishSort1 = new RadioButton("Aashish Sort 1");
 	static RadioButton aashishSort2 = new RadioButton("Aashish Sort 2");
 	static RadioButton aashishSort5 = new RadioButton("Aashish Sort 5");
+	static RadioButton pancakeSort = new RadioButton("Pancake Sort");
 	static VBox typeBox = new VBox(9);
 	static Label typeTitle = new Label("Input Type");
 	static ToggleGroup types = new ToggleGroup();
@@ -128,6 +129,8 @@ public class GUI{
 		iteratives.getChildren().add(insertionSort);
 		iteratives.getChildren().add(shellSort);
 		iteratives.getChildren().add(aashishSort5);
+		iteratives.getChildren().add(pancakeSort);
+		iteratives.getChildren().add(aashishSort2);
 
 
 		algorithmBox.getChildren().add(recursives);
@@ -154,8 +157,6 @@ public class GUI{
 
 		algorithmBox.getChildren().add(garbages);
 		garbages.getChildren().add(garbageLabel);
-
-		iteratives.getChildren().add(aashishSort2);
 		garbages.getChildren().add(randomSort);
 		garbages.getChildren().add(trumpSort);
 		garbages.getChildren().add(bernieSort);
@@ -232,6 +233,7 @@ public class GUI{
 		aashishSort1.setToggleGroup(algorithms);
 		aashishSort2.setToggleGroup(algorithms);
 		aashishSort5.setToggleGroup(algorithms);
+		pancakeSort.setToggleGroup(algorithms);
 
 		alreadySorted.setToggleGroup(types);
 		reverseOrder.setToggleGroup(types);
@@ -284,6 +286,7 @@ public class GUI{
 		aashishSort1.setOnAction(sort->Sort.sortingMethod = "aashishSort1");
 		aashishSort2.setOnAction(sort->Sort.sortingMethod = "aashishSort2");
 		aashishSort5.setOnAction(sort->Sort.sortingMethod = "aashishSort5");
+		pancakeSort.setOnAction(sort->Sort.sortingMethod = "pancakeSort");
 
 		alreadySorted.setOnAction(numbers->Sort.inputMethod = "alreadySorted");
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");

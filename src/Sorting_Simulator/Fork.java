@@ -117,6 +117,9 @@ public class Fork implements Runnable{
 			if(fork.equals("aashishSort5")){
 				this.array = AashishSort5.aashishSort5(this.array);
 			}
+			if(fork.equals("pancakeSort")){
+				PancakeSort.pancakeSort(this.array);
+			}
 
 			try{
 				allBlocks.offer(array);
