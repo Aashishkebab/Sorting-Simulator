@@ -1,6 +1,6 @@
 # Sorting-Simulator
 Program that simulates sorting arrays with multiple threads and different algorithms.
-Please see the wiki to learn more: [Wiki](https://github.com/Aashishkebab/Sorting-Simulator/wiki).
+Please see the [Wiki](https://github.com/Aashishkebab/Sorting-Simulator/wiki) to learn more: 
 
 ## To use the program
 1. User sets the size of the array of items to be sorted.
