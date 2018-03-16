@@ -2,8 +2,14 @@
 Program that simulates sorting arrays with multiple threads and different algorithms.
 Please see the [Wiki](https://github.com/Aashishkebab/Sorting-Simulator/wiki) to learn more.
 
-### [Java 8 version Download](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar)
-### [Download](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator.jar)
+## Download
+Most systems will have Java 8. For those users, click the **Java 8 version
+
+### [Download](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar)
+### [Download Java 9 version](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar)
+- This won't work on many systems
+
+### [Java 8 version Download]()
 
 ## To use the program
 1. User sets the size of the array of items to be sorted.
