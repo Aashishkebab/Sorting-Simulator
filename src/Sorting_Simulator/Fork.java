@@ -124,7 +124,10 @@ public class Fork implements Runnable{
 				IntelligentDesignSort.intelligentDesignSort(this.array);
 			}
 			if(fork.equals("flashSort")){
-				FlashSort.flashsort(this.array, array.length);
+				FlashSort.flashSort(this.array);
+			}
+			if(fork.equals("dropSort")){
+				this.array = DropSort.dropSort(this.array);
 			}
 
 			try{
