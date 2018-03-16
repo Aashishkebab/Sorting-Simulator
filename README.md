@@ -6,8 +6,7 @@ Please see the [Wiki](https://github.com/Aashishkebab/Sorting-Simulator/wiki) to
 Most systems will have Java 8. For those users, click the **Java 8 version
 
 ### [Download](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar)
-### [Download Java 9 version](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar)
-- This won't work on many systems
+### [Download Java 9 version](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar) - This won't work on many systems
 
 ### [Java 8 version Download]()
 
