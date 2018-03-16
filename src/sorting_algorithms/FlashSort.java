@@ -4,9 +4,13 @@ import static sorting_algorithms.InsertionSort.insertionSort;
 
 
 public class FlashSort extends Sort{
-	public static int[] flashsort(int[] array, int length){
+	public static void flashSort(int[] array){
+		flashsort(array, array.length);
+	}
+
+	private static void flashsort(int[] array, int length){
 		if(length == 0){
-			return array;
+			return;
 		}
 
 		//20% of the number of elements or 0.2n classes will
@@ -58,7 +62,7 @@ public class FlashSort extends Sort{
 
 		if(max == min){
 			//all the elements are the same
-			return array;
+			return;
 		}
 
 		//dynamically allocate the storage for L
@@ -216,18 +220,18 @@ public class FlashSort extends Sort{
 				//smaller for the next level of recursion. However,
 				//progress is assured since at each level the elements
 				//with the maximum value will get sorted.
-				int[] aNewArray = new int[K];
-				System.arraycopy(array, K, aNewArray, K, array.length - K);
-				array = flashsort(aNewArray, classSize);
+//				int[] aNewArray = new int[K];
+//				System.arraycopy(array, K, aNewArray, K, array.length - K);
+				flashsort(array, classSize);
 			}else //perform insertion sort on the class
 			{
 				if(classSize > 1){
-					int[] aNewArray = new int[array.length];
-					System.arraycopy(array, K, aNewArray, K, array.length - K);
-					array = insertionSort(aNewArray);
+//					int[] aNewArray = new int[array.length];
+//					System.arraycopy(array, K, aNewArray, K, array.length - K);
+					insertionSort(array);
 				}
 			}
 		}
-		return array;
+		return;
 	}
 }
