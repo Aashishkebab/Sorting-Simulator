@@ -14,45 +14,7 @@ public class QuickSort extends Sort{
 		realQuickSort(array, 0, array.length - 1);
 	}
 
-	private static int[] actualQuickSort(int[] array, int lower, int upper){  //Deprecated
-		if(array == null || array.length <= 0){
-			return null;
-		}
-
-		int newLow = lower, newHigh = upper;
-		int pivot = array[(int)(Math.random() * array.length)];
-
-		while(newLow <= newHigh){
-			while(array[newLow] < pivot){
-				newLow++;
-			}
-			while(array[newHigh] > pivot){
-				newHigh--;
-			}
-
-			if(newLow <= newHigh){
-				swapTwoValues(newLow, newHigh, array);
-
-				newLow++;
-				newHigh--;
-			}
-		}
-
-		if(lower < newHigh){
-			if((newHigh - lower) > 1){
-				actualQuickSort(array, lower, newHigh);
-			}
-		}
-		if(newLow < upper){
-			if((upper - newLow) > 1){
-				actualQuickSort(array, newLow, upper);
-			}
-		}
-
-		return array;
-	}
-
-	static int[] realQuickSort(int[] array, int lower, int upper){
+	private static int[] realQuickSort(int[] array, int lower, int upper){
 		if(lower < upper){
 			int pivot;
 
