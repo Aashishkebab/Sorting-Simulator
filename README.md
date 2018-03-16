@@ -1,6 +1,6 @@
 # Sorting-Simulator
 Program that simulates sorting arrays with multiple threads and different algorithms.
-The project was originally written in NetBeans. It was originally made for a project in my Computer Science class in college.
+Please see the wiki to learn more: [Wiki](https://github.com/Aashishkebab/Sorting-Simulator/wiki).
 
 ## To use the program
 1. User sets the size of the array of items to be sorted.
