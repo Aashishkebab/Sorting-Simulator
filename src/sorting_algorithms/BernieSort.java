@@ -11,7 +11,7 @@ package sorting_algorithms;
 public class BernieSort extends Sort{
 	public static int averageWealth;
 
-	public static int[] spreadTheWealth(int[] array){
+	public static void spreadTheWealth(int[] array){
 		long sum = 0;
 
 		for(int i = 0; i < array.length; i++){
@@ -23,6 +23,6 @@ public class BernieSort extends Sort{
 			array[i] = averageWealth;
 		}
 
-		return array;
+		return;
 	}
 }

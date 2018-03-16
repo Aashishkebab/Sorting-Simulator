@@ -19,7 +19,7 @@ import static sorting_algorithms.Sort.allBlocks;
  */
 public class Fork implements Runnable{
 
-	String fork;
+	final String fork;
 	int[] array;
 
 	public Fork(String fork, int[] array){

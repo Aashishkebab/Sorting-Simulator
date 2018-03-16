@@ -257,14 +257,6 @@ public class Sort{
 		mergeBlocks(blockSize, array);
 	}
 
-	private static void setArray(int[] array){
-		array = (int[])allBlocks.peek();
-
-		for(int i = 0; i < array.length; i++){
-			array[i] = ((int[])(allBlocks.peek()))[i];
-		}
-	}
-
 	public static int[] trimArray(int[] array){
 		int numOfValues = 0;
 
