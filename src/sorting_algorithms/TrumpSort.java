@@ -15,6 +15,7 @@ public class TrumpSort extends Sort{
 	static public int immigrants = 0;
 
 	public static int[] makeSortingGreatAgain(int[] array){
+		immigrants = 0;
 		int wall = 0;
 		boolean[] registryOfIllegals = new boolean[array.length];
 
@@ -60,25 +61,6 @@ public class TrumpSort extends Sort{
 			}
 		}
 		return illegals;
-	}
-
-	public static int[] deport(int illegal, int[] array){
-		int[] newArray = new int[array.length - 1];
-		immigrants++;
-
-		for(int i = 0, j = 0; i < array.length; i++){
-			if(i == illegal){
-				i++;
-			}
-
-			try{
-				newArray[j] = array[i];
-			}catch(Exception e){
-			}
-			j++;
-		}
-
-		return newArray;
 	}
 
 }
