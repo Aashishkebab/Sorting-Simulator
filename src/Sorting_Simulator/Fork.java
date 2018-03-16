@@ -120,6 +120,9 @@ public class Fork implements Runnable{
 			if(fork.equals("pancakeSort")){
 				PancakeSort.pancakeSort(this.array);
 			}
+			if(fork.equals("intelligentDesignSort")){
+				IntelligentDesignSort.intelligentDesignSort(this.array);
+			}
 
 			try{
 				allBlocks.offer(array);
