@@ -33,8 +33,6 @@ public class TrumpSort extends Sort{
 		}
 		array = deportAll(array, registryOfIllegals);
 
-//        System.out.println("Here it is:\n" + Arrays.toString(array));
-
 		return array;
 	}
 
