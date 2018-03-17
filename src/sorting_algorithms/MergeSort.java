@@ -63,12 +63,12 @@ public class MergeSort extends Sort{
 						array[indexResult] = part2[index2];
 						index2++;
 					}
-					//System.out.println("As we go: " + Arrays.toString(array));
 				}catch(Exception arrayEmpty){
 					addArrays(array, indexResult, part1, index1);
 					addArrays(array, indexResult, part2, index2);
 
-					return Sort.trimArray(array);
+//					return trimArray(array, 0);
+					return array;
 				}
 
 				indexResult++;
