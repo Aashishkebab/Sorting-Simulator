@@ -11,9 +11,9 @@ import Sorting_Simulator.GUI;
 /**
  * @author Aashish Bharadwaj
  */
-public class RandomSort extends Sort{
+public class BogoSort extends Sort{
 
-	public static void randomSort(int[] array){
+	public static void bogoSort(int[] array){
 		int loops = 0;
 
 		while(true){

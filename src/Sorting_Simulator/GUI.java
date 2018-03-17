@@ -54,7 +54,7 @@ public class GUI{
 	static final RadioButton mergeSort = new RadioButton("Merge Sort");
 	//	static RadioButton timSort = new RadioButton("Tim Sort");
 	static final RadioButton javaSort = new RadioButton("Java default sort");
-	static final RadioButton randomSort = new RadioButton("Randomness Sort");
+	static final RadioButton bogoSort = new RadioButton("Bogo Sort");
 	static final RadioButton trumpSort = new RadioButton("Trump Sort");
 	static final RadioButton bernieSort = new RadioButton("Bernie Sort");
 	static final RadioButton hillarySort = new RadioButton("Hillary Sort");
@@ -161,7 +161,7 @@ public class GUI{
 
 		algorithmBox.getChildren().add(garbages);
 		garbages.getChildren().add(garbageLabel);
-		garbages.getChildren().add(randomSort);
+		garbages.getChildren().add(bogoSort);
 		garbages.getChildren().add(dropSort);
 		garbages.getChildren().add(trumpSort);
 		garbages.getChildren().add(bernieSort);
@@ -227,7 +227,7 @@ public class GUI{
 		mergeSort.setToggleGroup(algorithms);
 //		timSort.setToggleGroup(algorithms);
 		javaSort.setToggleGroup(algorithms);
-		randomSort.setToggleGroup(algorithms);
+		bogoSort.setToggleGroup(algorithms);
 		trumpSort.setToggleGroup(algorithms);
 		bernieSort.setToggleGroup(algorithms);
 		hillarySort.setToggleGroup(algorithms);
@@ -273,7 +273,7 @@ public class GUI{
 		mergeSort.setOnAction(sort->Sort.sortingMethod = "mergeSort");
 //		timSort.setOnAction(sort->Sort.sortingMethod = "timSort");
 		javaSort.setOnAction(sort->Sort.sortingMethod = "javaSort");
-		randomSort.setOnAction(sort->Sort.sortingMethod = "randomSort");
+		bogoSort.setOnAction(sort->Sort.sortingMethod = "bogoSort");
 		trumpSort.setOnAction(sort->{
 			if(!banned){
 				alert("PLEASE READ!",
