@@ -67,7 +67,7 @@ public class MergeSort extends Sort{
 					addArrays(array, indexResult, part1, index1);
 					addArrays(array, indexResult, part2, index2);
 
-//					return trimArray(array, 0);
+//					return filterArray(array, 0);
 					return array;
 				}
 

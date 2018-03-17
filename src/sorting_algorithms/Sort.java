@@ -257,7 +257,7 @@ public class Sort{
 		mergeBlocks(blockSize, array);
 	}
 
-	public static int[] trimArray(int[] array, int nullValue){
+	public static int[] filterArray(int[] array, int nullValue){
 		int numOfValues = 0;
 
 		for(int i = 0; i < array.length; i++){
@@ -267,7 +267,14 @@ public class Sort{
 		}
 
 		int[] newArray = new int[numOfValues];
-		System.arraycopy(array, 0, newArray, 0, numOfValues);
+		int counter = 0;
+
+		for(int i = 0; i < numOfValues; i++){
+			if(array[i] != nullValue){
+				newArray[counter] = array[i];
+				counter++;
+			}
+		}
 
 		return newArray;
 	}
