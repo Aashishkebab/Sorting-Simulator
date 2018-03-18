@@ -2,19 +2,15 @@ package sorting_algorithms;
 
 public class BucketSort extends Sort{
 	public static void bucketSort(int[] array){
-		int[] bucket = new int[getMaxValue(array) + 1];
-
-//		for(int i = 0; i < bucket.length; i++){ //May need for C++ or other languages
-//			bucket[i] = 0;
-//		}
+		int[] count = new int[getMaxValue(array) + 1]; //Assume initialized to zeroes
 
 		for(int i = 0; i < array.length; i++){
-			bucket[array[i]]++;
+			count[array[i]]++;
 		}
 
 		int outPos = 0;
-		for(int i = 0; i < bucket.length; i++){
-			for(int j = 0; j < bucket[i]; j++){
+		for(int i = 0; outPos < array.length; i++){
+			for(int j = 0; j < count[i]; j++){
 				array[outPos++] = i;
 			}
 		}
