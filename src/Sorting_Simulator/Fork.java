@@ -103,7 +103,7 @@ public class Fork implements Runnable{
 				BucketSort.bucketSort(this.array);
 			}
 			if(fork.equals("countingSort")){
-				CountingSort.countingSort(this.array);
+				this.array = CountingSort.countingSort(this.array);
 			}
 			if(fork.equals("pigeonSort")){
 				PigeonholeSort.pigeonholeSort(this.array);
