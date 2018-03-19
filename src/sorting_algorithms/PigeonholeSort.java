@@ -20,17 +20,16 @@ public class PigeonholeSort extends Sort{
 		}
 
 		range = max - min + 1;
-		int[] phole = new int[range];
-		Arrays.fill(phole, 0);
+		int[] pigeonHoles = new int[range];
 
 		for(i = 0; i < n; i++){
-			phole[array[i] - min]++;
+			pigeonHoles[array[i] - min]++;
 		}
 
 		index = 0;
 
 		for(j = 0; j < range; j++){
-			while(phole[j]-- > 0){
+			while(pigeonHoles[j]-- > 0){
 				array[index++] = j + min;
 			}
 		}
