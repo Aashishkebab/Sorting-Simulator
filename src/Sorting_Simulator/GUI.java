@@ -60,8 +60,8 @@ public class GUI{
 	static final RadioButton hillarySort = new RadioButton("Hillary Sort");
 	static final RadioButton gravitySort = new RadioButton("Gravity/Bead Sort");
 	static final RadioButton radixSort = new RadioButton("Radix Sort");
-	static final RadioButton bucketSort = new RadioButton("Counting Sort");
-	static final RadioButton countingSort = new RadioButton("Crappy Counting Sort");
+	static final RadioButton countingSort = new RadioButton("Counting Sort");
+	//	static final RadioButton countingSortBad = new RadioButton("Crappy Counting Sort");
 	static final RadioButton pigeonSort = new RadioButton("Pigeonhole Sort");
 	static final RadioButton aashishSort1 = new RadioButton("Aashish Sort 1");
 	static final RadioButton aashishSort2 = new RadioButton("Aashish Sort 2");
@@ -153,8 +153,8 @@ public class GUI{
 
 		mathematicals.getChildren().add(gravitySort);
 		mathematicals.getChildren().add(radixSort);
-		mathematicals.getChildren().add(bucketSort);
 		mathematicals.getChildren().add(countingSort);
+//		mathematicals.getChildren().add(countingSortBad);
 		mathematicals.getChildren().add(pigeonSort);
 		mathematicals.getChildren().add(aashishSort1);
 
@@ -233,8 +233,8 @@ public class GUI{
 		hillarySort.setToggleGroup(algorithms);
 		gravitySort.setToggleGroup(algorithms);
 		radixSort.setToggleGroup(algorithms);
-		bucketSort.setToggleGroup(algorithms);
 		countingSort.setToggleGroup(algorithms);
+//		countingSortBad.setToggleGroup(algorithms);
 		pigeonSort.setToggleGroup(algorithms);
 		aashishSort1.setToggleGroup(algorithms);
 		aashishSort2.setToggleGroup(algorithms);
@@ -289,8 +289,8 @@ public class GUI{
 		hillarySort.setOnAction(sort->Sort.sortingMethod = "hillarySort");
 		gravitySort.setOnAction(sort->Sort.sortingMethod = "gravitySort");
 		radixSort.setOnAction(sort->Sort.sortingMethod = "radixSort");
-		bucketSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
-		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSortBad");
+		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
+//		countingSortBad.setOnAction(sort->Sort.sortingMethod = "countingSortBad");
 		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
 		aashishSort1.setOnAction(sort->Sort.sortingMethod = "aashishSort1");
 		aashishSort2.setOnAction(sort->Sort.sortingMethod = "aashishSort2");
@@ -326,12 +326,12 @@ public class GUI{
 	private static void disableNonNegatives(){
 		gravitySort.setDisable(true);
 		radixSort.setDisable(true);
-		bucketSort.setDisable(true);
 		countingSort.setDisable(true);
+//		countingSortBad.setDisable(true);
 		aashishSort1.setDisable(true);
 
-		if(gravitySort.isSelected() || radixSort.isSelected() || bucketSort.isSelected() ||
-				countingSort.isSelected() || aashishSort1.isSelected()){
+		if(gravitySort.isSelected() || radixSort.isSelected() || countingSort.isSelected() ||
+				/*countingSortBad.isSelected() ||*/ aashishSort1.isSelected()){
 			javaSort.setSelected(true);
 			Sort.sortingMethod = "javaSort";
 			alert("Algorithm Changed", "Your selected algorithm does not work with negatives.",
@@ -342,8 +342,8 @@ public class GUI{
 	private static void enableNonNegatives(){
 		gravitySort.setDisable(false);
 		radixSort.setDisable(false);
-		bucketSort.setDisable(false);
 		countingSort.setDisable(false);
+//		countingSortBad.setDisable(false);
 		aashishSort1.setDisable(false);
 	}
 
