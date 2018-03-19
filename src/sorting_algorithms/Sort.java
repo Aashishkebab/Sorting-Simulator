@@ -47,10 +47,10 @@ public class Sort{
 
 	public static int[] incrementArray(int size, int min, int max){
 		int[] array = new int[size];
-		int numElements = 1 + max - min;
+		long numElements = 1 + max - min;
 
 		for(int i = 0; i < size; i++){
-			array[i] = min + (i * numElements) / size;
+			array[i] = min + (int)((i * numElements) / size);
 		}
 
 		return array;
@@ -58,10 +58,10 @@ public class Sort{
 
 	public static int[] decrementArray(int size, int min, int max){
 		int[] array = new int[size];
-		int numElements = 1 + max - min;
+		long numElements = 1 + max - min;
 
 		for(int i = 0; i < size; i++){
-			array[i] = max - (i * numElements) / size;
+			array[i] = max - (int)((i * numElements) / size);
 		}
 
 		return array;
