@@ -99,11 +99,11 @@ public class Fork implements Runnable{
 			if(fork.equals("radixSort")){
 				RadixSort.radixSort(this.array);
 			}
-			if(fork.equals("bucketSort")){
-				BucketSort.bucketSort(this.array);
-			}
 			if(fork.equals("countingSort")){
-				this.array = CountingSort.countingSort(this.array);
+				CountingSort.countingSort(this.array);
+			}
+			if(fork.equals("countingSortBad")){
+				this.array = CountingSortBad.countingSortBad(this.array);
 			}
 			if(fork.equals("pigeonSort")){
 				PigeonholeSort.pigeonholeSort(this.array);

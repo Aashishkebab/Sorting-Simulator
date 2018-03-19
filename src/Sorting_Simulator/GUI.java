@@ -60,8 +60,8 @@ public class GUI{
 	static final RadioButton hillarySort = new RadioButton("Hillary Sort");
 	static final RadioButton gravitySort = new RadioButton("Gravity/Bead Sort");
 	static final RadioButton radixSort = new RadioButton("Radix Sort");
-	static final RadioButton bucketSort = new RadioButton("Bucket Sort");
-	static final RadioButton countingSort = new RadioButton("Counting Sort");
+	static final RadioButton bucketSort = new RadioButton("Counting Sort");
+	static final RadioButton countingSort = new RadioButton("Crappy Counting Sort");
 	static final RadioButton pigeonSort = new RadioButton("Pigeonhole Sort");
 	static final RadioButton aashishSort1 = new RadioButton("Aashish Sort 1");
 	static final RadioButton aashishSort2 = new RadioButton("Aashish Sort 2");
@@ -289,8 +289,8 @@ public class GUI{
 		hillarySort.setOnAction(sort->Sort.sortingMethod = "hillarySort");
 		gravitySort.setOnAction(sort->Sort.sortingMethod = "gravitySort");
 		radixSort.setOnAction(sort->Sort.sortingMethod = "radixSort");
-		bucketSort.setOnAction(sort->Sort.sortingMethod = "bucketSort");
-		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
+		bucketSort.setOnAction(sort->Sort.sortingMethod = "countingSort");
+		countingSort.setOnAction(sort->Sort.sortingMethod = "countingSortBad");
 		pigeonSort.setOnAction(sort->Sort.sortingMethod = "pigeonSort");
 		aashishSort1.setOnAction(sort->Sort.sortingMethod = "aashishSort1");
 		aashishSort2.setOnAction(sort->Sort.sortingMethod = "aashishSort2");
