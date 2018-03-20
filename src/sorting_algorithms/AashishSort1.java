@@ -77,11 +77,14 @@ public class AashishSort1 extends Sort{
 			return newArray;
 		}
 
+		numberOfDigits--;
 		for(int p = 0; p < 10; p++){
 			// Redo the algorithm on only one bucket (aka one Most Significant Digit).
 			// Also reduce the number of digits being used by one.
-			digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]),
-			                             (short)(numberOfDigits - 1));
+			if(digitArrayIndexes[p] > 1){   // Only if there is more than one item in the bucket
+				digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]),
+				                             (short)numberOfDigits);
+			}
 		}
 
 		int arrayIndex = 0;
