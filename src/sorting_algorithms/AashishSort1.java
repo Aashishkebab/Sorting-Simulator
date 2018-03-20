@@ -97,24 +97,6 @@ public class AashishSort1 extends Sort{
 	}
 
 	/**
-	 * Create array with only items from original array, and not proceeding zeroes.
-	 *
-	 * @param array Array to pull data from
-	 * @param end   Where data should stop being pulled
-	 * @return Ending array
-	 */
-	private static int[] trimUnused(int[] array, int end){
-		int[] newArray = new int[end];
-
-		System.arraycopy(array, 0, newArray, 0, end);
-
-//		for(int i = 0; i < end; i++){   //Manual copy for other languages
-//			newArray[i] = array[i];
-//		}
-		return newArray;
-	}
-
-	/**
 	 * Sums the integers in an array
 	 *
 	 * @param indexArray Array to pull numbers from
