@@ -30,7 +30,7 @@ public class AashishSort1 extends Sort{
 	 * @return The sorted array.
 	 */
 	public static int[] aashishSort1(int[] array){
-		return splitByDigit(array, (short)Math.log10(getMaxValue(array)));
+		return splitByDigit(array, (short)Math.log10(getMaxValue(array)), array.length);
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class AashishSort1 extends Sort{
 	 *                       significant digit and going backwards.
 	 * @return The array split into digits.
 	 */
-	private static int[] splitByDigit(int[] array, short numberOfDigits){
+	private static int[] splitByDigit(int[] array, short numberOfDigits, int arrLength){
 		//  Use above method signature if using modulus variable, which is redundant.
 
 		int[][] digitArray = new int[10][array.length]; // Create ten 'buckets'
@@ -49,7 +49,7 @@ public class AashishSort1 extends Sort{
 		// We're assuming that digitArrayIndexes is automatically initialized to all zeroes in Java.
 		// Ports to other languages may require manually filling the array with zeroes.
 
-		for(int j = 0; j < array.length; j++){
+		for(int j = 0; j < arrLength; j++){
 			// Take a certain number of digits of an element of array and divides by most
 			// significant decimal to obtain most usable. significant digit.
 			// Essentially takes the modulus of the array item and then divides it by the number
@@ -82,8 +82,8 @@ public class AashishSort1 extends Sort{
 			// Redo the algorithm on only one bucket (aka one Most Significant Digit).
 			// Also reduce the number of digits being used by one.
 			if(digitArrayIndexes[p] > 1){   // Only if there is more than one item in the bucket
-				digitArray[p] = splitByDigit(trimUnused(digitArray[p], digitArrayIndexes[p]),
-				                             (short)numberOfDigits);
+				digitArray[p] = splitByDigit(digitArray[p], (short)numberOfDigits,
+				                             digitArrayIndexes[p]);
 			}
 		}
 
