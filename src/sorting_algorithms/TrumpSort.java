@@ -25,7 +25,8 @@ public class TrumpSort extends Sort{
 					//array = deport(i, array);
 					//i--;
 					registryOfIllegals[i] = true;
-				}else if(array[wall] < array[i]){
+				}
+				else if(array[wall] < array[i]){
 					wall = i;
 				}
 			}catch(Exception e){
@@ -44,7 +45,8 @@ public class TrumpSort extends Sort{
 			if(!registry[i]){
 				newArray[j] = array[i];
 				j++;
-			}else{
+			}
+			else{
 				immigrants++;
 			}
 		}

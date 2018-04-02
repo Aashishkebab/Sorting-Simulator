@@ -36,7 +36,8 @@ public class FlashSort extends Sort{
 				small = array[i];
 				big = array[i + 1];
 				bigIndex = i + 1;
-			}else{
+			}
+			else{
 				big = array[i];
 				bigIndex = i;
 				small = array[i + 1];
@@ -55,7 +56,8 @@ public class FlashSort extends Sort{
 		//do the last element
 		if(array[length - 1] < min){
 			min = array[length - 1];
-		}else if(array[length - 1] > max){
+		}
+		else if(array[length - 1] > max){
 			max = array[length - 1];
 			maxIndex = length - 1;
 		}
@@ -223,7 +225,8 @@ public class FlashSort extends Sort{
 //				int[] aNewArray = new int[K];
 //				System.arraycopy(array, K, aNewArray, K, array.length - K);
 				flashsort(array, classSize);
-			}else //perform insertion sort on the class
+			}
+			else //perform insertion sort on the class
 			{
 				if(classSize > 1){
 //					int[] aNewArray = new int[array.length];

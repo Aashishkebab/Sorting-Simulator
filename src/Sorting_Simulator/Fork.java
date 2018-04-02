@@ -145,7 +145,8 @@ public class Fork implements Runnable{
 		}catch(NullPointerException e){
 			if(Sort.sortingMethod.equals("hillarySort")){
 				return;
-			}else{
+			}
+			else{
 				Platform.runLater(new NullPointer());
 			}
 		}catch(Exception e){

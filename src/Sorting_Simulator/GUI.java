@@ -352,7 +352,8 @@ public class GUI{
 			if(Integer.parseInt(minInputSize.getText()) < 0 || Integer.parseInt(
 					maxInputSize.getText()) < 0){
 				disableNonNegatives();
-			}else{
+			}
+			else{
 				enableNonNegatives();
 			}
 		}catch(NumberFormatException e){
@@ -405,7 +406,8 @@ public class GUI{
 
 		if(wait){
 			alert.showAndWait();
-		}else{
+		}
+		else{
 			alert.show();
 		}
 	}
@@ -425,7 +427,8 @@ class SetGoState implements Runnable{
 		GUI.goButton.setDisable(isDisabled);
 		if(isDisabled){
 			GUI.goButton.setText("Sorting...");
-		}else{
+		}
+		else{
 			GUI.goButton.setText("Go");
 		}
 	}

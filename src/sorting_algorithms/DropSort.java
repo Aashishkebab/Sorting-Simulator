@@ -8,7 +8,8 @@ public class DropSort extends Sort{
 				if(array[greatest] > array[i]){
 					array = drop(i, array);
 					i--;
-				}else if(array[greatest] < array[i]){
+				}
+				else if(array[greatest] < array[i]){
 					greatest = i;
 				}
 			}catch(Exception e){

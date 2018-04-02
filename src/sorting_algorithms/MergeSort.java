@@ -45,7 +45,8 @@ public class MergeSort extends Sort{
 
 		if(part1.length == 0){
 			return part2;
-		}else if(part2.length == 0){
+		}
+		else if(part2.length == 0){
 			return part1;
 		}
 
@@ -59,7 +60,8 @@ public class MergeSort extends Sort{
 					if(part1[index1] <= part2[index2]){
 						array[indexResult] = part1[index1];
 						index1++;
-					}else{
+					}
+					else{
 						array[indexResult] = part2[index2];
 						index2++;
 					}

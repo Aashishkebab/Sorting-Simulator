@@ -242,7 +242,8 @@ public class Sort{
 				alert("Crap", "Fatal error has ocurred!", "InterruptedException", "ERROR", true);
 			}
 
-		}else{
+		}
+		else{
 			sortByBlocks(array, size, blockSize);
 			doTheMerge(array, blockSize);
 		}
@@ -486,7 +487,8 @@ class SetGoState implements Runnable{
 		GUI.goButton.setDisable(isDisabled);
 		if(isDisabled){
 			GUI.goButton.setText("Sorting...");
-		}else{
+		}
+		else{
 			GUI.goButton.setText("Go");
 		}
 	}

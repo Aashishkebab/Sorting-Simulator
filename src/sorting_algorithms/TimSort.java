@@ -74,7 +74,8 @@ public class TimSort extends Sort{  //Doesn't work right now
 			if(left[i] <= right[j]){
 				arr[k] = left[i];
 				i++;
-			}else{
+			}
+			else{
 				arr[k] = right[j];
 				j++;
 			}
