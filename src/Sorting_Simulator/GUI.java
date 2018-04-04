@@ -17,6 +17,7 @@ import sorting_algorithms.Sort;
 import java.awt.*;
 
 import static Sorting_Simulator.SortingSimulator.banned;
+import static Sorting_Simulator.SortingSimulator.getTriggered;
 
 
 /**
@@ -100,9 +101,11 @@ public class GUI{
 
 	//	static HBox blockSizeBox = new HBox(13);
 	static final TextField blockSize = new TextField("0");
-	static final HBox printConsoleBox = new HBox(4);
+	static final HBox printConsoleBox = new HBox(7);
 	static final Label printConsoleLabel = new Label("Display array");
 	static final CheckBox printConsole = new CheckBox();
+	static final Label offendLabel = new Label("Display potentially offensive content");
+	static final CheckBox offend = new CheckBox();
 
 	public static void createUI(){
 		addElementsToInterface();
@@ -163,10 +166,12 @@ public class GUI{
 		garbages.getChildren().add(garbageLabel);
 		garbages.getChildren().add(bogoSort);
 		garbages.getChildren().add(dropSort);
-		garbages.getChildren().add(trumpSort);
-		garbages.getChildren().add(bernieSort);
-		garbages.getChildren().add(hillarySort);
-		garbages.getChildren().add(intelligentDesignSort);
+		if(getTriggered){
+			garbages.getChildren().add(trumpSort);
+			garbages.getChildren().add(bernieSort);
+			garbages.getChildren().add(hillarySort);
+			garbages.getChildren().add(intelligentDesignSort);
+		}
 
 
 		mainInterface.getChildren().add(bottomItems);
@@ -203,6 +208,8 @@ public class GUI{
 		mainInterface.getChildren().add(printConsoleBox);
 		printConsoleBox.getChildren().add(printConsoleLabel);
 		printConsoleBox.getChildren().add(printConsole);
+		printConsoleBox.getChildren().add(offendLabel);
+		printConsoleBox.getChildren().add(offend);
 
 	}
 
@@ -321,6 +328,31 @@ public class GUI{
 		});
 
 		printConsole.setOnAction(reduceOverhead->Sort.printArrays = printConsole.isSelected());
+		offend.setOnAction(snowflake->{
+			SortingSimulator.getTriggered = offend.isSelected();
+			safeSpace();
+		});
+	}
+
+	private static void safeSpace(){
+		if(getTriggered){
+			garbages.getChildren().add(trumpSort);
+			garbages.getChildren().add(bernieSort);
+			garbages.getChildren().add(hillarySort);
+			garbages.getChildren().add(intelligentDesignSort);
+		}
+		else{
+			if(trumpSort.isSelected() || bernieSort.isSelected() || hillarySort.isSelected() ||
+					intelligentDesignSort.isSelected()){
+				javaSort.setSelected(true);
+				Sort.sortingMethod = "javaSort";
+			}
+
+			garbages.getChildren().remove(trumpSort);
+			garbages.getChildren().remove(bernieSort);
+			garbages.getChildren().remove(hillarySort);
+			garbages.getChildren().remove(intelligentDesignSort);
+		}
 	}
 
 	private static void disableNonNegatives(){

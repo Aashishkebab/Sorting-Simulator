@@ -19,6 +19,7 @@ import static Sorting_Simulator.GUI.alert;
 public class SortingSimulator extends Application{
 
 	public static boolean banned = false;
+	public static boolean getTriggered = false;
 //	public static boolean randomExplained = false;
 
 	/**
