@@ -129,6 +129,9 @@ public class Fork implements Runnable{
 			if(fork.equals("dropSort")){
 				this.array = DropSort.dropSort(this.array);
 			}
+			if(fork.equals("permSort")){
+				PermSort.permSort(this.array);
+			}
 
 			try{
 				allBlocks.offer(array);

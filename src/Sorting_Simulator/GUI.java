@@ -71,6 +71,7 @@ public class GUI{
 	static final RadioButton intelligentDesignSort = new RadioButton("Intelligent Design Sort");
 	static final RadioButton flashSort = new RadioButton("Flash Sort");
 	static final RadioButton dropSort = new RadioButton("Drop Sort");
+	static final RadioButton permSort = new RadioButton("Permutation Sort");
 
 	static final VBox typeBox = new VBox(9);
 	static final Label typeTitle = new Label("Input Type");
@@ -166,6 +167,7 @@ public class GUI{
 		garbages.getChildren().add(garbageLabel);
 		garbages.getChildren().add(bogoSort);
 		garbages.getChildren().add(dropSort);
+		garbages.getChildren().add(permSort);
 		if(getTriggered){
 			garbages.getChildren().add(trumpSort);
 			garbages.getChildren().add(bernieSort);
@@ -250,6 +252,7 @@ public class GUI{
 		intelligentDesignSort.setToggleGroup(algorithms);
 		flashSort.setToggleGroup(algorithms);
 		dropSort.setToggleGroup(algorithms);
+		permSort.setToggleGroup(algorithms);
 
 		alreadySorted.setToggleGroup(types);
 		reverseOrder.setToggleGroup(types);
@@ -306,6 +309,7 @@ public class GUI{
 		intelligentDesignSort.setOnAction(sort->Sort.sortingMethod = "intelligentDesignSort");
 		flashSort.setOnAction(sort->Sort.sortingMethod = "flashSort");
 		dropSort.setOnAction(sort->Sort.sortingMethod = "dropSort");
+		permSort.setOnAction(sort->Sort.sortingMethod = "permSort");
 
 		alreadySorted.setOnAction(numbers->Sort.inputMethod = "alreadySorted");
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");
