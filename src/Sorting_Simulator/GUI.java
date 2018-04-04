@@ -145,13 +145,13 @@ public class GUI{
 		recursives.getChildren().add(heapSort);
 		recursives.getChildren().add(quickSort);
 		recursives.getChildren().add(mergeSort);
-		recursives.getChildren().add(flashSort);
 
 
 		algorithmBox.getChildren().add(mathematicals);
 		mathematicals.getChildren().add(mathematicalLabel);
 
 		mathematicals.getChildren().add(gravitySort);
+		mathematicals.getChildren().add(flashSort);
 		mathematicals.getChildren().add(radixSort);
 		mathematicals.getChildren().add(countingSort);
 //		mathematicals.getChildren().add(countingSortBad);
