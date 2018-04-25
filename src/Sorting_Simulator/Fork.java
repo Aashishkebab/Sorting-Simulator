@@ -135,6 +135,9 @@ public class Fork implements Runnable{
 			if(fork.equals("shearSort")){
 				ShearSort.shearSort(this.array);
 			}
+			if(fork.equals("patienceSort")){
+				PatienceSort.patienceSort(this.array);
+			}
 
 			try{
 				allBlocks.offer(array);
