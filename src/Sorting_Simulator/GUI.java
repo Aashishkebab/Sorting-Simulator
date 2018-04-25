@@ -31,13 +31,13 @@ public class GUI{
 	static final VBox topCushion = new VBox();
 	static final VBox mainInterface = new VBox(37);
 	static final HBox algorithmBox = new HBox(55);
-	static final VBox iteratives = new VBox(7);
+	static final VBox iteratives = new VBox(6);
 	static final Label iterativeLabel = new Label("Iterative Algorithms");
-	static final VBox recursives = new VBox(7);
+	static final VBox recursives = new VBox(6);
 	static final Label recursiveLabel = new Label("Recursive Algorithms");
-	static final VBox mathematicals = new VBox(7);
+	static final VBox mathematicals = new VBox(6);
 	static final Label mathematicalLabel = new Label("Mathematical (non-comparitive) Algorithms");
-	static final VBox garbages = new VBox(7);
+	static final VBox garbages = new VBox(6);
 	static final Label garbageLabel = new Label("Garbage Algorithms");
 	static final ToggleGroup algorithms = new ToggleGroup();
 	static final RadioButton slowSort = new RadioButton("Slow Sort");
@@ -72,6 +72,7 @@ public class GUI{
 	static final RadioButton flashSort = new RadioButton("Flash Sort");
 	static final RadioButton dropSort = new RadioButton("Drop Sort");
 	static final RadioButton permSort = new RadioButton("Permutation Sort");
+	static final RadioButton shearSort = new RadioButton("Shear Sort");
 
 	static final VBox typeBox = new VBox(9);
 	static final Label typeTitle = new Label("Input Type");
@@ -138,6 +139,7 @@ public class GUI{
 		iteratives.getChildren().add(aashishSort5);
 		iteratives.getChildren().add(pancakeSort);
 		iteratives.getChildren().add(aashishSort2);
+		iteratives.getChildren().add(shearSort);
 
 
 		algorithmBox.getChildren().add(recursives);
@@ -253,6 +255,7 @@ public class GUI{
 		flashSort.setToggleGroup(algorithms);
 		dropSort.setToggleGroup(algorithms);
 		permSort.setToggleGroup(algorithms);
+		shearSort.setToggleGroup(algorithms);
 
 		alreadySorted.setToggleGroup(types);
 		reverseOrder.setToggleGroup(types);
@@ -310,6 +313,7 @@ public class GUI{
 		flashSort.setOnAction(sort->Sort.sortingMethod = "flashSort");
 		dropSort.setOnAction(sort->Sort.sortingMethod = "dropSort");
 		permSort.setOnAction(sort->Sort.sortingMethod = "permSort");
+		shearSort.setOnAction(sort->Sort.sortingMethod = "shearSort");
 
 		alreadySorted.setOnAction(numbers->Sort.inputMethod = "alreadySorted");
 		reverseOrder.setOnAction(numbers->Sort.inputMethod = "reverseOrder");

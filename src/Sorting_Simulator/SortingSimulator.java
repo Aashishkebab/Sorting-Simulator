@@ -49,15 +49,15 @@ public class SortingSimulator extends Application{
 	public void start(Stage primaryStage){
 		if(Screen.getPrimary().getVisualBounds().getHeight() < 720){
 			alert("Low Resolution Warning", "Your screen resolution is low.",
-			      "Some items " + "may\n" + "not display correctly.", "WARNING", true);
+			      "Some items may\n" + "not display correctly.", "WARNING", true);
 		}
 
 		GUI.createUI();
 
-		primaryStage.setScene(new Scene(GUI.elements, 837, 555));
+		primaryStage.setScene(new Scene(GUI.elements, 837, 573));
 
 		primaryStage.setMinWidth(837);
-		primaryStage.setMinHeight(555);
+		primaryStage.setMinHeight(573);
 
 		primaryStage.setOnCloseRequest(close->System.exit(0));
 

@@ -132,6 +132,9 @@ public class Fork implements Runnable{
 			if(fork.equals("permSort")){
 				PermSort.permSort(this.array);
 			}
+			if(fork.equals("shearSort")){
+				ShearSort.shearSort(this.array);
+			}
 
 			try{
 				allBlocks.offer(array);
