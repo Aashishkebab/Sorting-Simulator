@@ -8,7 +8,7 @@ Please see the [Wiki](https://github.com/Aashishkebab/Sorting-Simulator/wiki) to
 
 ### [Click here to download](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar)
 
-You can also [Download the Java 9 version](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar). This version works identically, but is slightly faster due to improvements in Java. The problem is that the default Java download still links to Java 9 (because Oracle is weird), so that is the default download link. If you have Java 9 installed, you should download this version.
+You can also [Download the Java 9 version](https://github.com/Aashishkebab/Sorting-Simulator/raw/master/out/artifacts/Sorting_Simulator_jar/Sorting-Simulator_Java8.jar). This version works identically, but is slightly faster due to improvements in Java. The problem is that the default Java download still links to Java 8 (because Oracle is weird), so that is the default download link. If you have Java 9 installed, you should download this version.
 
 ## To use the program
 1. User sets the size of the array of items to be sorted.
