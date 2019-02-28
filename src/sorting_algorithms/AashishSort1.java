@@ -29,7 +29,7 @@ public class AashishSort1 extends Sort{
 	 * @param array The array to be sorted.
 	 * @return The sorted array.
 	 */
-	public static int[] aashishSort1(int[] array){
+	public static long[] aashishSort1(long[] array){
 		return splitByDigit(array, (short)Math.log10(getMaxValue(array)), array.length);
 	}
 
@@ -41,9 +41,10 @@ public class AashishSort1 extends Sort{
 	 *                       starting at the least significant digit and going backwards.
 	 * @param arrLength      Number of consecutive items in passed in "array" that are valid.
    *                       We need this because 'array' will contain a bunch of extra '0' elements.
+	 * 											 We're using int here because maximum array size in Java is Integer.MAX_VALUE.
 	 * @return The array split into digits.
 	 */
-	private static int[] splitByDigit(int[] array, short numberOfDigits, int arrLength){
+	private static long[] splitByDigit(long[] array, short numberOfDigits, int arrLength){
 		//  Use above method signature if using modulus variable, which is redundant.
 
 		/*
