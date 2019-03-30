@@ -29,14 +29,14 @@ public class AashishSort1 extends Sort{
 	 * @param array The array to be sorted.
 	 * @return The sorted array.
 	 */
-	public static long[] aashishSort1(long[] array){
+	public static int[] aashishSort1(int[] array) {
 		return splitByDigit(array, (short)Math.log10(getMaxValue(array)), array.length);
 	}
 
 	/**
 	 * Splits the array into multiple arrays based on a significant digit.
 	 *
-	 * @param array          Array to be split into multiple arrays/buckers
+	 * @param array          Array to be split into multiple arrays/buckets
 	 * @param numberOfDigits The number of digits that are being to be looked at,
 	 *                       starting at the least significant digit and going backwards.
 	 * @param arrLength      Number of consecutive items in passed in "array" that are valid.
@@ -44,7 +44,7 @@ public class AashishSort1 extends Sort{
 	 * 											 We're using int here because maximum array size in Java is Integer.MAX_VALUE.
 	 * @return The array split into digits.
 	 */
-	private static long[] splitByDigit(long[] array, short numberOfDigits, int arrLength){
+	private static int[] splitByDigit(int[] array, short numberOfDigits, int arrLength) {
 		//  Use above method signature if using modulus variable, which is redundant.
 
 		/*
@@ -112,7 +112,7 @@ public class AashishSort1 extends Sort{
 			 * with a reduced number of digits.
 			 */
 			if(digitArrayIndexes[p] > 1){   // Only if there is more than one item in the bucket
-				digitArray[p] = splitByDigit(digitArray[p], (short)numberOfDigits,
+				digitArray[p] = splitByDigit(digitArray[p], numberOfDigits,
 				                             digitArrayIndexes[p]);
 			}
 		}
