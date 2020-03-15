@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Sorting-Simulator:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Sorting_Simulator_jar</output-path>
-    <root id="archive" name="Sorting-Simulator.jar">
-      <element id="module-output" name="Sorting-Simulator" />
-    </root>
-  </artifact>
-</component>
